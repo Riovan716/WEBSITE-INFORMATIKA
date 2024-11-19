@@ -55,7 +55,8 @@ class MahasiswaController extends Controller
             ->with('status', $status);
     }
 
-    public function adminFilterMahasiswa(Request $request){
+    public function adminFilterMahasiswa(Request $request)
+    {
         if ($request->searchby == 'angkatan') {
             $this->filtercategory = $request->searchby;
             $this->filtervalue = $request->searchvalue;
@@ -138,7 +139,7 @@ class MahasiswaController extends Controller
         ]);
 
         // dd($angkatan);
-        return view('adminMahasiswa')
+        return view('admin.mahasiswa.adminMahasiswa')
             ->with('data', $mahasiswa)
             ->with('angkatan', $angkatan)
             ->with('status', $status);
@@ -146,7 +147,7 @@ class MahasiswaController extends Controller
 
     public function addMahasiswa()
     {
-        return view('adminMahasiswaAdd');
+        return view('admin.mahasiswa.adminMahasiswaAdd');
     }
 
     public function addMahasiswa_proses(Request $request)
@@ -173,7 +174,7 @@ class MahasiswaController extends Controller
         $mahasiswa = Mahasiswa::where('id', $id)
             ->first();
 
-        return view('adminMahasiswaEdit')->with('mahasiswa', $mahasiswa);
+        return view('admin.mahasiswa.adminMahasiswaEdit')->with('mahasiswa', $mahasiswa);
     }
 
     public function editMahasiswa_proses(Request $request)

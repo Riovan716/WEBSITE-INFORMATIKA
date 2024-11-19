@@ -25,12 +25,12 @@ class DosenController extends Controller
     {
         $dosen = Dosen::get();
 
-        return view('adminDosen')->with('dosen', $dosen);
+        return view('admin.dosen.adminDosen')->with('dosen', $dosen);
     }
 
     public function addDosen()
     {
-        return view('adminDosenAdd');
+        return view('admin.dosen.adminDosenAdd');
     }
 
     public function addDosen_proses(Request $request)
@@ -59,7 +59,7 @@ class DosenController extends Controller
         $dosen = Dosen::where('id', $id)
             ->first();
 
-        return view('adminDosenedit')->with('dosen', $dosen);
+        return view('admin.dosen.adminDosenedit')->with('dosen', $dosen);
     }
 
     public function editDosen_proses(Request $request)
