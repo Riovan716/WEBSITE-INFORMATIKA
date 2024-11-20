@@ -24,7 +24,7 @@ class EventController extends Controller
 
     public function addEvents()
     {
-        return view('adminEventsAdd');
+        return view('admin.event.adminEventsAdd');
     }
 
     public function addEvents_proses(Request $request)
@@ -63,7 +63,7 @@ class EventController extends Controller
         $events = Event::orderBy('id', 'desc')
             ->get();
 
-        return view('adminEvents')->with('events', $events);
+        return view('admin.event.adminEvents')->with('events', $events);
     }
 
     public function editEvent($id)
@@ -71,7 +71,7 @@ class EventController extends Controller
         $events = Event::where('id', $id)
             ->first();
 
-        return view('adminEventsEdit')->with('events', $events);
+        return view('admin.event.adminEventsEdit')->with('events', $events);
     }
 
     public function editEvent_proses(Request $request)

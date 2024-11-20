@@ -17,12 +17,12 @@ class OrganisasiController extends Controller
     {
         $organisasi = Organisasi::get();
 
-        return view('adminOrganisasi')->with('organisasi', $organisasi);
+        return view('admin.organisasi.adminOrganisasi')->with('organisasi', $organisasi);
     }
 
     public function addOrganisasi()
     {
-        return view('adminOrganisasiAdd');
+        return view('admin.organisasi.adminOrganisasiAdd');
     }
 
     public function addOrganisasi_proses(Request $request)
@@ -52,7 +52,7 @@ class OrganisasiController extends Controller
         $organisasi = Organisasi::where('id', $id)
             ->first();
 
-        return view('adminOrganisasiEdit')->with('organisasi', $organisasi);
+        return view('admin.organisasi.adminOrganisasiEdit')->with('organisasi', $organisasi);
     }
 
     public function editOrganisasi_proses(Request $request)

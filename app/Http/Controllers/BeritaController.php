@@ -26,7 +26,7 @@ class BeritaController extends Controller
         $berita = Berita::orderBy('id', 'desc')
             ->get();
 
-        return view('adminBerita')->with('berita', $berita);
+        return view('admin.berita.adminBerita')->with('berita', $berita);
     }
 
     public function editBerita($id)
@@ -34,7 +34,7 @@ class BeritaController extends Controller
         $berita = Berita::where('id', $id)
             ->first();
 
-        return view('adminBeritaEdit')->with('berita', $berita);
+        return view('admin.berita.adminBeritaEdit')->with('berita', $berita);
     }
 
     public function editBerita_proses(Request $request)
@@ -75,7 +75,7 @@ class BeritaController extends Controller
 
     public function addBerita()
     {
-        return view('adminBeritaAdd');
+        return view('admin.berita.adminBeritaAdd');
     }
 
     public function addBerita_proses(Request $request)

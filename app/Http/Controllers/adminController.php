@@ -10,6 +10,6 @@ class adminController extends Controller
 
     public function admin()
     {
-        return view('adminMenu');
+        return view('admin.menu.adminMenu');
     }
 }

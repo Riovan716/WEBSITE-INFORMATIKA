@@ -34,7 +34,7 @@ class VisiMisiController extends Controller
         $visi = Visi::get();
         $misi = Misi::get();
         $sejarah = Sejarah::first();
-        return view('adminVisiMisi')
+        return view('admin.visimisi.adminVisiMisi')
             ->with('misi', $misi)
             ->with('visi', $visi)
             ->with('sejarah', $sejarah);
@@ -44,7 +44,7 @@ class VisiMisiController extends Controller
     {
         $visi = DB::table('visi')->first();
 
-        return view('adminVisiEdit')->with('visi', $visi);
+        return view('admin.visimisi.adminVisiEdit')->with('visi', $visi);
     }
 
     public function editVisi_proses(Request $request)
@@ -65,7 +65,7 @@ class VisiMisiController extends Controller
 
     public function addMisi()
     {
-        return view('adminMisiAdd');
+        return view('admin.visimisi.adminMisiAdd');
     }
 
     public function addMisi_proses(Request $request)
@@ -86,7 +86,7 @@ class VisiMisiController extends Controller
         $misi = Misi::where('id', $id)
             ->first();
 
-        return view('adminMisiEdit')->with('misi', $misi);
+        return view('admin.visimisi.adminMisiEdit')->with('misi', $misi);
     }
 
     public function editMisi_proses(Request $request)

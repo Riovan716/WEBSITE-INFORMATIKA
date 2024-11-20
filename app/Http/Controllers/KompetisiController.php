@@ -27,12 +27,12 @@ class KompetisiController extends Controller
         $kompetisi = Kompetisi::orderBy('id', 'desc')
             ->get();
 
-        return view('adminKompetisi')->with('kompetisi', $kompetisi);
+        return view('admin.kompetisi.adminKompetisi')->with('kompetisi', $kompetisi);
     }
 
     public function addKompetisi()
     {
-        return view('adminKompetisiAdd');
+        return view('admin.kompetisi.adminKompetisiAdd');
     }
 
     public function addKompetisi_proses(Request $request)
@@ -75,7 +75,7 @@ class KompetisiController extends Controller
         $kompetisi = Kompetisi::where('id', $id)
             ->first();
 
-        return view('adminKompetisiEdit')->with('kompetisi', $kompetisi);
+        return view('admin.kompetisi.adminKompetisiEdit')->with('kompetisi', $kompetisi);
     }
 
     public function editKompetisi_proses(Request $request)

@@ -17,7 +17,7 @@ class SejarahController extends Controller
     {
         $sejarah = Sejarah::first();
 
-        return view('adminSejarahEdit')->with('sejarah', $sejarah);
+        return view('admin.sejarah.adminSejarahEdit')->with('sejarah', $sejarah);
     }
 
     public function editSejarah_proses(Request $request)

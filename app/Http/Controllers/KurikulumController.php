@@ -32,12 +32,12 @@ class KurikulumController extends Controller
         $kurikulum = Kurikulum::orderBy('semester', 'asc')
             ->get();
 
-        return view('adminKurikulum')->with('kurikulum', $kurikulum);
+        return view('admin.kurikulum.adminKurikulum')->with('kurikulum', $kurikulum);
     }
 
     public function addKurikulum()
     {
-        return view('adminKurikulumAdd');
+        return view('admin.kurikulum.adminKurikulumAdd');
     }
 
     public function addKurikulum_proses(Request $request)
@@ -54,7 +54,7 @@ class KurikulumController extends Controller
             'semester' => $request->semester,
             'sks' => $request->sks,
             'tahun' => $request->tahun,
-            'tahun' => $request->tahun,
+
         ]);
 
         return redirect('/admin/kurikulum');
@@ -65,7 +65,7 @@ class KurikulumController extends Controller
         $kurikulum = Kurikulum::where('id', $id)
             ->first();
 
-        return view('adminKurikulumEdit')->with('kurikulum', $kurikulum);
+        return view('admin.kurikulum.adminKurikulumEdit')->with('kurikulum', $kurikulum);
     }
 
     public function editKurikulum_proses(Request $request)

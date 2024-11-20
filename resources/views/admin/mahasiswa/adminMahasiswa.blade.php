@@ -1,13 +1,13 @@
-@extends('master')
+@extends('admin.menu.adminMenu')
 
 @section('section')
     <br>
-    <h1 class="text-dark container"><b>Daftar Alumni Informatika Institut Teknologi Del</b></h1>
-    <br>
+    <a href="/admin/addMahasiswa"><button type="button" class="btn btn-success">Tambah Mahasiswa</button></a>
+    <br><br>
 
     <div class="row">
         <div class="col-4 py-5 px-5">
-            <form action="{{ route('filter.mahasiswa') }}" method="GET">
+            <form action="{{ route('filter.AdminMahasiswa') }}" method="GET">
                 @csrf
                 <div class="row">
                     <label for="searchby" class="py-2">Pilih Kategori</label>
@@ -35,15 +35,13 @@
         </div>
     </div>
 
-    <div class="py-5 mx-5" style="border-radius:20px; background-color:rgba(171, 196, 255, 0.65);">
+    <div class="py-5 mx-5" style="border-radius:20px;">
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">NIM</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Angkatan</th>
-                    <th scope="col">Tahun Lulus</th>
-                    <th scope="col">SK Yudisium</th>
                     <th scope="col">Status</th>
                 </tr>
             </thead>
@@ -54,9 +52,15 @@
                         <td>{{ $item->nim }}</td>
                         <td>{{ $item->nama }}</td>
                         <td>{{ $item->angkatan }}</td>
-                        <td>{{ $item->tahunlulus }}</td>
-                        <td>{{ $item->skyudisium }}</td>
                         <td>{{ $item->status }}</td>
+                        <td class="d-flex">
+                            <a href="/admin/editMahasiswa/{{ $item->id }}"><button type="button"
+                                    class="btn btn-primary mx-1">Edit</button></a>
+
+                            <a href="/admin/hapusMahasiswa/{{ $item->id }}"><button type="button"
+                                    class="btn btn-danger mx-1">Hapus</button></a>
+                        </td>
+
                         {{-- @endif --}}
                     </tr>
                 @endforeach
@@ -64,9 +68,8 @@
         </table>
         {{ $data->links() }}
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    </script>
+
+    <a href="/mahasiswa" target="_blank"><button type="button" class="btn btn-success mx-1">Lihat Pratinjau</button></a>
     <script>
         function dependent(e1, e2) {
             var s1 = document.getElementById(e1);
@@ -89,9 +92,7 @@
                 var optionarr = [
                     @if (@isset($status) & (sizeof($status) > 0))
                         @foreach ($status as $sts)
-                            @if ($sts->status != 'Tidak Aktif')
-                                '{{ $sts->status }}|{{ $sts->status }}',
-                            @endif
+                            '{{ $sts->status }}|{{ $sts->status }}',
                         @endforeach
                     @endif
                 ];
