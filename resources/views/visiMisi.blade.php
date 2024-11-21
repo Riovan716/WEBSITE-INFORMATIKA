@@ -3,9 +3,9 @@
 @section('section')
     <div class="bg-light">
         <!-- Bagian dengan Background Gambar -->
-        <div class="py-5 text-center text-white"
+        <div class="py-5 text-center text-black"
             style="
-                background-image: url('/asset/img/pemandangan_2.jpg'); 
+                background-image: url('/asset/img/pemandangan_4.jpg'); 
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;

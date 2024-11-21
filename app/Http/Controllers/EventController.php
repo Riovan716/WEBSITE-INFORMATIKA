@@ -55,7 +55,7 @@ class EventController extends Controller
             'penjelasan' => $request->penjelasan,
         ]);
 
-        return redirect('/');
+        return redirect('/admin/showEvent');
     }
 
     public function showEvent()
