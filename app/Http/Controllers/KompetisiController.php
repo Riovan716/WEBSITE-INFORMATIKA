@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kompetisi;
+use App\Models\Participant;
 
 class KompetisiController extends Controller
 {
@@ -132,10 +133,131 @@ class KompetisiController extends Controller
         return redirect('/admin/kompetisi');
     }
 
-    public function participant()
+    //pindah dari kompetisi ke page mau menambah participant
+
+    public function viewParticipant(Request $request)
     {
-        return view('participant');
+        // Ambil kompetisi dari query string
+        $kompetisi = $request->get('kompetisi');
+
+        // Filter data berdasarkan kompetisi
+        if ($kompetisi) {
+            $participants = Participant::where('kompetisi', $kompetisi)->get();
+        } else {
+            $participants = Participant::all(); // Tampilkan semua jika tidak ada filter
+        }
+
+        // Kirim data ke view
+        return view('admin.kompetisi.adminParticipantView', compact('participants', 'kompetisi'));
     }
 
+
+
+    public function addParticipant()
+    {
+        return view('admin.kompetisi.adminParticipant');
+    }
+
+
+    public function addParticipant_proses(Request $request)
+    {
+        // Validasi input
+        $this->validate($request, [
+            'nim' => 'required',
+            'nama' => 'required',
+            'prestasi' => 'required',
+            'keterangan' => 'required',
+            'file' => 'required|file|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        // Cek file dan proses upload
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $latestEntry = Participant::orderBy('id', 'desc')->first();
+            $nextId = $latestEntry ? $latestEntry->id + 1 : 1;
+
+            $extension = $file->getClientOriginalExtension();
+            $imageName = $nextId . '.' . $extension;
+
+            // Pindahkan file ke folder public/asset/img/Participants
+            $file->move(public_path('asset/img/Participants'), $imageName);
+        } else {
+            return back()->withErrors('File gambar tidak ditemukan.');
+        }
+
+        // Simpan data ke tabel participants
+        Participant::create([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'prestasi' => $request->prestasi,
+            'keterangan' => $request->keterangan,
+            'gambar' => $imageName,
+        ]);
+
+        // Redirect dengan pesan sukses
+        return redirect('/admin/viewParticipant')->with('success', 'Data berhasil ditambahkan.');
+    }
+
+    public function hapusParticipant($id)
+    {
+        Participant::where('id', $id)
+            ->delete();
+
+        return redirect('/admin/viewParticipant');
+    }
+
+
+    public function editParticipant($id)
+    {
+        $participant = Participant::where('id', $id)
+            ->first();
+
+        return view('admin.kompetisi.adminParticipantEdit')->with('participant', $participant);
+    }
+
+    public function editParticipant_proses(Request $request)
+    {
+        // Validasi input
+        $this->validate($request, [
+            'nim' => 'required',
+            'nama' => 'required',
+            'prestasi' => 'required',
+            'keterangan' => 'required',
+            'file' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048', // File opsional
+        ]);
+
+        // Proses update data
+        $participant = Participant::findOrFail($request->id); // Cari peserta berdasarkan ID
+
+        if ($request->hasFile('file')) {
+            // Proses upload file baru
+            $file = $request->file('file');
+            $extension = $file->getClientOriginalExtension();
+            $imageName = $request->id . '.' . $extension;
+
+            // Pindahkan file ke folder public/asset/img/Participants
+            $file->move(public_path('asset/img/Participants'), $imageName);
+
+            // Update data dengan file gambar baru
+            $participant->update([
+                'nim' => $request->nim,
+                'nama' => $request->nama,
+                'prestasi' => $request->prestasi,
+                'keterangan' => $request->keterangan,
+                'gambar' => $imageName, // Update gambar dengan nama baru
+            ]);
+        } else {
+            // Update data tanpa mengubah file gambar
+            $participant->update([
+                'nim' => $request->nim,
+                'nama' => $request->nama,
+                'prestasi' => $request->prestasi,
+                'keterangan' => $request->keterangan,
+            ]);
+        }
+
+        // Redirect dengan pesan sukses
+        return redirect('/admin/viewParticipant')->with('success', 'Data berhasil diperbarui.');
+    }
 
 }
