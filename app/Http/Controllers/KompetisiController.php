@@ -46,8 +46,10 @@ class KompetisiController extends Controller
             'file' => 'required',
         ]);
 
-        $news = Kompetisi::orderBy('id', 'desc')
-            ->first();
+        $news = Kompetisi::orderBy('id', 'desc')->first();
+
+        // Tentukan ID untuk nama file
+        $nextId = $news ? $news->id + 1 : 1;
 
         $imageExt = $request->file->getClientOriginalName();
 
@@ -55,8 +57,8 @@ class KompetisiController extends Controller
         $pathInfo = pathinfo($imageExt);
         $extension = $pathInfo['extension'];
 
-        $imageName = $news->id;
-        $request->file->move(public_path('asset/img/Kompetisi'), $imageName + 1 . '.' . $extension);
+        $imageName = $nextId;
+        $request->file->move(public_path('asset/img/Kompetisi'), $imageName . '.' . $extension);
 
         Kompetisi::insert([
             'nama' => $request->nama,
@@ -64,11 +66,12 @@ class KompetisiController extends Controller
             'penyelenggara' => $request->penyelenggara,
             'keterangan' => $request->keterangan,
             'link' => $request->links,
-            'gambar' => $imageName + 1 . '.' . $extension,
+            'gambar' => $imageName . '.' . $extension,
         ]);
 
         return redirect('/admin/kompetisi');
     }
+
 
     public function editKompetisi($id)
     {
@@ -117,4 +120,11 @@ class KompetisiController extends Controller
 
         return redirect('/admin/kompetisi');
     }
+
+    public function participant()
+    {
+        return view('participant');
+    }
+
+
 }

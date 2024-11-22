@@ -289,6 +289,9 @@
                                                 <li><a class="dropdown-item text-light" href="/sejarah"
                                                         style="font-size: 16px; font-family: Nunito;">Sejarah</a></li>
                                                 <hr>
+                                                <li><a class="dropdown-item text-light" href="/organisasi"
+                                                    style="font-size: 16px; font-family: Nunito;">Himasti</a></li>
+                                                    <hr>
                                                 <!-- <li><a class="dropdown-item text-light" href="/sejarah" style="font-size: 16px; font-family: Nunito;">Data Pendaftaran</a></li> -->
                                             </ul>
                                         </div>
@@ -312,8 +315,6 @@
                                             <ul class="dropdown-menu dropdown-menu-center dropcolor"
                                                 aria-labelledby="dropdownMenuLink" id="dropdownMenu"
                                                 style="width: fit-content;">
-                                                <li><a class="dropdown-item text-light" href="/organisasi"
-                                                        style="font-size: 16px; font-family: Nunito;">Himasti</a></li>
                                                 <hr>
                                                 <li><a class="dropdown-item text-light" href="/staffDosen"
                                                         style="font-size: 16px; font-family: Nunito">Dosen</a></li>
@@ -323,6 +324,10 @@
                                                 <hr>
                                                 <li><a class="dropdown-item text-light" href="/mahasiswa"
                                                         style="font-size: 16px; font-family: Nunito">Alumni</a></li>
+                                                        <hr>
+                                                <li><a class="dropdown-item text-light" href="/kompetisiAll"
+                                                        style="font-size: 16px; font-family: Nunito;">Kompetisi</a></li>
+                                                        <hr>
                                             </ul>
                                         </div>
                                     </li>

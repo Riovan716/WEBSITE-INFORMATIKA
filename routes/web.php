@@ -42,6 +42,8 @@ Route::get('/berita/{id}', [BeritaController::class, 'tampil_berita']);
 Route::get('/kompetisi/{id}', [KompetisiController::class, 'tampil_kompetisi']);
 Route::get('/kompetisiAll', [KompetisiController::class, 'kompetisiAll']);
 Route::post('/cariProses', [BlogController::class, 'cariProses']);
+Route::get('/participant', [KompetisiController::class, 'participant'])->name('participant');
+
 
 
 
