@@ -89,29 +89,40 @@ class KompetisiController extends Controller
             'penyelenggara' => 'required',
             'keterangan' => 'required',
             'links' => 'required',
+            'file' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $imageExt = $request->file->getClientOriginalName();
+        if ($request->hasFile('file')) {
+            $imageExt = $request->file->getClientOriginalName();
+            $pathInfo = pathinfo($imageExt);
+            $extension = $pathInfo['extension'];
 
-        // Get file extension
-        $pathInfo = pathinfo($imageExt);
-        $extension = $pathInfo['extension'];
+            $imageName = $request->id;
+            $request->file->move(public_path('asset/img/Kompetisi'), $imageName . '.' . $extension);
 
-        $imageName = $request->id;
-        $request->file->move(public_path('asset/img/Kompetisi'), $imageName . '.' . $extension);
-
-        Kompetisi::where('id', $request->id)
-            ->update([
-                'nama' => $request->nama,
-                'tanggal' => $request->tanggal,
-                'penyelenggara' => $request->penyelenggara,
-                'keterangan' => $request->keterangan,
-                'link' => $request->links,
-                'gambar' => $imageName . '.' . $extension,
-            ]);
+            Kompetisi::where('id', $request->id)
+                ->update([
+                    'nama' => $request->nama,
+                    'tanggal' => $request->tanggal,
+                    'penyelenggara' => $request->penyelenggara,
+                    'keterangan' => $request->keterangan,
+                    'link' => $request->links,
+                    'gambar' => $imageName . '.' . $extension,
+                ]);
+        } else {
+            Kompetisi::where('id', $request->id)
+                ->update([
+                    'nama' => $request->nama,
+                    'tanggal' => $request->tanggal,
+                    'penyelenggara' => $request->penyelenggara,
+                    'keterangan' => $request->keterangan,
+                    'link' => $request->links,
+                ]);
+        }
 
         return redirect('/admin/kompetisi');
     }
+
 
     public function hapusKompetisi($id)
     {
