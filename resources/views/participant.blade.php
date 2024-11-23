@@ -1,5 +1,7 @@
 @extends('master')
 
+@section('title', 'Daftar Peserta')
+
 @section('section')
 <div class="container mt-4">
 
@@ -30,7 +32,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="6" class="text-center">Belum ada data peserta</td>
+                    <td colspan="5" class="text-center">Belum ada data peserta</td>
                 </tr>
             @endforelse
         </tbody>

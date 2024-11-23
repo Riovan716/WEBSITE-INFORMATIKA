@@ -15,6 +15,27 @@
 
     <title>Informatika</title>
     <style>
+        html, body {
+    height: 100%; /* Pastikan halaman selalu mengambil 100% tinggi viewport */
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Atur tata letak secara vertikal */
+}
+
+#app {
+    flex: 1; /* Konten utama akan mengisi ruang yang tersisa */
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto; /* Dorong footer ke bawah */
+    background-color: #004080; /* Sesuaikan dengan warna footer Anda */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
         body {
             min-width: 920px;
         }
