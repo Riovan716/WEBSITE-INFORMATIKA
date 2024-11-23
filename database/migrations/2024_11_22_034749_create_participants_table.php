@@ -13,19 +13,19 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('participants', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id(); // Auto increment ID
             $table->string('nim', 100);
             $table->string('nama');
             $table->string('prestasi', 100);
             $table->text('keterangan');
             $table->string('gambar');
-            $table->unsignedBigInteger('kompetisi_id')->nullable();
+            $table->unsignedBigInteger('kompetisi_id'); // Foreign key untuk kompetisi
+            $table->timestamps(); // Untuk created_at dan updated_at
 
-            // Definisi foreign key
             $table->foreign('kompetisi_id')
                 ->references('id')
                 ->on('kompetisi')
-                ->onDelete('cascade');
+                ->onDelete('cascade'); // Hapus peserta jika kompetisi dihapus
         });
 
     }

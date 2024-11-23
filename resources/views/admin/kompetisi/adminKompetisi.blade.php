@@ -28,8 +28,9 @@
                         <td>{{ $item->keterangan }}</td>
                         <td>{{ $item->link }}</td>
                         <td class="d-flex">
-                            <a href="/admin/viewParticipant"><button type="button"
-                                class="btn btn-warning mx-1">more</button></a>
+                            <a href="{{ route('admin.viewParticipant', ['kompetisi_id' => $item->id]) }}">
+                                <button type="button" class="btn btn-warning">Lihat Participants</button>
+                            </a>                            
                             <a href="/admin/editKompetisi/{{ $item->id }}"><button type="button"
                                     class="btn btn-primary mx-1">Edit</button></a>
                             <a href="/admin/hapusKompetisi/{{ $item->id }}"><button type="button"

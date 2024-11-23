@@ -1,61 +1,46 @@
 @extends('admin.menu.adminMenu')
 
-
 @section('section')
+<div class="container">
+    <h1>Edit Participant</h1>
+    <h4>Kompetisi: {{ $kompetisi->nama ?? 'Kompetisi Tidak Ditemukan' }}</h4>
 
-    <div class="container">
+    <form action="{{ route('admin.editParticipantProses', $participant->id) }}" method="post" enctype="multipart/form-data">
+        @csrf
+    
+        <label class="form-label">NIM</label>
+        <input type="text" class="form-control" name="nim" value="{{ $participant->nim }}" required>
+    
+        <br><br>
 
-        <h1>Edit Kompetisi</h1>
-        <form action="/admin/editParticipant/proses" method="post" enctype="multipart/form-data">
-            {{ csrf_field() }}
+        <label class="form-label">Nama Kontestan</label>
+        <input type="text" class="form-control" name="nama" value="{{ $participant->nama }}">
 
-            <input type="text" class="form-control" name="id" value="{{ $participant->id }}" hidden>
+        <br><br>
 
-            <label class="form-label">Nim</label>
-            <input type="text" class="form-control" name="nim" value="{{ $participant->nama }}">
+        <label class="form-label">Prestasi</label>
+        <input type="text" class="form-control" name="prestasi" value="{{ $participant->prestasi }}">
 
-            <br><br>
+        <br><br>
 
-            <label class="form-label">Nama</label>
-            <input type="text" class="form-control" name="nama" value="{{ $participant->tanggal }}">
+        <label class="form-label">Keterangan</label>
+        <textarea class="form-control" name="keterangan" rows="3">{{ $participant->keterangan }}</textarea>
 
-            <br><br>
+        <br><br>
 
-            <label class="form-label">Prestasi</label>
-            <input type="text" class="form-control" name="prestasi" value="{{ $participant->penyelenggara }}">
-
-            <br><br>
-
-            <label class="form-label">Keterangan</label>
-            <textarea class="form-control" name="keterangan" rows="3">{{ $participant->keterangan }}</textarea>
-
-            <br><br>
-
-            <div class="image-wrapper"><img src="{{ asset('asset/img/Berita/' . $participant->gambar) }}"
-                    alt="{{ $participant->gambar }}" style="width: 100%">
-            </div>
-
-            <div class="form-group">
-                <b>File Gambar</b><br />
-                <input type="file" name="file">
-            </div><br>
-            <br>
-
-            <input type="submit" value="Edit Participant" class="btn btn-primary">
-        </form>
-
-        <br>
-        {{-- menampilkan error validasi --}}
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+        <label class="form-label">Gambar Saat Ini</label><br>
+        @if ($participant->gambar)
+            <img src="{{ asset('asset/img/Participants/' . $participant->gambar) }}" alt="Gambar" width="150">
+        @else
+            <p>Tidak ada gambar</p>
         @endif
+        <br><br>
 
-    </div>
+        <label class="form-label">Upload Gambar Baru</label>
+        <input type="file" class="form-control" name="file">
 
+        <br><br>
+        <input type="submit" value="Perbarui Participant" class="btn btn-primary">
+    </form>
+</div>
 @endsection

@@ -8,7 +8,7 @@
         <h1>Tambah Participant</h1>
         <form action="/admin/addParticipant_proses" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
-
+            <input type="hidden" name="kompetisi_id" value="{{ $kompetisi->id }}">
             <label class="form-label">Nim</label>
             <input type="text" class="form-control" name="nim">
 

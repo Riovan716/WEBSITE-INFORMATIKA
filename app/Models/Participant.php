@@ -8,7 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Participant extends Model
 {
     use HasFactory;
+
     protected $table = 'participants';
-    public $timestamps = false;
-    protected $fillable = ['nim', 'nama', 'prestasi', 'keterangan', 'gambar'];
+    protected $fillable = ['nim', 'nama', 'prestasi', 'keterangan', 'gambar', 'kompetisi_id'];
+
+    public function kompetisi()
+    {
+        return $this->belongsTo(Kompetisi::class, 'kompetisi_id');
+    }
 }

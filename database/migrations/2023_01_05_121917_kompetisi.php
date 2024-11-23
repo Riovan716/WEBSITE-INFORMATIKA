@@ -13,15 +13,16 @@ return new class extends Migration {
     public function up()
     {
         Schema::create('kompetisi', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
-            $table->id();
+            $table->id(); // Auto increment ID
             $table->string('nama', 100);
             $table->date('tanggal');
             $table->string('penyelenggara', 100);
             $table->text('keterangan');
             $table->string('gambar');
             $table->string('link', 100);
+            $table->timestamps(); // Untuk created_at dan updated_at
         });
+
     }
 
     /**

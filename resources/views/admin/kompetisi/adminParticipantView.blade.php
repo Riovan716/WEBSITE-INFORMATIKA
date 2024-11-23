@@ -2,8 +2,15 @@
 
 @section('section')
 <div class="container mt-4">
-    <h2>Daftar Participants</h2>
-    <a href="/admin/addParticipant"><button type="button" class="btn btn-warning mx-1">Add Participant</button></a>
+    @if ($kompetisi)
+        <h2>Daftar Participants untuk Kompetisi: {{ $kompetisi->nama }}</h2>
+        <a href="{{ route('admin.addParticipant', ['kompetisi_id' => $kompetisi->id]) }}">
+            <button type="button" class="btn btn-success">Tambah Participant</button>
+        </a>
+    @else
+        <h2>Kompetisi Tidak Ditemukan</h2>
+        <p>Harap pilih kompetisi yang valid untuk melihat atau menambahkan peserta.</p>
+    @endif
 
     <table class="table table-bordered mt-3">
         <thead>
@@ -13,6 +20,7 @@
                 <th>Prestasi</th>
                 <th>Keterangan</th>
                 <th>Gambar</th>
+                <th>Operasi</th>
             </tr>
         </thead>
         <tbody>
@@ -29,13 +37,15 @@
                             <p>Tidak ada gambar</p>
                         @endif
                     </td>
-
                     <td class="d-flex">
-                      <a href="/admin/editParticipant/{{ $participant->id }}"><button type="button"
-                              class="btn btn-primary mx-1">Edit</button></a>
-                      <a href="/admin/hapusParticipant/{{ $participant->id }}"><button type="button"
-                              class="btn btn-danger mx-1">Hapus</button></a>
-                  </td>
+                        <a href="/admin/editParticipant/{{ $participant->id }}">
+                            <button type="button" class="btn btn-primary mx-1">Edit</button>
+                        </a>
+                        <a href="{{ route('admin.hapusParticipant', ['id' => $participant->id]) }}">
+                            <button type="button" class="btn btn-danger mx-1">Hapus</button>
+                        </a>
+                        
+                    </td>
                 </tr>
             @empty
                 <tr>
