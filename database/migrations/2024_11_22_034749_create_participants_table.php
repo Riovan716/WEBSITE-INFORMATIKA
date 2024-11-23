@@ -19,7 +19,15 @@ return new class extends Migration {
             $table->string('prestasi', 100);
             $table->text('keterangan');
             $table->string('gambar');
+            $table->unsignedBigInteger('kompetisi_id')->nullable();
+
+            // Definisi foreign key
+            $table->foreign('kompetisi_id')
+                ->references('id')
+                ->on('kompetisi')
+                ->onDelete('cascade');
         });
+
     }
 
     /**
@@ -29,6 +37,14 @@ return new class extends Migration {
      */
     public function down()
     {
+        Schema::table('participants', function (Blueprint $table) {
+            // Hapus foreign key
+            $table->dropForeign(['kompetisi_id']);
+            // Hapus kolom kompetisi_id
+            $table->dropColumn('kompetisi_id');
+        });
+
+        // Hapus tabel participants
         Schema::dropIfExists('participants');
     }
 };
