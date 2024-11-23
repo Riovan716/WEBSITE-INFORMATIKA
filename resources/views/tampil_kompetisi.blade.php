@@ -2,7 +2,7 @@
 
 @section('section')
 
-    <div >
+    
         <h1 class=" container text-body"><b>{{$kompetisi->nama}}</b></h1>
         <br>
 
@@ -23,10 +23,11 @@
             <p><b>Link Lebih Lanjut</b></p>
             <a href="{{$kompetisi->link}}">{{$kompetisi->link}}</a>
             <br> <br><br>
-            <a href="{{ route('participant') }}" class="btn btn-primary">Go to Participant</a>
 
+            <a href="{{ route('viewParticipant', ['kompetisi_id' => $kompetisi->id]) }}">
+                <button type="button" class="btn btn-warning">Lihat Participants</button>
+            </a> 
         </div>
-    </div>
     <br><br>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+
 @endsection

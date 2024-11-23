@@ -91,7 +91,7 @@ Route::post('/admin/addParticipant_proses', [KompetisiController::class, 'addPar
 Route::get('/admin/hapusParticipant/{id}', [KompetisiController::class, 'hapusParticipant'])->middleware(['auth', 'verified'])->name('admin.hapusParticipant');
 Route::get('/admin/editParticipant/{id}', [KompetisiController::class, 'editParticipant'])->middleware(['auth', 'verified'])->name('admin.editParticipant');
 Route::post('/admin/editParticipant/proses/{id}', [KompetisiController::class, 'editParticipant_proses'])->middleware(['auth', 'verified'])->name('admin.editParticipantProses');
-
+Route::get('/viewParticipant/{kompetisi_id}', [KompetisiController::class, 'Participant'])->middleware(['auth', 'verified'])->name('viewParticipant');
 //Kurikulum
 Route::get('/admin/kurikulum', [KurikulumController::class, 'adminKurikulum'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/addKurikulum', [KurikulumController::class, 'addkurikulum'])->middleware(['auth', 'verified'])->name('dashboard');

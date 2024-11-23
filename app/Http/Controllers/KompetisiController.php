@@ -275,4 +275,22 @@ class KompetisiController extends Controller
             ->with('success', 'Data participant berhasil diperbarui.');
     }
 
+
+    public function Participant($kompetisiId)
+    {
+        // Ambil data kompetisi berdasarkan ID
+        $kompetisi = Kompetisi::find($kompetisiId);
+
+        // Jika kompetisi tidak ditemukan
+        if (!$kompetisi) {
+            return redirect()->back()->with('error', 'Kompetisi tidak ditemukan.');
+        }
+
+        // Ambil peserta berdasarkan kompetisi_id
+        $participants = Participant::where('kompetisi_id', $kompetisiId)->get();
+
+        // Kirim data ke view
+        return view('participant', compact('kompetisi', 'participants'));
+    }
+
 }
