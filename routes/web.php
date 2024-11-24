@@ -34,6 +34,7 @@ Route::get('/staffDosen', [DosenController::class, 'staffDosen']);
 Route::get('/staffDosen/{id}', [DosenController::class, 'detailDosen']);
 Route::get('/mahasiswa', [MahasiswaController::class, 'mahasiswa']);
 Route::get('/filter-mahasiswa', [MahasiswaController::class, 'filterMahasiswa'])->name('filter.mahasiswa');
+Route::get('/alumni', [MahasiswaController::class, 'alumni'])->name('alumni');
 Route::get('/visiMisi', [VisiMisiController::class, 'visiMisi']);
 Route::get('/event/{id}', [EventController::class, 'tampil_event']);
 Route::get('/eventsAll', [EventController::class, 'eventAll']);

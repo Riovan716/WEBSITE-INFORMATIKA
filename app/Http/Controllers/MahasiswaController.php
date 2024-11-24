@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Alumni;
 use App\Models\Mahasiswa;
 
 class MahasiswaController extends Controller
@@ -203,5 +204,38 @@ class MahasiswaController extends Controller
             ->delete();
 
         return redirect('/admin/mahasiswa');
+    }
+
+    // alumni
+    public function alumni(Request $request)
+    {
+        $query = Alumni::where('status', 'lulus'); // Menggunakan model Alumni
+
+        $angkatan = Mahasiswa::select('angkatan')->distinct()->get(); // Masih bisa mengambil data Mahasiswa
+        $status = Mahasiswa::select('status')->distinct()->get();
+
+        if ($request->has('searchby') && $request->searchby == 'angkatan' && $request->has('searchvalue')) {
+            $query->where('angkatan', $request->searchvalue);
+        }
+
+        if ($request->has('searchby') && $request->searchby == 'status' && $request->has('searchvalue')) {
+            $query->where('status', $request->searchvalue);
+        }
+
+        $alumni = $query->orderBy('nim', 'ASC')->paginate(20);
+        return view('alumni', compact('alumni', 'angkatan', 'status'));
+    }
+
+
+
+
+
+    public function adminAlumni()
+    {
+        $alumni = Mahasiswa::where('status', 'lulus')
+            ->orderBy('nim', 'ASC')
+            ->paginate(20);
+
+        return view('admin.mahasiswa.adminAlumni')->with('data', $alumni);
     }
 }

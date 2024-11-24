@@ -15,26 +15,32 @@
 
     <title>Informatika</title>
     <style>
-        html, body {
-    height: 100%; /* Pastikan halaman selalu mengambil 100% tinggi viewport */
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* Atur tata letak secara vertikal */
-}
+        html,
+        body {
+            height: 100%;
+            /* Pastikan halaman selalu mengambil 100% tinggi viewport */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            /* Atur tata letak secara vertikal */
+        }
 
-#app {
-    flex: 1; /* Konten utama akan mengisi ruang yang tersisa */
-    display: flex;
-    flex-direction: column;
-}
+        #app {
+            flex: 1;
+            /* Konten utama akan mengisi ruang yang tersisa */
+            display: flex;
+            flex-direction: column;
+        }
 
-footer {
-    margin-top: auto; /* Dorong footer ke bawah */
-    background-color: #004080; /* Sesuaikan dengan warna footer Anda */
-    color: white;
-    text-align: center;
-    padding: 10px;
-}
+        footer {
+            margin-top: auto;
+            /* Dorong footer ke bawah */
+            background-color: #004080;
+            /* Sesuaikan dengan warna footer Anda */
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
 
         body {
             min-width: 920px;
@@ -311,8 +317,8 @@ footer {
                                                         style="font-size: 16px; font-family: Nunito;">Sejarah</a></li>
                                                 <hr>
                                                 <li><a class="dropdown-item text-light" href="/organisasi"
-                                                    style="font-size: 16px; font-family: Nunito;">Himasti</a></li>
-                                                    <hr>
+                                                        style="font-size: 16px; font-family: Nunito;">Himasti</a></li>
+                                                <hr>
                                                 <!-- <li><a class="dropdown-item text-light" href="/sejarah" style="font-size: 16px; font-family: Nunito;">Data Pendaftaran</a></li> -->
                                             </ul>
                                         </div>
@@ -324,8 +330,6 @@ footer {
                                         <a class="nav-link text-light" href="/kurikulum"
                                             style="font-size: 16px; font-family: Nunito">Kurikulum</a>
                                     </li>
-
-                                    <!-- AKADEMIK -->
 
                                     <li class="nav-item">
                                         <div class="dropdown show">
@@ -343,12 +347,13 @@ footer {
                                                 <li><a class="dropdown-item text-light" href="/mahasiswa"
                                                         style="font-size: 16px; font-family: Nunito">Mahasiswa</a></li>
                                                 <hr>
-                                                <li><a class="dropdown-item text-light" href="/mahasiswa"
+                                                <li><a class="dropdown-item text-light" href="/alumni"
                                                         style="font-size: 16px; font-family: Nunito">Alumni</a></li>
-                                                        <hr>
+                                                <hr>
                                                 <li><a class="dropdown-item text-light" href="/kompetisiAll"
-                                                        style="font-size: 16px; font-family: Nunito;">Kompetisi</a></li>
-                                                        <hr>
+                                                        style="font-size: 16px; font-family: Nunito;">Kompetisi</a>
+                                                </li>
+                                                <hr>
                                             </ul>
                                         </div>
                                     </li>
@@ -469,7 +474,9 @@ footer {
         input.value = '';
     }
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    < /body>
 
-</html>
+    <
+    /html>

@@ -7,7 +7,7 @@
 
     <div class="row">
         <div class="col-4 py-5 px-5">
-            <form action="{{ route('filter.mahasiswa') }}" method="GET">
+            <form action="{{ route('alumni') }}" method="GET">
                 @csrf
                 <div class="row">
                     <label for="searchby" class="py-2">Pilih Kategori</label>
@@ -15,15 +15,31 @@
                         <select name="searchby" id="searchby" class="form-select form-select-sm"
                             aria-label=".form-select-sm example" onchange="dependent('searchby', 'searchvalue')">
                             <option value="">Semua</option>
-                            <option value="angkatan">Angkatan</option>
-                            <option value="status">Status</option>
+                            <option value="angkatan" {{ request('searchby') == 'angkatan' ? 'selected' : '' }}>Angkatan
+                            </option>
+                            <option value="status" {{ request('searchby') == 'status' ? 'selected' : '' }}>Status</option>
                         </select>
                     </div>
                     <div class="col-8">
                         <div class="row">
                             <div class="col-8">
                                 <select name="searchvalue" id="searchvalue" class="form-select form-select-sm"
-                                    aria-label=".form-select-sm example"></select>
+                                    aria-label=".form-select-sm example">
+                                    <option value="">Pilih...</option>
+                                    @if (request('searchby') == 'angkatan')
+                                        @foreach ($angkatan as $akt)
+                                            <option value="{{ $akt->angkatan }}"
+                                                {{ request('searchvalue') == $akt->angkatan ? 'selected' : '' }}>
+                                                {{ $akt->angkatan }}</option>
+                                        @endforeach
+                                    @elseif(request('searchby') == 'status')
+                                        @foreach ($status as $sts)
+                                            <option value="{{ $sts->status }}"
+                                                {{ request('searchvalue') == $sts->status ? 'selected' : '' }}>
+                                                {{ $sts->status }}</option>
+                                        @endforeach
+                                    @endif
+                                </select>
                             </div>
                             <div class="col-4">
                                 <button class="btn btn-primary">Terapkan</button>
@@ -42,27 +58,27 @@
                     <th scope="col">NIM</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Angkatan</th>
+                    <th scope="col">Status</th>
                     <th scope="col">Tahun Lulus</th>
                     <th scope="col">SK Yudisium</th>
-                    <th scope="col">Status</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($data as $item)
+                @foreach ($alumni as $item)
                     <tr>
                         {{-- @if ($item['prodi_name'] == 'S1 Informatika') --}}
                         <td>{{ $item->nim }}</td>
                         <td>{{ $item->nama }}</td>
                         <td>{{ $item->angkatan }}</td>
-                        <td>{{ $item->tahunlulus }}</td>
-                        <td>{{ $item->skyudisium }}</td>
                         <td>{{ $item->status }}</td>
+                        <td>{{ $item->tahun_lulus }}</td>
+                        <td>{{ $item->sk_yudisium }}</td>
                         {{-- @endif --}}
                     </tr>
                 @endforeach
             </tbody>
         </table>
-        {{ $data->links() }}
+        {{ $alumni->links() }}
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
