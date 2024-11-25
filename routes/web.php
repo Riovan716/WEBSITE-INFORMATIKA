@@ -135,6 +135,16 @@ Route::get('/admin/editMahasiswa/{id}', [MahasiswaController::class, 'editMahasi
 Route::post('/admin/editMahasiswa_proses', [MahasiswaController::class, 'editMahasiswa_proses'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/hapusMahasiswa/{id}', [MahasiswaController::class, 'hapusMahasiswa'])->middleware(['auth', 'verified'])->name('dashboard');
 
+// Alumni
+Route::get('/admin/alumni', [MahasiswaController::class, 'adminAlumni'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/filteralumni', [MahasiswaController::class, 'adminFilterAlumni'])->middleware(['auth', 'verified'])->name('filter.AdminAlumni');
+Route::get('/admin/addAlumni', [MahasiswaController::class, 'addAlumni'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/addAlumni_proses', [MahasiswaController::class, 'addAlumni_proses'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/admin/editAlumni/{id}', [MahasiswaController::class, 'editAlumni'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/admin/editAlumni_proses', [MahasiswaController::class, 'editAlumni_proses'])->middleware(['auth', 'verified'])->name('editAlumni.proses');
+Route::get('/admin/hapusAlumni/{id}', [MahasiswaController::class, 'hapusAlumni'])->middleware(['auth', 'verified'])->name('dashboard');
+
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

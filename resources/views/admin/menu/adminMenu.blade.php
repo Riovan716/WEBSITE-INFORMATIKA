@@ -101,7 +101,8 @@
                 <a href="/admin" class="d-flex align-items-center pb-3 text-white text-decoration-none">
                     <span class="fs-5 d-sm-inline">Menu</span>
                 </a>
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
+                    id="menu">
                     <li class="nav-item">
                         <a href="/admin/showEvent" class="nav-link align-middle px-0">
                             <i class="ri-calendar-event-line fs-4"></i>
@@ -118,6 +119,12 @@
                         <a href="/admin/mahasiswa" class="nav-link align-middle px-0">
                             <i class="ri-user-3-line fs-4"></i>
                             <span class="ms-1 d-none d-sm-inline">Mahasiswa</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/alumni" class="nav-link align-middle px-0">
+                            <i class="ri-user-3-line fs-4"></i>
+                            <span class="ms-1 d-none d-sm-inline">Alumni</span>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -143,7 +150,7 @@
                             <i class="ri-information-line fs-4"></i>
                             <span class="ms-1 d-none d-sm-inline">Visi Misi</span>
                         </a>
-                    </li> 
+                    </li>
                     <li class="nav-item">
                         <a href="/admin/organisasi" class="nav-link align-middle px-0">
                             <i class="ri-organization-chart fs-4"></i>
@@ -161,7 +168,8 @@
                         <li>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <a class="dropdown-item" href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">
+                                <a class="dropdown-item" href="route('logout')"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">
                                     {{ __('Log Out') }}
                                 </a>
                             </form>
@@ -182,4 +190,3 @@
 </body>
 
 </html>
-

@@ -209,9 +209,9 @@ class MahasiswaController extends Controller
     // alumni
     public function alumni(Request $request)
     {
-        $query = Alumni::where('status', 'lulus'); // Menggunakan model Alumni
+        $query = Alumni::where('status', 'lulus');
 
-        $angkatan = Mahasiswa::select('angkatan')->distinct()->get(); // Masih bisa mengambil data Mahasiswa
+        $angkatan = Mahasiswa::select('angkatan')->distinct()->get();
         $status = Mahasiswa::select('status')->distinct()->get();
 
         if ($request->has('searchby') && $request->searchby == 'angkatan' && $request->has('searchvalue')) {
@@ -226,16 +226,129 @@ class MahasiswaController extends Controller
         return view('alumni', compact('alumni', 'angkatan', 'status'));
     }
 
-
-
-
-
-    public function adminAlumni()
+    public function adminAlumni(Request $request)
     {
-        $alumni = Mahasiswa::where('status', 'lulus')
-            ->orderBy('nim', 'ASC')
-            ->paginate(20);
+        $query = Alumni::where('status', 'lulus');
 
-        return view('admin.mahasiswa.adminAlumni')->with('data', $alumni);
+        if ($request->has('searchby') && $request->searchby != '') {
+            $searchby = $request->searchby;
+            $searchvalue = $request->searchvalue;
+
+            $query->where($searchby, $searchvalue);
+        }
+
+        $alumni = $query->get(); // Ambil data alumni 
+        $angkatan = Alumni::select('angkatan')->distinct()->get();
+        $status = Alumni::select('status')->distinct()->get();
+
+        $alumni = $query->orderBy('nim', 'ASC')->paginate(20);
+        return view('admin.mahasiswa.adminAlumni', compact('alumni', 'angkatan', 'status'));
+    }
+
+
+
+    public function showAlumni(Request $request)
+    {
+        $alumni = Alumni::all();
+        $angkatan = Alumni::select('angkatan')->distinct()->get();
+        $status = Alumni::select('status')->distinct()->get();
+
+
+        // Pastikan variabel alumni, angkatan, dan status dipassing ke view
+        return view('admin.mahasiswa.adminAlumni', compact('alumni', 'angkatan', 'status'));
+    }
+
+
+    public function adminFilterAlumni(Request $request)
+    {
+        $query = Alumni::where('status', 'lulus');
+
+        if ($request->filled('searchby') && $request->searchby == 'angkatan' && $request->filled('searchvalue')) {
+            $query->where('angkatan', $request->searchvalue);
+        }
+
+        if ($request->filled('searchby') && $request->searchby == 'status' && $request->filled('searchvalue')) {
+            $query->where('status', $request->searchvalue);
+        }
+
+        $alumni = $query->orderBy('nim', 'ASC')->paginate(20);
+
+        $angkatan = Mahasiswa::select('angkatan')->distinct()->get();
+        $status = Mahasiswa::select('status')->distinct()->get();
+
+        return view('admin.mahasiswa.adminAlumni', [
+            'alumni' => $alumni,
+            'angkatan' => $angkatan,
+            'status' => $status,
+        ]);
+    }
+
+    public function addAlumni()
+    {
+        return view('admin.mahasiswa.adminAlumniAdd');
+    }
+
+    public function addAlumni_proses(Request $request)
+    {
+        $request->validate([
+            'nim' => 'required|unique:alumni,nim',
+            'nama' => 'required',
+            'angkatan' => 'required',
+            'tahun_lulus' => 'required',
+            'sk_yudisium' => 'required',
+        ]);
+
+        $alumni = new Alumni();
+        $alumni->nama = $request->nama;
+        $alumni->angkatan = $request->angkatan;
+        $alumni->status = 'Lulus';
+        $alumni->tahun_lulus = $request->tahun_lulus;
+        $alumni->sk_yudisium = $request->sk_yudisium;
+        $alumni->save();
+
+        return redirect('/admin/alumni')->with('success', 'Data Alumni Berhasil Ditambahkan');
+    }
+
+
+    public function editAlumni($id)
+    {
+
+        $alumni = Alumni::where('id', $id)->first();
+        return view('admin.mahasiswa.adminAlumniEdit', compact('alumni'));
+    }
+
+
+    public function editAlumni_proses(Request $request)
+    {
+        $request->validate([
+            'nim' => 'required',
+            'nama' => 'required',
+            'angkatan' => 'required',
+            'tahun_lulus' => 'required',
+            'sk_yudisium' => 'required',
+        ]);
+
+        $alumni = Alumni::find($request->id);
+        if (!$alumni) {
+            return redirect('/admin/alumni')->with('error', 'Data alumni tidak ditemukan.');
+        }
+
+        $alumni->update([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'angkatan' => $request->angkatan,
+            'tahun_lulus' => $request->tahun_lulus,
+            'sk_yudisium' => $request->sk_yudisium,
+        ]);
+
+        return redirect('/admin/alumni')->with('success', 'Data Alumni Berhasil Diubah');
+    }
+
+    public function hapusAlumni($id)
+    {
+        Alumni::where('id', $id)
+            ->delete();
+
+        return redirect('/admin/alumni');
     }
 }
