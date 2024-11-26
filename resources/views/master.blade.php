@@ -11,253 +11,251 @@
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <link rel="shortcut icon" href="{{ asset('asset/img/logo_del.png') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+</head>
 
-    <title>Informatika</title>
-    <style>
-        html,
-        body {
-            height: 100%;
-            /* Pastikan halaman selalu mengambil 100% tinggi viewport */
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            /* Atur tata letak secara vertikal */
-        }
+<title>Informatika</title>
+<style>
+    html,
+    body {
+        height: 100%;
+        /* Pastikan halaman selalu mengambil 100% tinggi viewport */
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        /* Atur tata letak secara vertikal */
+    }
 
-        #app {
-            flex: 1;
-            /* Konten utama akan mengisi ruang yang tersisa */
-            display: flex;
-            flex-direction: column;
-        }
+    #app {
+        flex: 1;
+        /* Konten utama akan mengisi ruang yang tersisa */
+        display: flex;
+        flex-direction: column;
+    }
 
-        footer {
-            margin-top: auto;
-            /* Dorong footer ke bawah */
-            background-color: #004080;
-            /* Sesuaikan dengan warna footer Anda */
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
+    .text-white {
+        color: #ffffff;
+    }
 
-        body {
-            min-width: 920px;
-        }
 
-        .dropcolor {
-            background-color: #767676;
-        }
+    .hover\:text-gray-300:hover {
+        color: #d1d5db;
+    }
 
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
 
-        footer {
-            bottom: 0;
-            width: 100%;
-        }
+    body {
+        min-width: 920px;
+    }
 
-        /* slideshiot */
+    .dropcolor {
+        background-color: #767676;
+    }
 
-        /* endslidehost */
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
 
-        /* Modif Corry */
-        /* Ganti warna teks saat kursor diarahkan */
-        .dosen-name:hover {
-            color: blue;
-            /* Ganti dengan warna yang diinginkan */
-        }
 
-        /* Tambahkan garis bawah saat kursor diarahkan */
-        .card-link:hover .dosen-name {
-            text-decoration: underline;
-            /* Menambahkan garis bawah */
-        }
 
-        .gbrDosen {
-            border-radius: 50%;
-            width: 25%;
-        }
+    /* slideshiot */
 
-        .serv ul {
-            display: flex;
-            flex-wrap: wrap;
-            padding-left: 0;
-            justify-content: center;
-        }
+    /* endslidehost */
 
-        .serv ul li {
-            list-style: none;
-            flex: 0 0 33.333333%;
-        }
+    /* Modif Corry */
+    /* Ganti warna teks saat kursor diarahkan */
+    .dosen-name:hover {
+        color: blue;
+        /* Ganti dengan warna yang diinginkan */
+    }
 
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    /* Tambahkan garis bawah saat kursor diarahkan */
+    .card-link:hover .dosen-name {
+        text-decoration: underline;
+        /* Menambahkan garis bawah */
+    }
 
-        .martop {
-            margin-top: 20px;
-            background-color: rgba(255, 0, 0, 0.109);
-            background-size: contain;
-        }
+    .gbrDosen {
+        border-radius: 50%;
+        width: 25%;
+    }
 
-        .beff {
-            margin: 20px;
-            background-color: aliceblue;
-        }
+    .serv ul {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 0;
+        justify-content: center;
+    }
 
-        .afft {
-            margin: 20px;
-        }
+    .serv ul li {
+        list-style: none;
+        flex: 0 0 33.333333%;
+    }
 
-        * {
-            font-family: 'Nunito';
-        }
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 
-        .ele {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    .martop {
+        margin-top: 20px;
+        background-color: rgba(255, 0, 0, 0.109);
+        background-size: contain;
+    }
 
-        .lingkar {
-            border-radius: 50%;
-            height: 10em;
-            width: 10em;
-            position: relative;
-            border: 7px solid rgba(0, 121, 194, 1);
-        }
+    .beff {
+        margin: 20px;
+        background-color: aliceblue;
+    }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
+    .afft {
+        margin: 20px;
+    }
 
-        .trigger:hover+.keTrig {
-            visibility: visible;
-        }
+    * {
+        font-family: 'Nunito';
+    }
 
-        .keTrig {
-            padding: 3%;
-            background-color: rgba(90, 94, 123, 0.95);
-            list-style: none;
-            color: white;
-            position: absolute;
-            visibility: hidden;
-        }
+    .ele {
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 
-        .cards-wrapper {
-            display: flex;
-        }
+    .lingkar {
+        border-radius: 50%;
+        height: 10em;
+        width: 10em;
+        position: relative;
+        border: 7px solid rgba(0, 121, 194, 1);
+    }
 
-        .card {
-            margin: 0.5em;
-            width: calc(100%/3);
-        }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-        .image-wrapper {
-            height: 10vw;
-            margin: 0 auto;
-            /* display: flex;
+    .trigger:hover+.keTrig {
+        visibility: visible;
+    }
+
+    .keTrig {
+        padding: 3%;
+        background-color: rgba(90, 94, 123, 0.95);
+        list-style: none;
+        color: white;
+        position: absolute;
+        visibility: hidden;
+    }
+
+    .cards-wrapper {
+        display: flex;
+    }
+
+    .card {
+        margin: 0.5em;
+        width: calc(100%/3);
+    }
+
+    .image-wrapper {
+        height: 10vw;
+        margin: 0 auto;
+        /* display: flex;
               justify-content: center;
               align-items: center; */
-        }
+    }
 
-        .image-wrapper img {
-            max-width: 100%;
-            max-height: 100%;
-        }
+    .image-wrapper img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 
-        /* .biru:hover{
+    /* .biru:hover{
               color: blue
           } */
 
-        .mainmenubtn {
+    .mainmenubtn {
 
-            cursor: pointer;
-        }
+        cursor: pointer;
+    }
 
-        .mainmenubtn:hover {
-            background-color: grey;
-        }
+    .mainmenubtn:hover {
+        background-color: grey;
+    }
 
-        .dropdown-child {
-            display: none;
-            position: absolute;
-            background-color: rgba(90, 94, 123, 0.67);
-            border-radius: 3%;
-        }
+    .dropdown-child {
+        display: none;
+        position: absolute;
+        background-color: rgba(90, 94, 123, 0.67);
+        border-radius: 3%;
+    }
 
-        .dropdown-child a {
-            color: white;
-            padding: 20px;
-            text-decoration: none;
-            display: block;
-            border-radius: 3%;
-        }
+    .dropdown-child a {
+        color: white;
+        padding: 20px;
+        text-decoration: none;
+        display: block;
+        border-radius: 3%;
+    }
 
-        .dropdown-child a:hover {
-            background-color: rgba(90, 94, 123, 1);
-            border-radius: 3%;
-            z-index: 100000000000;
-        }
+    .dropdown-child a:hover {
+        background-color: rgba(90, 94, 123, 1);
+        border-radius: 3%;
+        z-index: 100000000000;
+    }
 
-        .dropdown-menu .dropdown-item:hover {
-            background-color: #a0c4ff;
-            /* Ganti dengan warna biru pudar yang Anda inginkan */
-            color: #fff;
-            /* Ganti dengan warna teks yang sesuai */
-        }
+    .dropdown-menu .dropdown-item:hover {
+        background-color: #a0c4ff;
+        /* Ganti dengan warna biru pudar yang Anda inginkan */
+        color: #fff;
+        /* Ganti dengan warna teks yang sesuai */
+    }
 
-        .text-full {
-            text-align: justify;
-            color: #4a4a4a
-        }
-
-
-        .dropdown:hover .dropdown-child {
-            display: block;
-        }
-
-        .text-body {
-            color: #266bb1 !important;
-        }
-
-        .horizontal {
-            width: 339px;
-            margin: 0 auto;
-            /* Membuat elemen berada di tengah */
-            border: 2px solid;
-            /* Mengatur border dengan ketebalan 2px */
-            color: rgba(0, 121, 194, 1);
-            /* Mengatur warna border menjadi dark blue */
-        }
-
-        .hr-vertical {
-            width: 2px;
-            /* Sesuaikan lebar vertikal sesuai kebutuhan */
-            height: 100%;
-            /* Sesuaikan tinggi vertikal sesuai kebutuhan */
-            border: 2px solid rgba(0, 121, 194, 1);
-            /* Mengatur border dengan ketebalan 2px dan warna dark blue */
-            margin: 0;
-            /* Hapus margin agar lebih tepat di tengah */
-            transform: rotate(180deg);
-        }
+    .text-full {
+        text-align: justify;
+        color: #4a4a4a
+    }
 
 
-        /* pagination in eventAll */
+    .dropdown:hover .dropdown-child {
+        display: block;
+    }
 
-        /* croptting */
-    </style>
-</head>
+    .text-body {
+        color: #266bb1 !important;
+    }
+
+    .horizontal {
+        width: 339px;
+        margin: 0 auto;
+        /* Membuat elemen berada di tengah */
+        border: 2px solid;
+        /* Mengatur border dengan ketebalan 2px */
+        color: rgba(0, 121, 194, 1);
+        /* Mengatur warna border menjadi dark blue */
+    }
+
+    .hr-vertical {
+        width: 2px;
+        /* Sesuaikan lebar vertikal sesuai kebutuhan */
+        height: 100%;
+        /* Sesuaikan tinggi vertikal sesuai kebutuhan */
+        border: 2px solid rgba(0, 121, 194, 1);
+        /* Mengatur border dengan ketebalan 2px dan warna dark blue */
+        margin: 0;
+        /* Hapus margin agar lebih tepat di tengah */
+        transform: rotate(180deg);
+    }
+
+
+    /* pagination in eventAll */
+
+    /* croptting */
+</style>
+
 
 <body>
     <header style="background-color: #09306B ;">
@@ -401,50 +399,57 @@
 
     <br>
     <footer>
-        <div class="container-fluid" style="background-color: #09306B ;">
-            <div class="row">
-                <div class="col-12 col-md-6 px-3 py-3 text-light" style="font-family: Nunito;">
-
-                    <!-- KONTAK KAMI -->
-
-                    <h1 class="text-light fs-3 fw-bold px-3">Kontak Kami</h1>
-                    <br>
-                    <div class="container-fluid">
-                        <span>Institut Teknologi Del</span>
-                        <br>
-                        <span>Jl. Sisingamangaraja, Sitoluama, Laguboti, Toba, Sumatera Utara, Indonesia</span>
-                        <br>
-                        <p>Kode Pos : 22381</p>
-                        <p>
-                            <i class="ri-phone-line"></i>
-                            <span>+62 632 331234</span>
-                            <br>
-                            <i class="ri-mail-line"></i>
-                            <i>Informatika@del.ac.id</i>
-                        </p>
+        <div style="background-color: #4A90E2; padding: 20px 0;">
+            <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+                <a style="text-align: center;">
+                    <div style="text-align: center">
+                        <div style="background-color: #e2e8f0; color: #000; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+                            Web KP/magang
+                        </div>
                     </div>
-                </div>
+                    <a href="https://www.del.ac.id/">
+                        <img src="{{ asset('asset/img/logo_del_2.jpg') }}" alt="Logo Del" style="height: 60px;">
+                    </a>
 
-                <!-- TAUTAN -->
-
-                <div class="col-12 col-md-6 px-3 py-3 text-light" style="font-family: Nunito;">
-                    <h1 class="text-light fs-3 fw-bold">Tautan</h1>
-                    <a href="https://www.del.ac.id/"><img src="{{ asset('asset/img/logo_del.png') }}" alt="del"
-                            target="_blank" width="100em" height="100em" class="rounded mx-2"></a>
-                    <a href="https://spmb.del.ac.id/"><img src="{{ asset('asset/img/spmb.png') }}" alt="spmb"
-                            target="_blank" width="130em" height="100em" class="rounded mx-2"></a>
-                </div>
+                    <a href="https://himasti.delcom.org/">
+                        <img src="{{ asset('asset/img/logo_himasti.jpg') }}" alt="Logo Himasti" style="height: 60px;">
+                    </a>
+                    <a href="#">
+                        <img src="{{ asset('asset/img/spmb.png') }}" alt="SPMB IT Del" style="height: 60px;">
+                    </a>
+                </a>
             </div>
         </div>
 
-        <!-- TANDA COPYRIGHT -->
+        <div style="background-color: #003f88; color: #ffffff; padding: 80px 0;">
+            <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start;">
 
-        <div class="container-fluid d-flex justify-content-center"
-            style="background-color: #000; font-family: Nunito; margin-bottom: -10px;">
-            <p class="justify-items-center" style="color: #f4f4f4 ; font-weight: 700"> &copy; 2023 Program Studi S1
-                INFORMATIKA - IT Del</p>
+                <!-- Bagian Kiri -->
+                <div style="flex: 1; text-align: center;">
+                    <p style="font-size: 14px; margin-bottom: 10px;">
+                        Copyright 2024 © S1IF IT Del. All Rights Reserved.
+                    </p>
+                    <div style="display: flex; justify-content: center; gap: 15px; align-items: center; margin-top: 10px;">
+                        <i class="bi bi-instagram" style="font-size: 2rem; color: #e1306c;"></i>
+                        <i class="bi bi-telephone" style="font-size: 2rem; color: #157347;"></i>
+                        <i class="bi bi-envelope" style="font-size: 2rem; color: #1da1f2;"></i>
+                    </div>
+                </div>
+
+
+                <!-- Bagian Kanan -->
+                <div style="flex: 1; text-align: center; font-size: 14px;">
+                    <b style="margin-bottom: 5px; font-size: 20px;">Institut Teknologi Del</b>
+                    <p style="margin-bottom: 5px;">Jl. Sisingamangaraja, Sitoluama, Laguboti, Toba, Sumatera Utara, Indonesia</p>
+                    <p>Kode Pos: 22381</p>
+                </div>
+
+            </div>
         </div>
     </footer>
+
+
+
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
@@ -476,7 +481,5 @@
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-    < /body>
-
-    <
-    /html>
+</script>
+< /html>
