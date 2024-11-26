@@ -1,39 +1,16 @@
+
 @extends('admin.menu.adminMenu')
 
 @section('section')
-
-    <h3>Sejarah</h3>
-
-    <form action="/admin/editSejarah/proses" method="post" enctype="multipart/form-data">
-        {{ csrf_field() }}
-
-        <label class="form-label">Sejarah</label>
-        <textarea class="form-control" name="sejarah" rows="3" id="text-area">{{ $sejarah->sejarah }}</textarea>
-        <br>
-        <input type="submit" value="Ubah Sejarah" class="btn btn-primary">
-    </form>
-
-
-    <br>
-    {{-- menampilkan error validasi --}}
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+<form action="{{ route('admin.sejarah.edit.proses') }}" method="post">
+    @csrf
+    <div class="card">
+        <div class="card-header">Form Edit Sejarah</div>
+        <div class="card-body">
+            <textarea class="form-control" name="sejarah" rows="10" placeholder="Masukkan sejarah di sini...">{!! $data->sejarah !!}</textarea>
         </div>
-    @endif
-
-@endsection
-
-@section('scripts')
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#text-area'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+</form>
+    
 @endsection

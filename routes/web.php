@@ -11,9 +11,9 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\OrganisasiController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SejarahController;
+use App\Http\Controllers\AdminSejarahController;
 use App\Http\Controllers\VisiMisiController;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -110,9 +110,18 @@ Route::get('/admin/editMisi/{id}', [VisiMisiController::class, 'editMisi'])->mid
 Route::post('/admin/editMisi/proses', [VisiMisiController::class, 'editMisi_proses'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/editVisi', [VisiMisiController::class, 'editVisi'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::post('/admin/editVisi/proses', [VisiMisiController::class, 'editVisi_proses'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/admin/editSejarah', [SejarahController::class, 'editSejarah'])->middleware(['auth', 'verified'])->name('dashboard');
-Route::post('/admin/editSejarah/proses', [SejarahController::class, 'editSejarah_proses'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/hapusMisi/{id}', [VisiMisiController::class, 'hapusMisi'])->middleware(['auth', 'verified'])->name('dashboard');
+
+//Sejarah 
+// Route untuk menampilkan halaman Sejarah
+Route::get('/admin/sejarah', [AdminSejarahController::class, 'showSejarah'])->middleware(['auth', 'verified'])->name('admin.sejarah');
+
+// Route untuk mengedit data Sejarah
+Route::get('/admin/editSejarah', [AdminSejarahController::class, 'editSejarah'])->middleware(['auth', 'verified'])->name('admin.sejarah.edit');
+
+// Route untuk menyimpan perubahan data Sejarah
+Route::post('/admin/editSejarah', [AdminSejarahController::class, 'editSejarahProses'])->middleware(['auth', 'verified'])->name('admin.sejarah.edit.proses');
+
 
 
 //Organisasi
