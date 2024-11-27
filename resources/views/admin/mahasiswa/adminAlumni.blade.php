@@ -15,25 +15,14 @@
                         <select name="searchby" id="searchby" class="form-select form-select-sm"
                             aria-label=".form-select-sm example" onchange="dependent('searchby', 'searchvalue')">
                             <option value="">Semua</option>
-                            <option value="angkatan" {{ request('searchby') == 'angkatan' ? 'selected' : '' }}>Angkatan
-                            </option>
-
+                            <option value="angkatan">Angkatan</option>
                         </select>
                     </div>
                     <div class="col-8">
                         <div class="row">
                             <div class="col-8">
                                 <select name="searchvalue" id="searchvalue" class="form-select form-select-sm"
-                                    aria-label=".form-select-sm example">
-                                    <option value="">Pilih...</option>
-                                    @if (request('searchby') == 'angkatan')
-                                        @foreach ($angkatan as $akt)
-                                            <option value="{{ $akt->angkatan }}"
-                                                {{ request('searchvalue') == $akt->angkatan ? 'selected' : '' }}>
-                                                {{ $akt->angkatan }}</option>
-                                        @endforeach
-                                    @endif
-                                </select>
+                                    aria-label=".form-select-sm example"></select>
                             </div>
                             <div class="col-4">
                                 <button class="btn btn-primary">Terapkan</button>
@@ -81,13 +70,12 @@
                                 <a href="/admin/hapusAlumni/{{ $item->id }}"><button type="button"
                                         class="btn btn-danger mx-1">Hapus</button></a>
                             </td>
-                            {{-- @endif --}}
                         </tr>
                     @endforeach
                 @endif
             </tbody>
         </table>
-        {{ $alumni->links() }}
+        {{ $alumni->appends(request()->query())->links() }}
     </div>
 
     <a href="/alumni" target="_blank"><button type="button" class="btn btn-success mx-1">Lihat Pratinjau</button></a>

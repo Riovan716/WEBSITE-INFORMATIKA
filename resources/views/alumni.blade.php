@@ -17,7 +17,7 @@
                             <option value="">Semua</option>
                             <option value="angkatan" {{ request('searchby') == 'angkatan' ? 'selected' : '' }}>Angkatan
                             </option>
-                            <option value="status" {{ request('searchby') == 'status' ? 'selected' : '' }}>Status</option>
+
                         </select>
                     </div>
                     <div class="col-8">
@@ -31,12 +31,6 @@
                                             <option value="{{ $akt->angkatan }}"
                                                 {{ request('searchvalue') == $akt->angkatan ? 'selected' : '' }}>
                                                 {{ $akt->angkatan }}</option>
-                                        @endforeach
-                                    @elseif(request('searchby') == 'status')
-                                        @foreach ($status as $sts)
-                                            <option value="{{ $sts->status }}"
-                                                {{ request('searchvalue') == $sts->status ? 'selected' : '' }}>
-                                                {{ $sts->status }}</option>
                                         @endforeach
                                     @endif
                                 </select>
