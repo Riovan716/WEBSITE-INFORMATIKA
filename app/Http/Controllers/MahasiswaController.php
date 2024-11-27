@@ -299,6 +299,7 @@ class MahasiswaController extends Controller
         ]);
 
         $alumni = new Alumni();
+        $alumni->nim = $request->nim;
         $alumni->nama = $request->nama;
         $alumni->angkatan = $request->angkatan;
         $alumni->status = 'Lulus';

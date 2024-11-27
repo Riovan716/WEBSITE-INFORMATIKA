@@ -18,7 +18,13 @@ class KurikulumController extends Controller
             $kurikulum = Kurikulum::where('tahun', $targetYear)->get();
         }
 
-        $tahun_kurikulum = Kurikulum::distinct()->whereNot("tahun", null)->orderByDesc("tahun")->get(["tahun"]);
+        // Tetapkan daftar tahun yang dapat dipilih (misalnya, hanya 2019 dan 2024)
+        $tahun_kurikulum = collect([
+            (object) ['tahun' => 2014],
+            (object) ['tahun' => 2019],
+            (object) ['tahun' => 2024],
+        ]);
+
 
         $data = [
             "kurikulum" => $kurikulum,
@@ -54,7 +60,6 @@ class KurikulumController extends Controller
             'semester' => $request->semester,
             'sks' => $request->sks,
             'tahun' => $request->tahun,
-
         ]);
 
         return redirect('/admin/kurikulum');
