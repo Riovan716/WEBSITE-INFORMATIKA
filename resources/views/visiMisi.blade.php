@@ -5,7 +5,7 @@
 
         <div class="py-5 text-center text-white"
             style="
-                background-image: url('/asset/img/pemandangan_4.jpg'); 
+                background-image: url('/asset/img/visi_misi.jpg'); 
                 background-size: cover;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -13,21 +13,19 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px; 
             ">
-            <h1 class="p-5 rounded-5"
-                style=" 
-               display: inline-block;
-               font-size: 3rem;
-               font-weight: bold;
-               position: absolute;
-               bottom: 260px;
-               left: 10px;">
-                VISI & MISI
-            </h1>
 
         </div>
 
         <!-- Bagian Konten -->
+
+        <!-- Header Section -->
+        <div class="d-flex justify-content-center p-4">
+            <h1 class="fw-bold text-center">VISI & MISI</h1>
+        </div>
+
         <div class="container py-5">
             <!-- VISI -->
             <div class="row mt-5">
