@@ -72,7 +72,20 @@
                 width: 15%;
             }
 
-            /* SKS */
+            .dropdown-wrapper {
+                position: relative;
+            }
+
+            select.form-control {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><polygon points="0,0 10,0 5,7" style="fill:%23000;" /></svg>');
+                background-repeat: no-repeat;
+                background-position: right 10px center;
+                background-size: 10px 10px;
+                padding-right: 30px;
+            }
         </style>
     </head>
 
@@ -84,14 +97,16 @@
                 <div class="form-row">
                     <div class="form-group col-md-4 m-2">
                         <label for="tahun">Tahun Kurikulum</label>
-                        <select name="tahun" id="tahun" class="form-control"
-                            onchange="document.getElementById('formFilterByYear').submit();">
-                            <option disabled selected>Pilih Tahun</option>
-                            @foreach ($tahun_kurikulum as $tahun)
-                                <option {{ request()->get('tahun') == $tahun->tahun ? 'selected' : '' }}
-                                    value="{{ $tahun->tahun }}">{{ $tahun->tahun }}</option>
-                            @endforeach
-                        </select>
+                        <div class="dropdown-wrapper">
+                            <select name="tahun" id="tahun" class="form-control"
+                                onchange="document.getElementById('formFilterByYear').submit();">
+                                <option disabled selected>Pilih Tahun</option>
+                                @foreach ($tahun_kurikulum as $tahun)
+                                    <option {{ request()->get('tahun') == $tahun->tahun ? 'selected' : '' }}
+                                        value="{{ $tahun->tahun }}">{{ $tahun->tahun }}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                     <div class="form-group col-md-4 mt-2 mb-4">
                         <label></label>

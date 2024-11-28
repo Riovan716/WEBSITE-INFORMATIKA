@@ -2,9 +2,12 @@
 
 <head>
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -98,8 +101,12 @@
         </h1>
         <h1 class="text-light text-center">Program Studi Informatika</h1>
         <p class="text-light container text-center" style="
-        ">Informatika merupakan salah satu core technology dalam sistem teknologi yang dikenal sebagai Teknologi Informasi dan Komunikasi (Information and Communication Technology), karena melalui pemfungsian Informatika-lah diperoleh produk-produk perangkat
-            lunak (software products) yang memungkinkan terwujudnya sifat intelligent dari Teknologi Informasi dan Komunikasi. Teknologi Informasi dan Komunikasi merupakan strategic enabling technology dalam menopang upaya pencerdasan kehidupan bangsa</p>
+        ">Informatika merupakan salah satu core technology
+            dalam sistem teknologi yang dikenal sebagai Teknologi Informasi dan Komunikasi (Information and
+            Communication Technology), karena melalui pemfungsian Informatika-lah diperoleh produk-produk perangkat
+            lunak (software products) yang memungkinkan terwujudnya sifat intelligent dari Teknologi Informasi dan
+            Komunikasi. Teknologi Informasi dan Komunikasi merupakan strategic enabling technology dalam menopang upaya
+            pencerdasan kehidupan bangsa</p>
 
         <div>
             <div class="row text-light">
@@ -158,7 +165,8 @@
                                 <div class="image-wrapper"><img src="..." alt="..."></div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
@@ -166,7 +174,8 @@
                                 <div class="image-wrapper"><img src="..." alt="..."></div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
@@ -174,7 +183,8 @@
                                 <div class="image-wrapper"><img src="..." alt="..."></div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
@@ -187,7 +197,8 @@
                                 <div class="image-wrapper"><img src="..." alt="..."></div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
@@ -195,7 +206,8 @@
                                 <div class="image-wrapper"><img src="..." alt="..."></div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
@@ -203,7 +215,8 @@
                                 <div class="image-wrapper"><img src="..." alt="..."></div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
@@ -215,7 +228,8 @@
                                 <div class="image-wrapper"><img src="..." alt="..."></div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
@@ -223,7 +237,8 @@
                                 <div class="image-wrapper"><img src="..." alt="..."></div>
                                 <div class="card-body">
                                     <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p class="card-text">Some quick example text to build on the card title and make up
+                                        the bulk of the card's content.</p>
                                     <a href="#" class="btn btn-primary">Go somewhere</a>
                                 </div>
                             </div>
@@ -231,11 +246,13 @@
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                    data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -247,13 +264,14 @@
         </div>
 
         <div class="d-flex pb-5 justify-content-center text-light">
-            <div id="CTA" class="w-50 p-4" style="text-align: center;background-color: rgba(156, 173, 206, 0.47);">
+            <div id="CTA" class="w-50 p-4"
+                style="text-align: center;background-color: rgba(156, 173, 206, 0.47);">
                 <h2>Bergabung Bersama Kami</h2>
                 <p>Informasi Pendaftaran</p>
                 <div class=" justify-content-center d-flex ">
                     <button type="button " class="btn btn-primary ">Klik Lebih Lanjut</button>
+                </div>
             </div>
-        </div>
         </div>
 
         <div class="d-flex justify-content-around text-light text-center mb-2 ">
@@ -281,7 +299,8 @@
                 <div class="col-sm ">
                     <img src=" " alt="logo Del "><br>
                     <label for=" ">Institut Teknologi Del</label><br>
-                    <label for=" ">Jl. Sisingamangaraja, Sitoluama, Laguboti, Toba Samosir Sumatera Utara - Indonesia
+                    <label for=" ">Jl. Sisingamangaraja, Sitoluama, Laguboti, Toba Samosir Sumatera Utara -
+                        Indonesia
                         22381</label>
                     <br><br><br>
                     <label for=" ">+62822988XXXXX</label><br>
@@ -291,7 +310,7 @@
                     <p>Enter your email address to subscribe to this blog and receive notifications of new posts by
                         email.</p>
                     <p>Email Address</p>
-                    <hr  style="size: 10; width: 80%; ">
+                    <hr style="size: 10; width: 80%; ">
 
                     <div class="containter d-flex justify-content-end ">
                         <button type="button " class="mt-3 btn btn-primary ">Submit</button>

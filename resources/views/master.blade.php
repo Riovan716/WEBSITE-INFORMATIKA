@@ -209,9 +209,8 @@
 
     .dropdown-menu .dropdown-item:hover {
         background-color: #a0c4ff;
-        /* Ganti dengan warna biru pudar yang Anda inginkan */
         color: #fff;
-        /* Ganti dengan warna teks yang sesuai */
+
     }
 
     .text-full {
@@ -231,22 +230,15 @@
     .horizontal {
         width: 339px;
         margin: 0 auto;
-        /* Membuat elemen berada di tengah */
         border: 2px solid;
-        /* Mengatur border dengan ketebalan 2px */
         color: rgba(0, 121, 194, 1);
-        /* Mengatur warna border menjadi dark blue */
     }
 
     .hr-vertical {
         width: 2px;
-        /* Sesuaikan lebar vertikal sesuai kebutuhan */
         height: 100%;
-        /* Sesuaikan tinggi vertikal sesuai kebutuhan */
         border: 2px solid rgba(0, 121, 194, 1);
-        /* Mengatur border dengan ketebalan 2px dan warna dark blue */
         margin: 0;
-        /* Hapus margin agar lebih tepat di tengah */
         transform: rotate(180deg);
     }
 
@@ -400,10 +392,12 @@
     <br>
     <footer>
         <div style="background-color: #4A90E2; padding: 20px 0;">
-            <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <div
+                style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
                 <a style="text-align: center;">
                     <div style="text-align: center">
-                        <div style="background-color: #e2e8f0; color: #000; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+                        <div
+                            style="background-color: #e2e8f0; color: #000; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
                             Web KP/magang
                         </div>
                     </div>
@@ -412,7 +406,8 @@
                     </a>
 
                     <a href="https://himasti.delcom.org/">
-                        <img src="{{ asset('asset/img/logo_himasti.jpg') }}" alt="Logo Himasti" style="height: 60px;">
+                        <img src="{{ asset('asset/img/logo_himasti.jpg') }}" alt="Logo Himasti"
+                            style="height: 60px;">
                     </a>
                     <a href="#">
                         <img src="{{ asset('asset/img/spmb.png') }}" alt="SPMB IT Del" style="height: 60px;">
@@ -422,14 +417,16 @@
         </div>
 
         <div style="background-color: #003f88; color: #ffffff; padding: 80px 0;">
-            <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start;">
+            <div
+                style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start;">
 
                 <!-- Bagian Kiri -->
                 <div style="flex: 1; text-align: center;">
                     <p style="font-size: 14px; margin-bottom: 10px;">
                         Copyright 2024 © S1IF IT Del. All Rights Reserved.
                     </p>
-                    <div style="display: flex; justify-content: center; gap: 15px; align-items: center; margin-top: 10px;">
+                    <div
+                        style="display: flex; justify-content: center; gap: 15px; align-items: center; margin-top: 10px;">
                         <i class="bi bi-instagram" style="font-size: 2rem; color: #e1306c;"></i>
                         <i class="bi bi-telephone" style="font-size: 2rem; color: #157347;"></i>
                         <i class="bi bi-envelope" style="font-size: 2rem; color: #1da1f2;"></i>
@@ -440,7 +437,8 @@
                 <!-- Bagian Kanan -->
                 <div style="flex: 1; text-align: center; font-size: 14px;">
                     <b style="margin-bottom: 5px; font-size: 20px;">Institut Teknologi Del</b>
-                    <p style="margin-bottom: 5px;">Jl. Sisingamangaraja, Sitoluama, Laguboti, Toba, Sumatera Utara, Indonesia</p>
+                    <p style="margin-bottom: 5px;">Jl. Sisingamangaraja, Sitoluama, Laguboti, Toba, Sumatera Utara,
+                        Indonesia</p>
                     <p>Kode Pos: 22381</p>
                 </div>
 
@@ -482,4 +480,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
 </script>
+
 </html>
