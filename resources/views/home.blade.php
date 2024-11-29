@@ -63,7 +63,7 @@
 
     <div>
         <div class="row text-body mb-5 ">
-            <div class="col-sm-7" style="padding-left:50px;">
+            <div class="col-sm-6" style="padding-left:50px;">
                 <div class="p-2 container" style="background-color: rgba(156, 173, 206, 0.47) ;">
                     <a href="/eventsAll">
                         <h1 class=""><strong>| EVENTS</strong></h1>
@@ -164,7 +164,9 @@
                                         </div>
                                         @endforeach
                                     </div>
-                                    <div class="swiper-pagination martop"></div>
+                                    <br> <br><br>
+                                    <div class="swiper-pagination martop" style="background-color: white;"></div>
+
                                 </div>
                                 <p class=" d-flex align-items-center"><i class="beff ri-arrow-right-s-line"></i></p>
                             </div>

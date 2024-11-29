@@ -13,11 +13,14 @@
             background-color: #f8f9fa;
         }
 
+        /* Sidebar Styles */
         .sidebar {
             background-color: #343a40;
             min-height: 100vh;
             position: fixed;
+            width: 250px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
         }
 
         .sidebar .nav-link {
@@ -53,14 +56,20 @@
 
         /* Konten disesuaikan agar tidak melebihi layar */
         .content {
-            margin-left: 350px;
+            margin-left: 250px;
             padding: 20px;
+            transition: margin-left 0.3s ease-in-out;
         }
 
         /* Responsif: sidebar otomatis tersembunyi di layar kecil */
         @media (max-width: 768px) {
             .sidebar {
-                display: none;
+                position: absolute;
+                transform: translateX(-250px);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
             }
 
             .content {
@@ -187,6 +196,13 @@
 
     <script src="https://cdn.ckeditor.com/ckeditor5/40.1.0/classic/ckeditor.js"></script>
     @yield('scripts')
+
+    <script>
+        // Toggle sidebar visibility on small screens
+        document.querySelector('.navbar-toggler').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>

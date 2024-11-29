@@ -14,12 +14,18 @@
     </div>
 
     <!-- Konten Sejarah -->
-    <div class="container my-4">
-        <div class="row justify-content-center">
-            <div class="col-lg-10">
+    <div class="container py-5">
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <fieldset class="border border-primary rounded-3 p-4 bg-white p-5 rounded-4 shadow-lg">
+                    <legend class="float-none w-100 text-white rounded py-3 px-4"
+                    style="background: linear-gradient(90deg, rgba(0, 51, 102, 1) 0%, rgba(0, 153, 255, 1) 100%);">
+                    SEJARAH
+                </legend>
                 <div class="bg-white p-5 rounded-4 shadow-lg" style="font-size: 18px; line-height: 1.8; text-align: justify;">
                     <p>{!! $sejarah->sejarah !!}</p>
                 </div>
+                </fieldset>
             </div>
         </div>
     </div>
