@@ -86,7 +86,7 @@ class OrganisasiSeed extends Seeder
                 'nama' => "Intan Sianipar",
                 'gambar' => "intan_danus_kepala.jpg",
                 'divisi' => "Danus",
-                'jabatan' => "Kepada Divisi"
+                'jabatan' => "Kepala Divisi"
             ],
             [
                 'nama' => "Sunanda Munthe",
@@ -243,6 +243,13 @@ class OrganisasiSeed extends Seeder
                 'gambar' => "bertrand_humas_anggota.jpg",
                 'divisi' => "Humas",
                 'jabatan' => "Anggota"
+            ],
+
+            [
+                'nama' => "Bertrand Sianipar",
+                'gambar' => "bertrand_humas_anggota.jpg",
+                'divisi' => "MPH",
+                'jabatan' => "MPH"
             ],
         ]);
     }

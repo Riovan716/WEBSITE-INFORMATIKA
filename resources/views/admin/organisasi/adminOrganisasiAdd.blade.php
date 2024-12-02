@@ -25,6 +25,7 @@
                 <label for="divisi">Divisi:</label>
                 <select class="form-control" id="divisi" name="divisi">
                     <option value="Pembina">Pembina</option>
+                    <option value="MPH">MPH</option>
                     <option value="BPH">BPH</option>
                     <option value="Danus">Danus</option>
                     <option value="Humas">Humas</option>
@@ -35,9 +36,21 @@
                 </select>
             </div>
 
-            <div class="mb-3">
-                <label for="jabatan" class="form-label">Jabatan</label>
-                <input type="text" class="form-control" id="jabatan" name="jabatan">
+            <div class="form-group">
+                <label for="jabatan">Jabatan:</label>
+                <select class="form-control" id="divisi" name="divisi">
+                    <option value="Pembina">Pembina</option>
+                    <option value="MPH">MPH</option>
+                    <option value="Ketua">Ketua</option>
+                    <option value="Wakil Ketua">Wakil Ketua</option>
+                    <option value="Sekretaris">Sekretaris</option>
+                    <option value="Wakil Sekretaris">Wakil sekretaris</option>
+                    <option value="Bendahara">Bendahara</option>
+                    <option value="Wakil Bendahara">Wakil Bendahara</option>
+                    <option value="Kepala Divisi">Kepala Divisi</option>
+                    <option value="Wakil Kepala Divisi">Wakil Kepala Divisi</option>
+                    <option value="Anggota">Anggota</option>
+                </select>
             </div>
 
             <button type="submit" class="btn btn-primary">Tambah Anggota</button>
