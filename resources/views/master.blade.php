@@ -396,10 +396,12 @@
                 style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
                 <a style="text-align: center;">
                     <div style="text-align: center">
-                        <div
-                            style="background-color: #e2e8f0; color: #000; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-                            Web KP/magang
-                        </div>
+                        <a href="https://kp.delcom.online/">
+                            <div
+                                style="background-color: #e2e8f0; color: #000; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
+                                Web KP/Magang
+                            </div>
+                        </a>
                     </div>
                     <a href="https://www.del.ac.id/">
                         <img src="{{ asset('asset/img/logo_del_2.jpg') }}" alt="Logo Del" style="height: 60px;">
