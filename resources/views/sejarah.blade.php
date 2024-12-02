@@ -22,7 +22,7 @@
                     style="background: linear-gradient(90deg, rgba(0, 51, 102, 1) 0%, rgba(0, 153, 255, 1) 100%);">
                     SEJARAH
                 </legend>
-                <div class="bg-white p-5 rounded-4 shadow-lg" style="font-size: 18px; line-height: 1.8; text-align: justify;">
+                <div class="bg-white" style="font-size: 18px; line-height: 1.8; text-align: justify;">
                     <p>{!! $sejarah->sejarah !!}</p>
                 </div>
                 </fieldset>
