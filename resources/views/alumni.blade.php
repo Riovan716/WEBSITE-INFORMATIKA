@@ -52,7 +52,7 @@
                     <th scope="col">NIM</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Angkatan</th>
-                    <th scope="col">Status</th>
+
                     <th scope="col">Tahun Lulus</th>
                     <th scope="col">SK Yudisium</th>
                 </tr>
@@ -64,7 +64,7 @@
                         <td>{{ $item->nim }}</td>
                         <td>{{ $item->nama }}</td>
                         <td>{{ $item->angkatan }}</td>
-                        <td>{{ $item->status }}</td>
+
                         <td>{{ $item->tahun_lulus }}</td>
                         <td>{{ $item->sk_yudisium }}</td>
                         {{-- @endif --}}

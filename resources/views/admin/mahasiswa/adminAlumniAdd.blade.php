@@ -29,7 +29,7 @@
 
             <label class="form-label">Tahun Lulus</label>
             <select name="tahun_lulus" id="tahun_lulus">
-                @for ($i = 2000; $i <= now()->year; $i++)
+                @for ($i = 2000; $i <= now()->year + 2; $i++)
                     <option value="{{ $i }}">{{ $i }}</option>
                 @endfor
             </select>

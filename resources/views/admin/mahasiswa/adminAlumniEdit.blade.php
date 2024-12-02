@@ -20,7 +20,7 @@
 
             <br><br>
 
-            <label class="form-label">Angkatan</label>
+            <label class="form-label">Angkatan</label> <br>
             <select name="angkatan" id="angkatan">
                 <option value="">--- Pilih Angkatan ---</option>
                 <option value="2014"{{ $alumni->angkatan == '2014' ? 'selected' : '' }}>2014</option>
@@ -38,20 +38,10 @@
                 <option value="2026"{{ $alumni->angkatan == '2026' ? 'selected' : '' }}>2026</option>
             </select>
 
-            <br><br>
-
-            <label class="form-label">Status</label>
-            <select name="status" id="status">
-                <option value="">--- Pilih Status ---</option>
-                <option value="Aktif" {{ $alumni->status == 'Aktif' ? 'selected' : '' }}>Aktif</option>
-                <option value="Tidak Aktif" {{ $alumni->status == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif</option>
-                <option value="Lulus" {{ $alumni->status == 'Lulus' ? 'selected' : '' }}>Lulus</option>
-                <option value="Mengundurkan Diri" {{ $alumni->status == 'Mengundurkan Diri' ? 'selected' : '' }}>
-                    Mengundurkan Diri</option>
-            </select>
+            <br>
 
             <br><br>
-            <label class="form-label">Tahun Lulus</label>
+            <label class="form-label">Tahun Lulus</label> <br>
             <select name="tahun_lulus" id="tahun_lulus">
                 <option value="">--- Pilih Tahun Lulus ---</option>
                 <option value="2014"{{ $alumni->tahun_lulus == '2014' ? 'selected' : '' }}>2014</option>
@@ -69,7 +59,7 @@
                 <option value="2026"{{ $alumni->tahun_lulus == '2026' ? 'selected' : '' }}>2026</option>
                 <option value="2026"{{ $alumni->tahun_lulus == '2027' ? 'selected' : '' }}>2027</option>
             </select>
-            <br>
+            <br><br>
             <label class="form-label mt-3">SK Yudisium</label>
             <input type="text" class="form-control" name="sk_yudisium" value="{{ $alumni->sk_yudisium }}">
 
