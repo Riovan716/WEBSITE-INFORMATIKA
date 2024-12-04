@@ -164,8 +164,8 @@
         height: 10vw;
         margin: 0 auto;
         /* display: flex;
-              justify-content: center;
-              align-items: center; */
+            justify-content: center;
+            align-items: center; */
     }
 
     .image-wrapper img {
@@ -174,7 +174,7 @@
     }
 
     /* .biru:hover{
-              color: blue
+        color: blue
           } */
 
     .mainmenubtn {

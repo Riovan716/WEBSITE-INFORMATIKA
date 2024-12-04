@@ -20,7 +20,12 @@
             <br><br>
 
             <label class="form-label">Prestasi</label>
-            <input type="text" class="form-control" name="prestasi">
+            <select class="form-control" name="prestasi">
+                <option value="juara_1">Juara 1</option>
+                <option value="juara_2">Juara 2</option>
+                <option value="juara_3">Juara 3</option>
+                <option value="anggota">Participant</option>
+            </select>
 
             <br><br>
 

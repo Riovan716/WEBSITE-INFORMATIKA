@@ -9,7 +9,7 @@
         <form action="/admin/addKompetisi_proses" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
 
-            
+
 
             <label class="form-label">Nama</label>
             <input type="text" class="form-control" name="nama">
@@ -32,8 +32,9 @@
             <br><br>
 
             <label class="form-label">Link Lebih Lanjut</label>
-            <input type="text" class="form-control" name="links">
+          <input type="text" class="form-control" name="links">
 
+          
             <br><br>
             <div class="form-group">
                 <b>File Gambar</b><br />
