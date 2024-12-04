@@ -9,6 +9,8 @@
         <form action="/admin/addKompetisi_proses" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
 
+            
+
             <label class="form-label">Nama</label>
             <input type="text" class="form-control" name="nama">
 

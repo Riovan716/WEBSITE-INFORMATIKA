@@ -8,6 +8,7 @@
     <table class="table table-bordered mt-3">
         <thead>
             <tr>
+                <th>No</th>
                 <th>NIM</th>
                 <th>Nama</th>
                 <th>Prestasi</th>
@@ -16,8 +17,10 @@
             </tr>
         </thead>
         <tbody>
-            @forelse($participants as $participant)
+            @foreach($participants as $index => $participant)
                 <tr>
+                    <!-- Menghitung nomor urut secara manual berdasarkan halaman -->
+                    <th scope="row">{{ $participants->firstItem() + $index }}</th>
                     <td>{{ $participant->nim }}</td>
                     <td>{{ $participant->nama }}</td>
                     <td>{{ $participant->prestasi }}</td>
@@ -30,12 +33,18 @@
                         @endif
                     </td>
                 </tr>
-            @empty
+            @endforeach
+            @if($participants->isEmpty())
                 <tr>
-                    <td colspan="5" class="text-center">Belum ada data peserta</td>
+                    <td colspan="6" class="text-center">Belum ada data peserta</td>
                 </tr>
-            @endforelse
+            @endif
         </tbody>
     </table>
+
+    <!-- Menampilkan pagination -->
+    <div class="d-flex justify-content-center">
+        {{ $participants->links() }}
+    </div>
 </div>
 @endsection

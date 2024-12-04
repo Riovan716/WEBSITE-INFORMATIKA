@@ -286,8 +286,8 @@ class KompetisiController extends Controller
             return redirect()->back()->with('error', 'Kompetisi tidak ditemukan.');
         }
 
-        // Ambil peserta berdasarkan kompetisi_id
-        $participants = Participant::where('kompetisi_id', $kompetisiId)->get();
+        // Ambil peserta berdasarkan kompetisi_id dengan paginasi
+        $participants = Participant::where('kompetisi_id', $kompetisiId)->paginate(10);
 
         // Kirim data ke view
         return view('participant', compact('kompetisi', 'participants'));

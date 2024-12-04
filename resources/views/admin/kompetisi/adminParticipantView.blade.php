@@ -15,6 +15,7 @@
     <table class="table table-bordered mt-3">
         <thead>
             <tr>
+                <th>No</th>
                 <th>NIM</th>
                 <th>Nama</th>
                 <th>Prestasi</th>
@@ -26,6 +27,8 @@
         <tbody>
             @forelse($participants as $participant)
                 <tr>
+                    <th scope="row">{{ $loop->iteration }}</th>
+
                     <td>{{ $participant->nim }}</td>
                     <td>{{ $participant->nama }}</td>
                     <td>{{ $participant->prestasi }}</td>
