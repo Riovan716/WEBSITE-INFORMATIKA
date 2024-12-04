@@ -330,7 +330,7 @@
                                             <ul class="dropdown-menu dropdown-menu-center dropcolor"
                                                 aria-labelledby="dropdownMenuLink" id="dropdownMenu"
                                                 style="width: fit-content;">
-                                                <hr>
+                                            
                                                 <li><a class="dropdown-item text-light" href="/staffDosen"
                                                         style="font-size: 16px; font-family: Nunito">Dosen</a></li>
                                                 <hr>
@@ -340,19 +340,23 @@
                                                 <li><a class="dropdown-item text-light" href="/alumni"
                                                         style="font-size: 16px; font-family: Nunito">Alumni</a></li>
                                                 <hr>
-                                                <li><a class="dropdown-item text-light" href="/kompetisiAll"
-                                                        style="font-size: 16px; font-family: Nunito;">Kompetisi</a>
-                                                </li>
-                                                <hr>
+                                                
                                             </ul>
                                         </div>
                                     </li>
+
+
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" href="/kompetisiAll"
+                                            style="font-size: 16px; font-family: Nunito">Kompetisi</a>
+                                    </li>
+                            
 
                                     <!-- KONTAK -->
 
                                     {{-- <li class="nav-item">
                     <a class="nav-link text-light" href="/kontak" style="font-size: 16px; font-family: Nunito">Kontak</a>
-                  </li> --}}
+                </li> --}}
 
                                     <!-- LOGIN ADMIN -->
 
