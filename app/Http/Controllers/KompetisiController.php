@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kompetisi;
 use App\Models\Participant;
+use App\Models\Mahasiswa;
 
 class KompetisiController extends Controller
 {
@@ -292,5 +293,24 @@ class KompetisiController extends Controller
         // Kirim data ke view
         return view('participant', compact('kompetisi', 'participants'));
     }
+
+    public function getNamaByNim($nim)
+    {
+        // Mencari mahasiswa berdasarkan NIM
+        $mahasiswa = mahasiswa::where('nim', $nim)->first();
+
+        if ($mahasiswa) {
+            return response()->json([
+                'status' => 'success',
+                'nama' => $mahasiswa->nama // Kolom 'nama' dari tabel mahasiswa
+            ]);
+        } else {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'NIM tidak ditemukan'
+            ]);
+        }
+    }
+
 
 }
