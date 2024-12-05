@@ -42,5 +42,9 @@
         <br><br>
         <input type="submit" value="Perbarui Participant" class="btn btn-primary">
     </form>
+    <br>
+    <a href="{{ route('admin.viewParticipant', ['kompetisi_id' => $kompetisi->id]) }}">
+        <button type="button" class="btn btn-danger">Kembali</button>
+    </a> 
 </div>
 @endsection

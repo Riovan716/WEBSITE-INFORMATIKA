@@ -44,7 +44,10 @@
             <br>
 
             <input type="submit" value="Tambah Kompetisi" class="btn btn-primary">
+            
         </form>
+        <br>
+        <a href="/admin/kompetisi"><button type="button" class="btn btn-danger">Kembali</button></a>
 
         <br>
         {{-- menampilkan error validasi --}}

@@ -27,7 +27,8 @@
         <tbody>
             @forelse($participants as $participant)
                 <tr>
-                    <th scope="row">{{ $loop->iteration }}</th>
+                    <th scope="row">{{ $participants->firstItem() + $loop->index }}</th>
+
 
                     <td>{{ $participant->nim }}</td>
                     <td>{{ $participant->nama }}</td>
@@ -57,5 +58,11 @@
             @endforelse
         </tbody>
     </table>
+           <!-- Pagination Links -->
+           <div class="d-flex justify-content-center">
+            {{ $participants->links() }}
+        </div>
+<br>
+    <a href="/admin/kompetisi"><button type="button" class="btn btn-danger">Kembali</button></a>
 </div>
 @endsection

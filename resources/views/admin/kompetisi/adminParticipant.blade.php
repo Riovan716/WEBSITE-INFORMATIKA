@@ -55,6 +55,9 @@
         </form>
 
         <br>
+        <a href="{{ route('admin.viewParticipant', ['kompetisi_id' => $kompetisi->id]) }}">
+            <button type="button" class="btn btn-danger">Kembali</button>
+        </a>   
         
         <!-- Menampilkan error validasi -->
         @if (count($errors) > 0)
@@ -64,6 +67,7 @@
                 @endforeach
             </div>
         @endif
+
     </div>
 
     <!-- jQuery -->

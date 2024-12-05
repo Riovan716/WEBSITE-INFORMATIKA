@@ -61,6 +61,8 @@
             </div>
         @endif
 
+        <a href="/admin/kompetisi"><button type="button" class="btn btn-danger">Kembali</button></a>
+
     </div>
 
 @endsection

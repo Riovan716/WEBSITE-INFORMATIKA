@@ -147,7 +147,7 @@ class KompetisiController extends Controller
         }
 
         // Ambil peserta berdasarkan kompetisi_id
-        $participants = Participant::where('kompetisi_id', $kompetisiId)->get();
+        $participants = Participant::where('kompetisi_id', $kompetisiId)->paginate(10);
 
         // Kirim data ke view
         return view('admin.kompetisi.adminParticipantView', compact('kompetisi', 'participants'));
