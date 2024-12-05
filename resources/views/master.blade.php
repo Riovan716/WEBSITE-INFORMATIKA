@@ -350,6 +350,9 @@
                                         <a class="nav-link text-light" href="/kompetisiAll"
                                             style="font-size: 16px; font-family: Nunito">Kompetisi</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link text-light" href="/kontak" style="font-size: 16px; font-family: Nunito">Kontak</a>
+                                    </li> 
                             
 
                                     <!-- KONTAK -->

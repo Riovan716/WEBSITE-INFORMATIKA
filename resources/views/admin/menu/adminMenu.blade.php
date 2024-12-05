@@ -166,6 +166,13 @@
                             <span class="ms-1 d-none d-sm-inline">Organisasi</span>
                         </a>
                     </li>
+
+                    <li class="nav-item menus">
+                        <a href="/admin/kontak" class="nav-link align-middle px-0">
+                            <i class="ri-contacts-line fs-4"></i>
+                            <span class="ms-1 d-none d-sm-inline">Kontak</span>
+                        </a>
+                    </li>
                 </ul>
                 <div class="dropdown mt-4">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"

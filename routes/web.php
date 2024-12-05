@@ -13,6 +13,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SejarahController;
 use App\Http\Controllers\AdminSejarahController;
 use App\Http\Controllers\VisiMisiController;
+use App\Http\Controllers\KontakController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -163,3 +164,14 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+
+// Kontak
+
+Route::get('/admin/kontak', [KontakController::class, 'adminKontak'])->middleware(['auth', 'verified']);
+Route::get('/admin/addKontak', [KontakController::class, 'adminKontakAdd'])->middleware(['auth', 'verified']);
+Route::post('/admin/addKontak/proses', [KontakController::class, 'addKontak_proses'])->middleware(['auth', 'verified']);
+Route::get('/admin/editKontak', [KontakController::class, 'adminKontakEdit'])->middleware(['auth', 'verified']);
+Route::post('/admin/editKontak/proses', [KontakController::class, 'editKontak_proses'])->middleware(['auth', 'verified']);
+Route::get('/admin/hapusKontak/{id}', [KontakController::class, 'deleteKontak_proses'])->middleware(['auth', 'verified']);
+Route::get('/kontak', [KontakController::class, 'showKontak']);
