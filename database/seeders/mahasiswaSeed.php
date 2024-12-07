@@ -672,7 +672,7 @@ class mahasiswaSeed extends Seeder
                 'nim' => '11S15045',
                 'nama' => 'Reikard Martua Napitupulu',
                 'angkatan' => 2015,
-                'status' => 'Aktif',
+                'status' => 'Lulus',
             ],
             [
                 'nim' => '11S15024',
@@ -944,7 +944,7 @@ class mahasiswaSeed extends Seeder
                 'nim' => '11S16009',
                 'nama' => 'Fitri Rosida Simorangkir',
                 'angkatan' => 2016,
-                'status' => 'Aktif',
+                'status' => 'Lulus',
             ],
             [
                 'nim' => '11S16040',
@@ -956,7 +956,7 @@ class mahasiswaSeed extends Seeder
                 'nim' => '11S16031',
                 'nama' => 'Glory Karina Hotbana Sitohang',
                 'angkatan' => 2016,
-                'status' => 'Aktif',
+                'status' => 'Lulus',
             ],
             [
                 'nim' => '11S16067',
@@ -1004,7 +1004,7 @@ class mahasiswaSeed extends Seeder
                 'nim' => '11S16035',
                 'nama' => 'Jeremy Valentin Siahaan',
                 'angkatan' => 2016,
-                'status' => 'Aktif',
+                'status' => 'Lulus',
             ],
             [
                 'nim' => '11S16023',
@@ -1028,7 +1028,7 @@ class mahasiswaSeed extends Seeder
                 'nim' => '11S16004',
                 'nama' => 'Jubey Simanjuntak',
                 'angkatan' => 2016,
-                'status' => 'Aktif',
+                'status' => 'Lulus',
             ],
             [
                 'nim' => '11S16061',
@@ -1130,7 +1130,7 @@ class mahasiswaSeed extends Seeder
                 'nim' => '11S16036',
                 'nama' => 'Tangido Halomoan Sinaga',
                 'angkatan' => 2016,
-                'status' => 'Aktif',
+                'status' => 'Lulus',
             ],
             [
                 'nim' => '11S16024',
@@ -1160,7 +1160,7 @@ class mahasiswaSeed extends Seeder
                 'nim' => '11S16062',
                 'nama' => 'Yosua Giat Raja Saragih',
                 'angkatan' => 2016,
-                'status' => 'Aktif',
+                'status' => 'Lulus',
             ],
             [
                 'nim' => '11S16045',
