@@ -847,13 +847,6 @@ class kurikulum extends Seeder
                 'tahun' => 2024
             ],
             [
-                'kode' => 'KUS1001',
-                'nama' => 'Penulisan Karya Ilmiah',
-                'semester' => 1,
-                'sks' => 2,
-                'tahun' => 2024
-            ],
-            [
                 'kode' => '10S1001',
                 'nama' => 'Matematika Diskrit',
                 'semester' => 1,

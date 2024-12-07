@@ -9,29 +9,29 @@ class KurikulumController extends Controller
 {
     public function kurikulum(Request $request)
     {
-        $targetYear = $request->query("tahun");
+        // Jika tidak ada parameter 'tahun', gunakan default tahun 2024
+        $targetYear = $request->query("tahun", 2024); // Default ke tahun 2024
 
-        $kurikulum = null;
-        if (!$targetYear) {
-            $kurikulum = Kurikulum::get();
-        } else {
-            $kurikulum = Kurikulum::where('tahun', $targetYear)->get();
-        }
+        // Ambil data kurikulum berdasarkan tahun yang ditargetkan
+        $kurikulum = Kurikulum::where('tahun', $targetYear)->get();
 
-        // Tetapkan daftar tahun yang dapat dipilih (misalnya, hanya 2019 dan 2024)
+        // Tetapkan daftar tahun yang dapat dipilih (misalnya, hanya 2014, 2019, dan 2024)
         $tahun_kurikulum = collect([
             (object) ['tahun' => 2014],
             (object) ['tahun' => 2019],
             (object) ['tahun' => 2024],
         ]);
 
-
+        // Kirim data ke view
         $data = [
             "kurikulum" => $kurikulum,
-            "tahun_kurikulum" => $tahun_kurikulum
+            "tahun_kurikulum" => $tahun_kurikulum,
+            "defaultYear" => $targetYear, // Kirim default tahun ke view
         ];
+
         return view('kurikulum', $data);
     }
+
 
     public function adminKurikulum()
     {
