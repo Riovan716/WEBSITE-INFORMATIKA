@@ -35,6 +35,7 @@
 
         .table th {
             background-color: #0b4582;
+            /* Biru */
             color: #ffffff;
             text-transform: uppercase;
         }
@@ -75,35 +76,19 @@
                     <div class="col-4">
                         <select name="searchby" id="searchby" class="form-select form-select-sm"
                             aria-label=".form-select-sm example" onchange="dependent('searchby', 'searchvalue')">
-                            <option value="angkatan" {{ request('searchby') == 'angkatan' ? 'selected' : '' }}>Angkatan
-                            </option>
-                            <option value="status" {{ request('searchby') == 'status' ? 'selected' : '' }}>Status</option>
+                            <option value="">Semua</option>
+                            <option value="angkatan">Angkatan</option>
+                            <option value="status">Status</option>
                         </select>
                     </div>
                     <div class="col-8">
                         <div class="row">
                             <div class="col-8">
                                 <select name="searchvalue" id="searchvalue" class="form-select form-select-sm"
-                                    aria-label=".form-select-sm example" onchange="this.form.submit()">
-                                    <option value="">Pilih...</option>
-                                    @if (request('searchby') == 'angkatan')
-                                        @foreach ($angkatan as $akt)
-                                            <option value="{{ $akt->angkatan }}"
-                                                {{ request('searchvalue') == $akt->angkatan ? 'selected' : '' }}>
-                                                {{ $akt->angkatan }}
-                                            </option>
-                                        @endforeach
-                                    @elseif (request('searchby') == 'status')
-                                        @foreach ($status as $sts)
-                                            @if ($sts->status != 'Tidak Aktif')
-                                                <option value="{{ $sts->status }}"
-                                                    {{ request('searchvalue') == $sts->status ? 'selected' : '' }}>
-                                                    {{ $sts->status }}
-                                                </option>
-                                            @endif
-                                        @endforeach
-                                    @endif
-                                </select>
+                                    aria-label=".form-select-sm example"></select>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-primary">Terapkan</button>
                             </div>
                         </div>
                     </div>
@@ -152,17 +137,21 @@
 
             if (s1.value == 'angkatan') {
                 var optionarr = [
-                    @foreach ($angkatan as $akt)
-                        '{{ $akt->angkatan }}|{{ $akt->angkatan }}',
-                    @endforeach
+                    @if (@isset($angkatan) & (sizeof($angkatan) > 0))
+                        @foreach ($angkatan as $akt)
+                            '{{ $akt->angkatan }}|{{ $akt->angkatan }}',
+                        @endforeach
+                    @endif
                 ];
             } else if (s1.value == 'status') {
                 var optionarr = [
-                    @foreach ($status as $sts)
-                        @if ($sts->status != 'Tidak Aktif')
-                            '{{ $sts->status }}|{{ $sts->status }}',
-                        @endif
-                    @endforeach
+                    @if (@isset($status) & (sizeof($status) > 0))
+                        @foreach ($status as $sts)
+                            @if ($sts->status != 'Tidak Aktif')
+                                '{{ $sts->status }}|{{ $sts->status }}',
+                            @endif
+                        @endforeach
+                    @endif
                 ];
             }
 

@@ -60,6 +60,15 @@
         .pagination {
             justify-content: center;
         }
+
+        .form-inline {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-inline select {
+            margin-right: 10px;
+        }
     </style>
 
     <br>
@@ -68,7 +77,7 @@
 
     <div class="row">
         <div class="col-4 py-5 px-5">
-            <form action="{{ route('alumni') }}" method="GET">
+            <form action="{{ route('alumni') }}" method="GET" class="form-inline">
                 @csrf
                 <div class="row">
                     <label for="searchby" class="py-2">Pilih Kategori</label>
@@ -81,25 +90,20 @@
                             </option>
                         </select>
                     </div>
-                    <div class="col-8">
-                        <div class="row">
-                            <div class="col-8">
-                                <select name="searchvalue" id="searchvalue" class="form-select form-select-sm"
-                                    aria-label=".form-select-sm example" onchange="this.form.submit()">
-                                    <option value="">Pilih...</option>
-                                    @foreach ($tahunLulus as $tahun)
-                                        <option value="{{ $tahun->tahun_lulus }}"
-                                            {{ request('searchvalue') == $tahun->tahun_lulus ? 'selected' : '' }}>
-                                            {{ $tahun->tahun_lulus }}
-                                        </option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="col-4">
-
-                                <button class="btn btn-primary" type="submit" style="display: none;">Terapkan</button>
-                            </div>
-                        </div>
+                    <div class="col-6">
+                        <select name="searchvalue" id="searchvalue" class="form-select form-select-sm"
+                            aria-label=".form-select-sm example">
+                            <option value="">Pilih...</option>
+                            @foreach ($tahunLulus as $tahun)
+                                <option value="{{ $tahun->tahun_lulus }}"
+                                    {{ request('searchvalue') == $tahun->tahun_lulus ? 'selected' : '' }}>
+                                    {{ $tahun->tahun_lulus }}
+                                </option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary" type="submit">Terapkan</button>
                     </div>
                 </div>
             </form>
@@ -148,13 +152,7 @@
 
             s2.innerHTML = ""; // Clear previous options
 
-            if (s1.value == 'angkatan') {
-                var optionarr = [
-                    @foreach ($angkatan as $akt)
-                        '{{ $akt->angkatan }}|{{ $akt->angkatan }}',
-                    @endforeach
-                ];
-            } else if (s1.value == 'tahun_lulus') {
+            if (s1.value == 'tahun_lulus') {
                 var optionarr = [
                     @foreach ($tahunLulus as $tahun)
                         '{{ $tahun->tahun_lulus }}|{{ $tahun->tahun_lulus }}',
@@ -162,6 +160,13 @@
                 ];
             }
 
+            // Reset options to default if "Semua" is selected
+            if (s1.value == '') {
+                s2.innerHTML = "<option value=''>Pilih...</option>";
+                return;
+            }
+
+            // Add options dynamically for years
             for (var option in optionarr) {
                 var pair = optionarr[option].split("|");
                 var newoption = document.createElement("option");
@@ -170,6 +175,11 @@
                 newoption.innerHTML = pair[1];
                 s2.options.add(newoption);
             }
+        }
+
+        // Initialize on page load to show the correct options
+        window.onload = function() {
+            dependent('searchby', 'searchvalue');
         }
     </script>
 @endsection
