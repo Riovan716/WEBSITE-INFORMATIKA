@@ -1,7 +1,6 @@
 @extends('master')
 
 @section('section')
-
     <style>
         /* CSS untuk halaman alumni */
         .container {
@@ -36,7 +35,6 @@
 
         .table th {
             background-color: #0b4582;
-            /* Biru */
             color: #ffffff;
             text-transform: uppercase;
         }
@@ -64,7 +62,6 @@
         }
     </style>
 
-
     <br>
     <h1 class="text-dark container text-center"><b>Daftar Alumni Informatika Institut Teknologi Del</b></h1>
     <br>
@@ -79,7 +76,8 @@
                         <select name="searchby" id="searchby" class="form-select form-select-sm"
                             aria-label=".form-select-sm example" onchange="dependent('searchby', 'searchvalue')">
                             <option value="">Semua</option>
-                            <option value="angkatan" {{ request('searchby') == 'angkatan' ? 'selected' : '' }}>Angkatan
+                            <option value="tahun_lulus" {{ request('searchby') == 'tahun_lulus' ? 'selected' : '' }}>
+                                Tahun Lulus
                             </option>
                         </select>
                     </div>
@@ -87,19 +85,19 @@
                         <div class="row">
                             <div class="col-8">
                                 <select name="searchvalue" id="searchvalue" class="form-select form-select-sm"
-                                    aria-label=".form-select-sm example">
+                                    aria-label=".form-select-sm example" onchange="this.form.submit()">
                                     <option value="">Pilih...</option>
-                                    @if (request('searchby') == 'angkatan')
-                                        @foreach ($angkatan as $akt)
-                                            <option value="{{ $akt->angkatan }}"
-                                                {{ request('searchvalue') == $akt->angkatan ? 'selected' : '' }}>
-                                                {{ $akt->angkatan }}</option>
-                                        @endforeach
-                                    @endif
+                                    @foreach ($tahunLulus as $tahun)
+                                        <option value="{{ $tahun->tahun_lulus }}"
+                                            {{ request('searchvalue') == $tahun->tahun_lulus ? 'selected' : '' }}>
+                                            {{ $tahun->tahun_lulus }}
+                                        </option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col-4">
-                                <button class="btn btn-primary">Terapkan</button>
+
+                                <button class="btn btn-primary" type="submit" style="display: none;">Terapkan</button>
                             </div>
                         </div>
                     </div>
@@ -148,15 +146,19 @@
             var s2 = document.getElementById(e2);
             var optionarr = [];
 
-            s2.innerHTML = "";
+            s2.innerHTML = ""; // Clear previous options
 
             if (s1.value == 'angkatan') {
                 var optionarr = [
-                    @if (@isset($angkatan) & (sizeof($angkatan) > 0))
-                        @foreach ($angkatan as $akt)
-                            '{{ $akt->angkatan }}|{{ $akt->angkatan }}',
-                        @endforeach
-                    @endif
+                    @foreach ($angkatan as $akt)
+                        '{{ $akt->angkatan }}|{{ $akt->angkatan }}',
+                    @endforeach
+                ];
+            } else if (s1.value == 'tahun_lulus') {
+                var optionarr = [
+                    @foreach ($tahunLulus as $tahun)
+                        '{{ $tahun->tahun_lulus }}|{{ $tahun->tahun_lulus }}',
+                    @endforeach
                 ];
             }
 

@@ -18,23 +18,23 @@
 
             <br><br>
 
-            <label class="form-label">Angkatan</label>
+            <label class="form-label">Angkatan</label><br>
             <select name="angkatan" id="angkatan">
-                @for ($i = 2000; $i <= now()->year; $i++)
+                @for ($i = 2014; $i <= now()->year; $i++)
                     <option value="{{ $i }}">{{ $i }}</option>
                 @endfor
             </select>
 
             <br><br>
 
-            <label class="form-label">Tahun Lulus</label>
+            <label class="form-label">Tahun Lulus</label> <br>
             <select name="tahun_lulus" id="tahun_lulus">
-                @for ($i = 2000; $i <= now()->year + 2; $i++)
+                @for ($i = 2018; $i <= now()->year + 2; $i++)
                     <option value="{{ $i }}">{{ $i }}</option>
                 @endfor
             </select>
 
-            <br>
+            <br><br>
 
             <label class="form-label mt-3">SK Yudisium</label>
             <input type="text" class="form-control" name="sk_yudisium">

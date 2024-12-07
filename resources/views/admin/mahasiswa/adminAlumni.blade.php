@@ -15,14 +15,17 @@
                         <select name="searchby" id="searchby" class="form-select form-select-sm"
                             aria-label=".form-select-sm example" onchange="dependent('searchby', 'searchvalue')">
                             <option value="">Semua</option>
-                            <option value="angkatan">Angkatan</option>
+                            <option value="tahun_lulus" {{ request('searchby') == 'tahun_lulus' ? 'selected' : '' }}>Tahun
+                                Lulus</option>
                         </select>
                     </div>
                     <div class="col-8">
                         <div class="row">
                             <div class="col-8">
                                 <select name="searchvalue" id="searchvalue" class="form-select form-select-sm"
-                                    aria-label=".form-select-sm example"></select>
+                                    aria-label=".form-select-sm example">
+
+                                </select>
                             </div>
                             <div class="col-4">
                                 <button class="btn btn-primary">Terapkan</button>
@@ -64,8 +67,6 @@
                             <td class="d-flex">
                                 <a href="/admin/editAlumni/{{ $item->id }}"><button type="button"
                                         class="btn btn-primary mx-1">Edit</button></a>
-
-                                <!-- Tombol hapus dengan konfirmasi -->
                                 <form action="/admin/hapusAlumni/{{ $item->id }}" method="POST"
                                     onsubmit="return confirmDelete(event)">
                                     @csrf
@@ -84,45 +85,40 @@
     <a href="/alumni" target="_blank"><button type="button" class="btn btn-success mx-1">Lihat Pratinjau</button></a>
 
     <script>
-        // Fungsi untuk konfirmasi penghapusan
         function confirmDelete(event) {
             const confirmed = confirm("Apakah Anda yakin ingin menghapus data ini?");
             if (!confirmed) {
-                event.preventDefault(); // Batalkan pengiriman form jika pengguna memilih "Batal"
+                event.preventDefault();
             }
             return confirmed;
         }
 
+
         function dependent(e1, e2) {
-            const s1 = document.getElementById(e1);
-            const s2 = document.getElementById(e2);
+            var s1 = document.getElementById(e1);
+            var s2 = document.getElementById(e2);
+            var optionarr = [];
 
-            s2.innerHTML = "";
-
-            let options = [];
-
-            if (s1.value === "angkatan") {
-                options = @json($angkatan->pluck('angkatan'));
-            } else if (s1.value === "status") {
-                options = @json($status->pluck('status'));
+            if (s1.value == "tahun_lulus") {
+                optionarr = [
+                    @if (@isset($tahunLulus) && sizeof($tahunLulus) > 0)
+                        @foreach ($tahunLulus as $tahun)
+                            "{{ $tahun->tahun_lulus }}|{{ $tahun->tahun_lulus }}",
+                        @endforeach
+                    @endif
+                ];
             }
-
-            options.forEach(option => {
-                const newOption = document.createElement("option");
-                newOption.value = option;
-                newOption.text = option;
-                s2.add(newOption);
-            });
+            for (var option in optionarr) {
+                var pair = optionarr[option].split("|");
+                var newOption = document.createElement("option");
+                newOption.value = pair[0];
+                newOption.innerHTML = pair[1];
+                s2.options.add(newOption);
+            }
+            s2.value = "";
         }
+        window.onload = function() {
+            dependent("searchby", "searchvalue");
+        };
     </script>
-
-    @if ($errors->any())
-        <div class="alert alert-danger">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 @endsection

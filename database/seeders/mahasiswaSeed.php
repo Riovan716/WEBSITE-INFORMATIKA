@@ -860,7 +860,7 @@ class mahasiswaSeed extends Seeder
                 'nim' => '11S16048',
                 'nama' => 'Christine Olga Panjaitan',
                 'angkatan' => 2016,
-                'status' => 'Tunda Unri',
+                'status' => 'Mengundurkan Diri',
             ],
             [
                 'nim' => '11S16020',

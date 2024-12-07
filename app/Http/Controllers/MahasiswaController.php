@@ -209,33 +209,25 @@ class MahasiswaController extends Controller
     // alumni
     public function alumni(Request $request)
     {
-        // Start with the base query to filter 'lulus' alumni
         $query = Alumni::where('status', 'lulus');
 
-        // Get distinct 'angkatan' and 'status' for filter options
         $angkatan = Mahasiswa::select('angkatan')->distinct()->get();
-        $status = Mahasiswa::select('status')->distinct()->get();
+        $tahunLulus = Alumni::select('tahun_lulus')->distinct()->orderBy('tahun_lulus', 'ASC')->get();
 
-        // Apply filter by 'angkatan' if requested
+        if ($request->has('searchby') && $request->searchby == 'tahun_lulus' && $request->has('searchvalue')) {
+            $query->where('tahun_lulus', $request->searchvalue);
+        }
+
         if ($request->has('searchby') && $request->searchby == 'angkatan' && $request->has('searchvalue')) {
             $query->where('angkatan', $request->searchvalue);
         }
 
-        // Apply filter by 'status' if requested
-        if ($request->has('searchby') && $request->searchby == 'status' && $request->has('searchvalue')) {
-            $query->where('status', $request->searchvalue);
-        }
-
-        // Paginate the alumni results
         $alumni = $query->orderBy('nim', 'ASC')->paginate(20);
 
-        // Get the total number of alumni after applying the filters
         $jumlahAlumni = Alumni::where('status', 'lulus')->count();
 
-        // Pass the alumni, filter options, and total count to the view
-        return view('alumni', compact('alumni', 'angkatan', 'status', 'jumlahAlumni'));
+        return view('alumni', compact('alumni', 'angkatan', 'tahunLulus', 'jumlahAlumni'));
     }
-
 
 
     public function adminAlumni(Request $request)
@@ -249,15 +241,17 @@ class MahasiswaController extends Controller
             $query->where($searchby, $searchvalue);
         }
 
-        $alumni = $query->get(); // Ambil data alumni 
+        $alumni = $query->orderBy('nim', 'ASC')->paginate(20);
         $angkatan = Alumni::select('angkatan')->distinct()->get();
         $status = Alumni::select('status')->distinct()->get();
+        $tahunLulus = Alumni::select('tahun_lulus')
+            ->distinct()
+            ->whereNotNull('tahun_lulus') // Tambahkan filter ini untuk menghilangkan null
+            ->orderBy('tahun_lulus', 'ASC')
+            ->get();
 
-        $alumni = $query->orderBy('nim', 'ASC')->paginate(20);
-        return view('admin.mahasiswa.adminAlumni', compact('alumni', 'angkatan', 'status'));
+        return view('admin.mahasiswa.adminAlumni', compact('alumni', 'angkatan', 'status', 'tahunLulus'));
     }
-
-
 
     public function showAlumni(Request $request)
     {
@@ -275,24 +269,24 @@ class MahasiswaController extends Controller
     {
         $query = Alumni::where('status', 'lulus');
 
+        if ($request->filled('searchby') && $request->searchby == 'tahun_lulus' && $request->filled('searchvalue')) {
+            $query->where('tahun_lulus', $request->searchvalue);
+        }
+
         if ($request->filled('searchby') && $request->searchby == 'angkatan' && $request->filled('searchvalue')) {
             $query->where('angkatan', $request->searchvalue);
         }
 
-        if ($request->filled('searchby') && $request->searchby == 'status' && $request->filled('searchvalue')) {
-            $query->where('status', $request->searchvalue);
-        }
-
         $alumni = $query->orderBy('nim', 'ASC')->paginate(20);
+        $angkatan = Alumni::select('angkatan')->distinct()->get();
+        $status = Alumni::select('status')->distinct()->get();
+        $tahunLulus = Alumni::select('tahun_lulus')
+            ->distinct()
+            ->whereNotNull('tahun_lulus') // Tambahkan filter ini untuk menghilangkan null
+            ->orderBy('tahun_lulus', 'ASC')
+            ->get();
 
-        $angkatan = Mahasiswa::select('angkatan')->distinct()->get();
-        $status = Mahasiswa::select('status')->distinct()->get();
-
-        return view('admin.mahasiswa.adminAlumni', [
-            'alumni' => $alumni,
-            'angkatan' => $angkatan,
-            'status' => $status,
-        ]);
+        return view('admin.mahasiswa.adminAlumni', compact('alumni', 'angkatan', 'status', 'tahunLulus'));
     }
 
     public function addAlumni()
