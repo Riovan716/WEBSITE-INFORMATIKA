@@ -31,7 +31,6 @@
                     </div>
                 </div>
             </form>
-
         </div>
     </div>
 
@@ -56,7 +55,6 @@
                 @else
                     @foreach ($alumni as $item)
                         <tr>
-                            {{-- @if ($item['prodi_name'] == 'S1 Informatika') --}}
                             <td>{{ $item->nim }}</td>
                             <td>{{ $item->nama }}</td>
                             <td>{{ $item->angkatan }}</td>
@@ -67,8 +65,13 @@
                                 <a href="/admin/editAlumni/{{ $item->id }}"><button type="button"
                                         class="btn btn-primary mx-1">Edit</button></a>
 
-                                <a href="/admin/hapusAlumni/{{ $item->id }}"><button type="button"
-                                        class="btn btn-danger mx-1">Hapus</button></a>
+                                <!-- Tombol hapus dengan konfirmasi -->
+                                <form action="/admin/hapusAlumni/{{ $item->id }}" method="POST"
+                                    onsubmit="return confirmDelete(event)">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger mx-1">Hapus</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach
@@ -79,7 +82,17 @@
     </div>
 
     <a href="/alumni" target="_blank"><button type="button" class="btn btn-success mx-1">Lihat Pratinjau</button></a>
+
     <script>
+        // Fungsi untuk konfirmasi penghapusan
+        function confirmDelete(event) {
+            const confirmed = confirm("Apakah Anda yakin ingin menghapus data ini?");
+            if (!confirmed) {
+                event.preventDefault(); // Batalkan pengiriman form jika pengguna memilih "Batal"
+            }
+            return confirmed;
+        }
+
         function dependent(e1, e2) {
             const s1 = document.getElementById(e1);
             const s2 = document.getElementById(e2);

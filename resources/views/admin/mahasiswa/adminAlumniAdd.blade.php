@@ -42,7 +42,7 @@
 
             <br>
 
-            <input type="submit" value="Tambah Mahasiswa" class="btn btn-primary">
+            <input type="submit" value="Tambah Alumni" class="btn btn-primary">
         </form>
 
         <br>

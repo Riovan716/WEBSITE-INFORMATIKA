@@ -209,22 +209,34 @@ class MahasiswaController extends Controller
     // alumni
     public function alumni(Request $request)
     {
+        // Start with the base query to filter 'lulus' alumni
         $query = Alumni::where('status', 'lulus');
 
+        // Get distinct 'angkatan' and 'status' for filter options
         $angkatan = Mahasiswa::select('angkatan')->distinct()->get();
         $status = Mahasiswa::select('status')->distinct()->get();
 
+        // Apply filter by 'angkatan' if requested
         if ($request->has('searchby') && $request->searchby == 'angkatan' && $request->has('searchvalue')) {
             $query->where('angkatan', $request->searchvalue);
         }
 
+        // Apply filter by 'status' if requested
         if ($request->has('searchby') && $request->searchby == 'status' && $request->has('searchvalue')) {
             $query->where('status', $request->searchvalue);
         }
 
+        // Paginate the alumni results
         $alumni = $query->orderBy('nim', 'ASC')->paginate(20);
-        return view('alumni', compact('alumni', 'angkatan', 'status'));
+
+        // Get the total number of alumni after applying the filters
+        $jumlahAlumni = Alumni::where('status', 'lulus')->count();
+
+        // Pass the alumni, filter options, and total count to the view
+        return view('alumni', compact('alumni', 'angkatan', 'status', 'jumlahAlumni'));
     }
+
+
 
     public function adminAlumni(Request $request)
     {
