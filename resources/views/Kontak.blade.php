@@ -37,13 +37,7 @@
                 <div class="col-lg-6 col-md-12">
                     <div class="mapswrapper">
                         <h2 class="map-title">Find Us</h2>
-                        <iframe
-                            width="100%"
-                            height="100%"
-                            loading="lazy"
-                            allowfullscreen
-                            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=94PX%2B766%2C%20Sitoluama%2C%20Laguboti%2C%20Toba%2C%20North%20Sumatra&zoom=17&maptype=roadmap">
-                        </iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5959.005460322029!2d99.14716529448003!3d2.3862331405905746!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x302e00fdad2d7341%3A0xf59ef99c591fe451!2sDel%20Institute%20of%20Technology!5e0!3m2!1sen!2sus!4v1733822470903!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
