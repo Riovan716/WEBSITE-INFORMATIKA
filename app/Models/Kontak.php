@@ -15,7 +15,6 @@ class Kontak extends Model
     // Kolom yang bisa diisi (fillable)
     protected $fillable = [
         'email',
-        'instagram',
         'nomor_telepon',
         'kode_pos',
     ];

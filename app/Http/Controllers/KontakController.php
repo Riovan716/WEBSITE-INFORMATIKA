@@ -39,7 +39,6 @@ class KontakController extends Controller
     // Validasi data yang masuk
     $this->validate($request, [
       'email' => 'email|string',
-      'instagram' => 'required|string',
       'nomor_telepon' => 'required|string',
       'kode_pos' => 'required|numeric',
     ]);
@@ -54,7 +53,6 @@ class KontakController extends Controller
     // Update data kontak
     $kontak->update([
       'email' => $request->email,
-      'instagram' => $request->instagram,
       'nomor_telepon' => $request->nomor_telepon,
       'kode_pos' => $request->kode_pos,
     ]);
@@ -69,7 +67,6 @@ class KontakController extends Controller
     // Validasi input dari form
     $this->validate($request, [
       'email' => 'required|string',
-      'instagram' => 'required|string',
       'nomor_telepon' => 'required|string',
       'kode_pos' => 'required|string',
     ]);
@@ -77,7 +74,6 @@ class KontakController extends Controller
     // Menambahkan data ke tabel kontaks
     Kontak::create([
       'email' => $request->email,
-      'instagram' => $request->instagram,
       'nomor_telepon' => $request->nomor_telepon,
       'kode_pos' => $request->kode_pos,
     ]);

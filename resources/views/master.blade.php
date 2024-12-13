@@ -436,7 +436,6 @@
                     </p>
 
                     <div style="display: flex; justify-content: center; gap: 15px; align-items: center; margin-top: 10px;">
-                        <a class="bi bi-instagram" style="font-size: 2rem; color: #e1306c;" href="https://www.instagram.com/himasti_itdel/"></a>
                         <a class="bi bi-telephone" style="font-size: 2rem; color: #157347;" href="tel:+62632331234"></a>
                         <a class="bi bi-envelope" style="font-size: 2rem; color: #1da1f2;" href="mailto:Informatika@del.ac.id"></a>
 
