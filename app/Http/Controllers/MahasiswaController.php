@@ -13,48 +13,30 @@ class MahasiswaController extends Controller
 
     public function mahasiswa()
     {
-        $angkatan = Mahasiswa::select('angkatan')
-            ->distinct()
-            ->get();
-
-        $status = Mahasiswa::select('status')
-            ->distinct()
-            ->get();
+        $angkatan = Mahasiswa::select('angkatan')->distinct()->get();
+        $status = Mahasiswa::select('status')->distinct()->whereIn('status', ['aktif', 'mengundurkan diri'])->get();
 
         if ($this->filtercategory == 'angkatan') {
-            $mahasiswa = Mahasiswa::where('angkatan', '=', $this->filtervalue)
+            $mahasiswa = Mahasiswa::where('angkatan', $this->filtervalue)
+                ->whereIn('status', ['aktif', 'mengundurkan diri'])
                 ->orderBy('nim', 'ASC')
                 ->paginate(20)
-                ->appends([
-                    'angkatan' => $this->filtervalue
-                ]);
-        }
-
-        if ($this->filtercategory == 'status') {
-            $mahasiswa = Mahasiswa::where('status', '=', $this->filtervalue)
+                ->appends(['angkatan' => $this->filtervalue]);
+        } elseif ($this->filtercategory == 'status') {
+            $mahasiswa = Mahasiswa::where('status', $this->filtervalue)
+                ->whereIn('status', ['aktif', 'mengundurkan diri'])
                 ->orderBy('nim', 'ASC')
                 ->paginate(20)
-                ->appends([
-                    'status' => $this->filtervalue
-                ]);
-        }
-
-        if ($this->filtercategory == '') {
-            $mahasiswa = Mahasiswa::orderBy('nim', 'ASC')
+                ->appends(['status' => $this->filtervalue]);
+        } else {
+            $mahasiswa = Mahasiswa::whereIn('status', ['aktif', 'mengundurkan diri'])
+                ->orderBy('nim', 'ASC')
                 ->paginate(20);
         }
 
-        $mahasiswa->appends([
-            'searchby' => $this->filtercategory,
-            'searchvalue' => $this->filtervalue,
-        ]);
-
-        // dd($angkatan);
-        return view('mahasiswa')
-            ->with('data', $mahasiswa)
-            ->with('angkatan', $angkatan)
-            ->with('status', $status);
+        return view('mahasiswa', compact('mahasiswa', 'angkatan', 'status'));
     }
+
 
     public function adminFilterMahasiswa(Request $request)
     {
@@ -187,16 +169,38 @@ class MahasiswaController extends Controller
             'status' => 'required'
         ]);
 
-        Mahasiswa::where('id', $request->id)
-            ->update([
-                'nim' => $request->nim,
-                'nama' => $request->nama,
-                'angkatan' => $request->angkatan,
-                'status' => $request->status,
+        $mahasiswa = Mahasiswa::find($request->id);
+
+        if (!$mahasiswa) {
+            return redirect('/admin/mahasiswa')->with('error', 'Data mahasiswa tidak ditemukan.');
+        }
+
+        // Jika status diubah menjadi 'lulus'
+        if ($request->status == 'lulus') {
+            Alumni::create([
+                'nim' => $mahasiswa->nim,
+                'nama' => $mahasiswa->nama,
+                'angkatan' => $mahasiswa->angkatan,
+                'status' => 'lulus',
+                'tahun_lulus' => now()->year,
+                'sk_yudisium' => $request->sk_yudisium ?? 'N/A',
             ]);
 
-        return redirect('/admin/mahasiswa');
+            // Hapus dari tabel mahasiswa
+            $mahasiswa->delete();
+
+            return redirect('/admin/mahasiswa')->with('success', 'Mahasiswa dipindahkan ke alumni.');
+        }
+        $mahasiswa->update([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'angkatan' => $request->angkatan,
+            'status' => $request->status,
+        ]);
+
+        return redirect('/admin/mahasiswa')->with('success', 'Data mahasiswa berhasil diubah.');
     }
+
 
     public function hapusMahasiswa($id)
     {
@@ -246,7 +250,7 @@ class MahasiswaController extends Controller
         $status = Alumni::select('status')->distinct()->get();
         $tahunLulus = Alumni::select('tahun_lulus')
             ->distinct()
-            ->whereNotNull('tahun_lulus') // Tambahkan filter ini untuk menghilangkan null
+            ->whereNotNull('tahun_lulus')
             ->orderBy('tahun_lulus', 'ASC')
             ->get();
 
