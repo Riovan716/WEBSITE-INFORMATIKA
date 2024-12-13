@@ -11,3 +11,4 @@ class Dosen extends Model
     protected $table = 'dosen';
     protected $fillable = ['nama', 'gambar', 'deskripsi', 'status'];
 }
+

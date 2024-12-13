@@ -1,8 +1,27 @@
 @extends('master')
 
 @section('section')
-    <h1 class="serv text-body text-center mt-3"><b>Struktur Keanggotaan 2023/2024</b></h1>
+<h1 class="serv text-body text-center mt-3">
+    <b>Struktur Keanggotaan {{ request('tahun', date('Y')) }}/{{ request('tahun', date('Y')) + 1 }}</b>
+</h1>
+
     <section>
+
+           <!-- Dropdown untuk memilih tahun -->
+           <form action="{{ url('/organisasi') }}" method="GET" class="text mb-5">
+            <label for="tahun" class="form-label" style="margin-left: 40px"><b>Pilih Tahun</b></label>
+            <select name="tahun" id="tahun" class="form-select w-25 d-inline" onchange="this.form.submit()">
+                @foreach ($tahunList as $item)
+                    <option value="{{ $item }}" 
+                        {{ ($tahun == $item || (!$tahun && $item == '2024')) ? 'selected' : '' }}>
+                        {{ $item }}/{{ $item + 1 }}
+                    </option>
+                @endforeach
+            </select>
+        </form>
+        
+        
+        
         <hr>
     <div class="mt-5 mb-5">
         <h2 class="serv text-body text-center mt-5 mb-5"><b>Pembina</b></h2>

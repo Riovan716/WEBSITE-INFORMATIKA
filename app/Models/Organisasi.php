@@ -9,5 +9,5 @@ class Organisasi extends Model
 {
     use HasFactory;
     protected $table = 'organisasi';
-    protected $fillable = ['nama', 'divisi', 'gambar', 'jabatan'];
+    protected $fillable = ['nama', 'divisi', 'gambar', 'jabatan', 'tahun'];
 }

@@ -2,6 +2,7 @@
 
 @section('section')
 <section>
+
     <div style="z-index: 9;">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -60,87 +61,56 @@
         pencerdasan kehidupan bangsa</p>
 
     <hr class="horizontal mb-5" />
-
-    <div>
-        <div class="row text-body mb-5 ">
-            <div class="col-sm-6" style="padding-left:50px;">
-                <div class="p-2 container" style="background-color: rgba(156, 173, 206, 0.47) ;">
-                    <a href="/eventsAll">
-                        <h1 class=""><strong>| EVENTS</strong></h1>
-                    </a>
-                    <br>
-                    @foreach ($events as $event)
-                    <div class="m-2">
-                        <div class="d-flex">
-                            <div id="tanggal" class="d-flex justify-content-center ">
-                                <p class="text-center" style="width: 90px; background-color: rgba(156, 173, 206, 0.47); padding: 5px; border-radius: 5px;">
-                                    <span style="display: block;">{{ substr($event->waktu_mulai, 8, 2) }}</span>
-                                    <span style="display: block;">
-                                        @if (intval(substr($event->waktu_mulai, 5, 2)) == 1)
-                                        Januari
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 2)
-                                        Febuari
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 3)
-                                        Maret
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 4)
-                                        April
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 5)
-                                        Mei
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 6)
-                                        Juni
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 7)
-                                        Juli
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 8)
-                                        Agustus
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 9)
-                                        September
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 10)
-                                        Oktober
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 11)
-                                        November
-                                        @elseif (intval(substr($event->waktu_mulai, 5, 2)) == 12)
-                                        Desember
-                                        @endif
-                                        {{-- tahun --}}
-                                    </span>
-                                    <span style="display: block;">{{ substr($event->waktu_mulai, 0, 4) }}</span>
-                                </p>
-                            </div>
-                            <div class="m-2">
-
-                                <a href="/event/{{ $event->id }}">
-                                    <h2>{{ $event->nama }}</h2>
-                                </a>
-                                <p>{{ substr($event->deskripsi_singkat, 0, 50) }}...</p>
-                            </div>
-                        </div>
-                        <hr class="w-75">
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-            <div class="col-sm-1 d-flex align-items-center justify-content-center">
-                <hr class="hr-vertical" />
-            </div>
-            <div class="col-sm-4">
-                <h1><a href="/kompetisiAll"><b>| Kompetisi</b></a></h1>
-                <br><br>
-                <ul style=" list-style-type: none;  padding: 0;
-                    margin: 0;">
-                    @foreach ($kompetisi as $item)
-                    <li>
-                        <div class=" pt-1 px-2 rounded-4">
-                            <h3><a href="/kompetisi/{{ $item->id }}">{{ $item->nama }}</a></h3>
-                            <p>Batas Pendaftaran : {{ $item->tanggal }}</p>
-                                </div>
-                            </li>
-                            <br>
-                        @endforeach
-                    </ul>
-                </div>
-            </div>
+ 
+    <div class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-dark"><strong>EVENTS</strong></h1>
+            <a href="/eventsAll" class="text-primary text-decoration-none">Selengkapnya →</a>
         </div>
+        <div id="event-container" class="row bg-light py-3 px-2" style="border-radius: 10px;">
+            @foreach ($events as $event)
+            <a href="/event/{{ $event->id }}" class="col-md-4 d-flex align-items-center mb-3 text-decoration-none text-dark">
+                <!-- Tanggal Event -->
+                <div class="d-flex flex-column align-items-center justify-content-center text-white" style="width: 60px; height: 60px; background-color: #003366; border-radius: 10px; text-align: center;">
+                    <span style="font-size: 1.2rem; font-weight: bold;">{{ date('d', strtotime($event->waktu_mulai)) }}</span>
+                    <span style="font-size: 0.8rem;">{{ date('M', strtotime($event->waktu_mulai)) }}</span>
+                </div>
+                <!-- Nama Event -->
+                <div class="ms-3">
+                    <h6 class="mb-1 text-dark">{{ $event->nama }}</h6>
+                    <p class="text-muted small mb-0">{{ date('Y', strtotime($event->waktu_mulai)) }}</p>
+                </div>
+            </a>
+            @endforeach
+        </div>
+    </div>
+    
+    
+    
 
+    <div class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-dark"><strong>Kompetisi</strong></h1>
+            <a href="/kompetisiAll" class="text-primary text-decoration-none">Selengkapnya →</a>
+        </div>
+        <div id="kompetisi-container" class="row bg-light py-3 px-2" style="border-radius: 10px;">
+            @foreach ($kompetisi as $item)
+            <a href="/kompetisi/{{ $item->id }}" class="col-md-4 d-flex align-items-center mb-3 text-decoration-none text-dark">
+                <!-- Tanggal Kompetisi -->
+                <div class="image-wrapper"><img src="{{ asset('asset/img/Kompetisi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="border-radius:4px 4px">
+                </div>
+           
+                <!-- Nama Kompetisi -->
+                <div class="ms-3">
+                    <h6 class="mb-1 text-dark">{{ $item->nama }}</h6>
+                    <p class="text-muted small mb-0">Batas Pendaftaran: {{ date('Y', strtotime($item->tanggal)) }}</p>
+                </div>
+            </a>
+            @endforeach
+        </div>
+    </div>
+
+    
         <div class=" text-body p-5" id="berita">
                             <h1><a href="/beritaAll"><b>| Berita Terkini</b></a></h1>
                             <hr>
@@ -258,5 +228,6 @@
 </div> --}}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+
 </script>
 @endsection
