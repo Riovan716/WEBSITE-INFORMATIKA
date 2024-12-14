@@ -23,7 +23,7 @@ class kopmetisiSeed extends Seeder
                 'tanggal' => '2022-08-31 00:00:00',
                 'penyelenggara' => 'Binus University',
                 'keterangan' => 'Lomba Design internasional yang diadakan oleh binus',
-                'gambar' => 'k1.jpg',
+                'gambar' => '1.jpg',
                 'link' => 'https://sis.binus.ac.id/idc',
             ],
             [
@@ -60,5 +60,5 @@ class kopmetisiSeed extends Seeder
             ],
         ]);
     }
-    
+
 }

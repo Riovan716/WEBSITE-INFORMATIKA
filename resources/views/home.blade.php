@@ -3,6 +3,8 @@
 @section('section')
 <section>
 
+    
+
     <div style="z-index: 9;">
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -90,7 +92,7 @@
 
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="text-dark"><strong>Kompetisi</strong></h1>
+            <h1 class="text-dark"><strong>KOMPETISI</strong></h1>
             <a href="/kompetisiAll" class="text-primary text-decoration-none">Selengkapnya →</a>
         </div>
         <div id="kompetisi-container" class="row bg-light py-3 px-2" style="border-radius: 10px;">
@@ -111,8 +113,8 @@
     </div>
 
     
-        <div class=" text-body p-5" id="berita">
-                            <h1><a href="/beritaAll"><b>| Berita Terkini</b></a></h1>
+        <div class="container my-5" id="berita">
+                            <h1><a href="/beritaAll"><b>BERITA TERKINI</b></a></h1>
                             <hr>
                             <div class=" d-flex text-dark">
                                 <p class=" d-flex align-items-center"><i class="beff ri-arrow-left-s-line"></i></p>
@@ -178,54 +180,6 @@
 </section>
 
 <br><br>
-
-{{-- <div class="container text-body">
-    <h1 class="text-center"><b><u>Link Terkait</u></b></h1><br><br>
-    <ul class="d-flex justify-content-center">
-        <div>
-            <div style="width: 50%; /* or any other width */
-                margin: auto;">
-                <a href="https://www.del.ac.id/" target="none"><img src="{{ asset('asset/img/logo_del.png') }}" alt="logo del " width="100em" style="border-radius: 10%;"></a>
-</div>
-<br>
-
-</div>
-
-<div>
-    <div class="d-flex justify-content-center">
-        <div class="">
-            <a href="https://spmb.del.ac.id/
-                        " target="none">
-                <h1>
-                    <b>SPMB </b> <br>
-                    IT Del
-                </h1>
-            </a>
-        </div>
-    </div>
-</div>
-
-<div>
-    <span class="d-flex">
-        <a href="https://cis.del.ac.id/user/login" target="none">
-            <a href="https://cis.del.ac.id/user/login" target="none">
-                <h1 class="me-1" style="font-size: 6em">CIS</h1>
-            </a>
-            <div class="cis-text"><br>
-                <a href="https://cis.del.ac.id/user/login" target="none">INSTITUT <br>TEKNOLOGI DEL</a>
-            </div>
-        </a>
-    </span>
-</div>
-<div>
-    <div>
-
-        <a href="https://ecourse.del.ac.id/my/" target="none"><img src=" {{ asset('asset/img/ecourse.png') }}" alt="logo del " width="100em" style="border-radius: 5%;width: 20em;"></a>
-    </div>
-
-</div>
-</ul>
-</div> --}}
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
 
