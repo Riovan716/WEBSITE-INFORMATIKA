@@ -11,7 +11,7 @@
             <img src="{{ asset('asset/img/Berita/' . $berita->gambar) }}" alt="{{ $berita->judul }}" class="img-fluid rounded" style="max-width: 100%; height: auto;">
         </div>
         <div class="col-md-6">
-            <div class="text-body">
+            <div class="text">
                 <p class="text-justify">{{ $berita->isi }}</p>
             </div>
         </div>
