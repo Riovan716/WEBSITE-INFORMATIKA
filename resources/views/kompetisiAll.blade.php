@@ -4,19 +4,22 @@
 <div class="container mt-5">
     <!-- Header -->
     <div class="text-center mb-4">
-        <h1 class="text-primary fw-bold"><strong>Kompetisi</strong></h1>
+        <h1 class="text-center mb-4" style="font-family: 'Arial', sans-serif; font-weight: bold; color: #333;">KOMPETISI</h1>
         <hr class="w-50 mx-auto">
     </div>
 
     <!-- Kompetisi List -->
-    <div class="row justify-content-center">
+    <div class="event-card shadow-sm p-4 rounded-3" style="background-color: rgb(255, 255, 255); border-radius: 25px;">
         @foreach ($kompetisi as $item)
-        <div class="m-2 p-2">
-            <div class="d-flex mt-2" style="background-color: rgb(160, 170, 206);">
+        <div class="event-card shadow-sm p-4 rounded-3 mb-4" style="background-color: rgb(255, 255, 255); border-radius: 25px;">
+            <div class="d-flex flex-wrap align-items-center">
                 <div class="card-body p-4" style="background-color: rgba(245, 245, 220, 0.144);">
                     <h3 class="card-title fw-bold">
-                        <img src="{{ asset('asset/img/Kompetisi/' . $item->gambar) }}" alt="{{ $item->nama }}" class="img-fluid mb-3" style="max-height: 200px; object-fit: cover;">
-                        <a href="/kompetisi/{{ $item->id }}" class="text-dark text-decoration-none">
+                        <!-- Gambar Kompetisi -->
+                        <img src="{{ asset('asset/img/Kompetisi/' . $item->gambar) }}" alt="{{ $item->nama }}" class="img-fluid mb-3" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
+                        
+                        <!-- Nama Kompetisi dengan Link -->
+                        <a href="/kompetisi/{{ $item->id }}" class="kompetisi-link text-dark text-decoration-none">
                             {{ $item->nama }}
                         </a>
                     </h3>
@@ -24,6 +27,7 @@
                     <p>Batas Pendaftaran: {{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</p>
                 </div>
             </div>
+            <hr>
         </div>
         @endforeach
     </div>
@@ -33,6 +37,19 @@
         {{ $kompetisi->links('custom') }}
     </div>
 </div>
+
+<!-- Custom CSS -->
+<style>
+    /* Efek hover untuk nama kompetisi */
+    .kompetisi-link {
+        transition: color 0.3s ease; /* Efek transisi untuk perubahan warna */
+    }
+
+    .kompetisi-link:hover {
+        color: #0079c2; /* Warna biru saat hover */
+        text-decoration: underline; /* Garis bawah saat hover */
+    }
+</style>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" 

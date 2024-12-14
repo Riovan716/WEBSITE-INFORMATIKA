@@ -7,12 +7,6 @@
 
         <img src="{{ asset('asset/img/sejarah.jpg') }}" alt="wisudawan" class="w-100 img-fluid" style="max-height: 700px; object-fit: cover;">
     </div>
-
-    <!-- Header Section -->
-    <div class="d-flex justify-content-center p-4">
-        <h1 class="fw-bold text-center">SEJARAH</h1>
-    </div>
-
     <!-- Konten Sejarah -->
     <div class="container py-5">
         <div class="row mt-5">

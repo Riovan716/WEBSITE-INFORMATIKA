@@ -21,11 +21,6 @@
 
         <!-- Bagian Konten -->
 
-        <!-- Header Section -->
-        <div class="d-flex justify-content-center p-4">
-            <h1 class="fw-bold text-center">VISI & MISI</h1>
-        </div>
-
         <div class="container py-5">
             <!-- VISI -->
             <div class="row mt-5">

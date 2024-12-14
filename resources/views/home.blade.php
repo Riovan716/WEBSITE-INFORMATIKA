@@ -63,10 +63,10 @@
         pencerdasan kehidupan bangsa</p>
 
     <hr class="horizontal mb-5" />
- 
+ <hr>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="text-dark"><strong>EVENTS</strong></h1>
+            <h1 class="text-dark"><strong>EVENTS</strong> <hr></h1>
             <a href="/eventsAll" class="text-primary text-decoration-none">Selengkapnya →</a>
         </div>
         <div id="event-container" class="row bg-light py-3 px-2" style="border-radius: 10px;">
@@ -87,14 +87,16 @@
         </div>
     </div>
     
-    
+    <hr>
     
 
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="text-dark"><strong>KOMPETISI</strong></h1>
+            <h1 class="text-dark"><strong>KOMPETISI</strong><hr></h1>
+            
             <a href="/kompetisiAll" class="text-primary text-decoration-none">Selengkapnya →</a>
         </div>
+        
         <div id="kompetisi-container" class="row bg-light py-3 px-2" style="border-radius: 10px;">
             @foreach ($kompetisi as $item)
             <a href="/kompetisi/{{ $item->id }}" class="col-md-4 d-flex align-items-center mb-3 text-decoration-none text-dark">
@@ -111,11 +113,16 @@
             @endforeach
         </div>
     </div>
+    <hr>
 
     
         <div class="container my-5" id="berita">
-                            <h1><a href="/beritaAll"><b>BERITA TERKINI</b></a></h1>
-                            <hr>
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="text-dark"><strong>BERITA</strong><hr></h1>
+            
+            <a href="/beritaAll" class="text-primary text-decoration-none">Selengkapnya →</a>
+        </div>
+                            
                             <div class=" d-flex text-dark">
                                 <p class=" d-flex align-items-center"><i class="beff ri-arrow-left-s-line"></i></p>
 
@@ -144,7 +151,7 @@
                             </div>
 
                         </div>
-
+<hr>
                         <br>
                         <div class="d-flex justify-content-around text-body text-center mb-2 ">
                             <div class="lingkar">

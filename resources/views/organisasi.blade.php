@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('section')
-<h1 class="serv text-body text-center mt-3">
+<h1 class="serv text-center mt-3">
     <b>Struktur Keanggotaan {{ request('tahun', date('Y')) }}/{{ request('tahun', date('Y')) + 1 }}</b>
 </h1>
 
@@ -59,6 +59,8 @@
             </div>
         </ul>
 
+        
+
         <div class="mt-5 mb-5">
         <hr/>
         <h2 class="serv text-body text-center"><b>Badan Pengurus Harian</b></h2>
@@ -85,6 +87,7 @@
                 @endforeach
                 
             </ul>
+            
 
             <ul>
                 @foreach ($organisasi->where('divisi', 'BPH')->where('jabatan', 'Sekretaris') as $item)
@@ -128,6 +131,7 @@
             </ul>
         </div>
         </div>
+        
 
         <div class="mt-5 mb-5">
             <hr/>
@@ -201,6 +205,7 @@
         </div>
         </div>
 
+        <hr>
         <h2 class="serv text-body text-center mt-5 mb-5"><b>Divisi Komunikasi dan Informasi</b></h2>
         <div class="serv text-body">
             <ul>
@@ -231,6 +236,7 @@
         </div>
         </div>
 
+        <hr>
         <h2 class="serv text-body text-center mt-5 mb-5"><b>Divisi Minat dan Bakat</b></h2>
         <div class="serv text-body">
             <ul>
