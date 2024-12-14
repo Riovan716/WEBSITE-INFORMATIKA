@@ -16,6 +16,7 @@ class OrganisasiSeed extends Seeder
     public function run()
     {
         DB::table('organisasi')->insert([
+            // 2024/2025
             [
                 'nama' => "Arie Satia Dharma",
                 'gambar' => "Arie.jpg",
@@ -164,7 +165,7 @@ class OrganisasiSeed extends Seeder
                 'tahun' => 2024,
 
             ],
-            
+
             [
                 'nama' => "",
                 'gambar' => "",
@@ -228,7 +229,278 @@ class OrganisasiSeed extends Seeder
                 'jabatan' => "Anggota",
                 'tahun' => 2024,
             ],
-        ]);
 
+            //2023/2024
+            [
+                'nama' => "Arie Satia Dharma",
+                'gambar' => "Arie.jpg",
+                'divisi' => "Pembina",
+                'jabatan' => "Pembina",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Benhard Yudha",
+                'gambar' => "benhard_ketua.jpg",
+                'divisi' => "BPH",
+                'jabatan' => "Ketua",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Baha Ambrosius Sibarani",
+                'gambar' => "baha_wakil_ketua.jpg",
+                'divisi' => "BPH",
+                'jabatan' => " Wakil Ketua",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Angelika Ruth",
+                'gambar' => "angelika_sekretaris.jpg",
+                'divisi' => "BPH",
+                'jabatan' => "Sekretaris",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Nadia Gracia Sirait",
+                'gambar' => "nadia_wakil_sekretaris.jpg",
+                'divisi' => "BPH",
+                'jabatan' => "Wakil Sekretaris",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Ella Tasya Silaban",
+                'gambar' => "ella_bendahara.jpeg",
+                'divisi' => "BPH",
+                'jabatan' => "Bendahara",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Olga Prischilla",
+                'gambar' => "olga_wakil_bendahara.jpg",
+                'divisi' => "BPH",
+                'jabatan' => "Wakil Bendahara",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Cindy Simangunsong",
+                'gambar' => "cindy_pendidikan_kepala.jpg",
+                'divisi' => "Pendidikan",
+                'jabatan' => "Kepala Divisi",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Viktris Lubis",
+                'gambar' => "viktris_pendidikan_wakil.jpg",
+                'divisi' => "Pendidikan",
+                'jabatan' => "Wakil Kepala Divisi",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Patricia Sibarani",
+                'gambar' => "patricia_pendidikan_anggota.jpg",
+                'divisi' => "Pendidikan",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Okdini Hutagalung",
+                'gambar' => "okdini_pendidikan_anggota.jpg",
+                'divisi' => "Pendidikan",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Intan Sianipar",
+                'gambar' => "intan_danus_kepala.jpg",
+                'divisi' => "Danus",
+                'jabatan' => "Kepala Divisi",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Sunanda Munthe",
+                'gambar' => "sunanda_danus_wakil.jpg",
+                'divisi' => "Danus",
+                'jabatan' => "Wakil Kepala Divisi",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Naomi Sihombing",
+                'gambar' => "naomi_danus_anggota.jpg",
+                'divisi' => "Danus",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Angel Lubis",
+                'gambar' => "angel_danus_anggota.jpg",
+                'divisi' => "Danus",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Lusiana Sikaen",
+                'gambar' => "lusiana_danus_anggota.jpg",
+                'divisi' => "Danus",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Boy Sitorus",
+                'gambar' => "boy_ristek_kepala.jpg",
+                'divisi' => "Ristek",
+                'jabatan' => "Kepala Divisi",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Rafael Manurung",
+                'gambar' => "rafael_ristek_anggota.jpg",
+                'divisi' => "Ristek",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Putri Manurung",
+                'gambar' => "putri_ristek_anggota.jpg",
+                'divisi' => "Ristek",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Prans Simarmata",
+                'gambar' => "prans_ristek_anggota.jpg",
+                'divisi' => "Ristek",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Gerald Nathanael",
+                'gambar' => "gerald_minat_kepala.jpg",
+                'divisi' => "Minat",
+                'jabatan' => "Kepala Divisi",
+                'tahun' => 2023,
+
+            ],
+            [
+                'nama' => "Joel Aritonang",
+                'gambar' => "joel_minat_wakil.jpg",
+                'divisi' => "Minat",
+                'jabatan' => "Wakil Kepala Divisi",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Riovan Sihombing",
+                'gambar' => "riovan_minat_anggota.jpg",
+                'divisi' => "Minat",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Pangeran Simamora",
+                'gambar' => "pangeran_minat_anggota.jpg",
+                'divisi' => "Minat",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Nada Bakara",
+                'gambar' => "nada_minat_anggota.jpg",
+                'divisi' => "Minat",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Rachel Nababan",
+                'gambar' => "rachel_minat_anggota.jpg",
+                'divisi' => "Minat",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Martha Tobing",
+                'gambar' => "martha_minat_anggota.jpg",
+                'divisi' => "Minat",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Jayfline Hutagalung",
+                'gambar' => "jayfline_kominfo_kepala.jpg",
+                'divisi' => "Kominfo",
+                'jabatan' => "Kepala Divisi",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Riskia Sitorus",
+                'gambar' => "riskia_kominfo_wakil.jpg",
+                'divisi' => "Kominfo",
+                'jabatan' => "Wakil Kepala Divisi",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Roy Hutajulu",
+                'gambar' => "roy_kominfo_anggota.jpg",
+                'divisi' => "Kominfo",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Ferdinand Sihombing",
+                'gambar' => "ferdinand_kominfo_anggota.jpg",
+                'divisi' => "kominfo",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Gerry Bukit",
+                'gambar' => "dummy.png",
+                'divisi' => "Humas",
+                'jabatan' => "Kepala Divisi",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Wilona Simbolon",
+                'gambar' => "dummy.png",
+                'divisi' => "Humas",
+                'jabatan' => "Wakil Kepala Divisi",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Deak Napitupulu",
+                'gambar' => "deak_humas_anggota.jpg",
+                'divisi' => "Humas",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Gracesia Marbun",
+                'gambar' => "gracesia_humas_anggota.jpg",
+                'divisi' => "Humas",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Dian Gulo",
+                'gambar' => "dian_humas_anggota.jpg",
+                'divisi' => "Humas",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Wesly Siahaan",
+                'gambar' => "wesly_humas_anggota.jpg",
+                'divisi' => "Humas",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+            [
+                'nama' => "Bertrand Sianipar",
+                'gambar' => "bertrand_humas_anggota.jpg",
+                'divisi' => "Humas",
+                'jabatan' => "Anggota",
+                'tahun' => 2023,
+            ],
+
+
+
+        ]);
     }
 }
