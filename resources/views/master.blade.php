@@ -330,7 +330,7 @@
                                             <ul class="dropdown-menu dropdown-menu-center dropcolor"
                                                 aria-labelledby="dropdownMenuLink" id="dropdownMenu"
                                                 style="width: fit-content;">
-                                            
+
                                                 <li><a class="dropdown-item text-light" href="/staffDosen"
                                                         style="font-size: 16px; font-family: Nunito">Dosen</a></li>
                                                 <hr>
@@ -340,7 +340,7 @@
                                                 <li><a class="dropdown-item text-light" href="/alumni"
                                                         style="font-size: 16px; font-family: Nunito">Alumni</a></li>
                                                 <hr>
-                                                
+
                                             </ul>
                                         </div>
                                     </li>
@@ -352,8 +352,8 @@
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link text-light" href="/kontak" style="font-size: 16px; font-family: Nunito">Kontak</a>
-                                    </li> 
-                            
+                                    </li>
+
 
                                     <!-- KONTAK -->
 
@@ -399,57 +399,51 @@
     <br>
     <footer>
         <div style="background-color: #4A90E2; padding: 20px 0;">
-            <div
-                style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
-                <a style="text-align: center;">
-                    <div style="text-align: center">
-                        <a href="https://kp.delcom.online/">
-                        <img src="{{ asset('asset/img/logo-sijapra.png') }}" alt="Logo Del" style="height: 60px;">
-                        </a>
-                    </div>
-                    <a href="https://www.del.ac.id/">
-                        <img src="{{ asset('asset/img/logo_del_2.jpg') }}" alt="Logo Del" style="height: 60px;">
-                    </a>
-
-                    <a href="https://himasti.delcom.org/">
-                        <img src="{{ asset('asset/img/logo_himasti.jpg') }}" alt="Logo Himasti"
-                            style="height: 60px;">
-                    </a>
-                    <a href="#">
-                        <img src="{{ asset('asset/img/spmb.png') }}" alt="SPMB IT Del" style="height: 60px;">
-                    </a>
+            <div class="d-flex align-items-center justify-content-around">
+                <a href="https://kp.delcom.online/" style="text-align: center;">
+                    <img src="{{ asset('asset/img/logo-sijapra.png') }}" alt="Logo Sijapra" style="height: 60px;">
+                </a>
+                <a href="https://www.del.ac.id/" style="text-align: center;">
+                    <img src="{{ asset('asset/img/logo_del_2.jpg') }}" alt="Logo Del" style="height: 60px;">
+                </a>
+                <a href="https://himasti.delcom.org/" style="text-align: center;">
+                    <img src="{{ asset('asset/img/logo_himasti.jpg') }}" alt="Logo Himasti" style="height: 60px;">
+                </a>
+                <a href="http://spmbapp.del.ac.id/index.php/site/login" style="text-align: center;">
+                    <img src="{{ asset('asset/img/spmb.png') }}" alt="SPMB IT Del" style="height: 60px;">
                 </a>
             </div>
         </div>
 
-        <div style="background-color: #003f88; color: #ffffff; padding: 80px 0;">
-            <div
-                style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start;">
 
-                <!-- Bagian Kiri -->
-                <div style="flex: 1; text-align: center;">
-                    <p style="font-size: 14px; margin-bottom: 10px;">
-                        Copyright 2024 © S1IF IT Del. All Rights Reserved.
-                    </p>
-
-                    <div style="display: flex; justify-content: center; gap: 15px; align-items: center; margin-top: 10px;">
-                        <a class="bi bi-telephone" style="font-size: 2rem; color: #157347;" href="tel:+62632331234"></a>
-                        <a class="bi bi-envelope" style="font-size: 2rem; color: #1da1f2;" href="mailto:Informatika@del.ac.id"></a>
-
-                    </div>
+        <div class="text-white py-5" style="background-color: #003f88">
+    <div class="container">
+        <div class="row justify-content-between align-items-start">
+            <!-- Bagian Kiri -->
+            <div class="col-md-6 text-md-start text-center mb-4 mb-md-0">
+                <p class="mb-2 small">
+                    Copyright 2024 © S1IF IT Del. All Rights Reserved.
+                </p>
+                <div class="d-flex justify-content-md-start justify-content-center gap-3 mt-2">
+                    <a href="tel:+62632331234" class="text-success fs-3">
+                        <i class="bi bi-telephone"></i>
+                    </a>
+                    <a href="mailto:Informatika@del.ac.id" class="text-info fs-3">
+                        <i class="bi bi-envelope"></i>
+                    </a>
                 </div>
+            </div>
 
-
-                <!-- Bagian Kanan -->
-                <div style="flex: 1; text-align: center; font-size: 14px;">
-                    <b style="margin-bottom: 5px; font-size: 20px;">Institut Teknologi Del</b>
-                    <p style="margin-bottom: 5px;">Jl. Sisingamangaraja, Sitoluama, Laguboti, Toba, Sumatera Utara,
-                        Indonesia</p>
-                    <p>Kode Pos: 22381</p>
-                </div>
-
+            <!-- Bagian Kanan -->
+            <div class="col-md-6 text-md-start text-center">
+                <b class="d-block fs-5 mb-2">Institut Teknologi Del</b>
+                <p class="mb-1 small">Jl. Sisingamangaraja, Sitoluama, Laguboti, Toba, Sumatera Utara, Indonesia</p>
+                <p class="mb-0 small">Kode Pos: 22381</p>
             </div>
         </div>
+    </div>
+</div>
+
     </footer>
 
 
