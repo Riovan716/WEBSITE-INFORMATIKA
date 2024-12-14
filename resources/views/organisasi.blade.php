@@ -45,19 +45,29 @@
         <div class="mt-5 mb-5">
             <h2 class="serv text-body text-center mt-5 mb-5"><b>Majelis Permusyawaratan Himpunan</b></h2>
             <div class="serv text-body">
-                <ul class="list-unstyled d-flex flex-wrap justify-content-around">
-                    @foreach ($organisasi->where('divisi', 'MPH') as $item)
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ asset('asset/img/Organisasi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="width: 18rem; height: 18rem;">
-                        <div class="card-body">
-                            <p class="text-center"><strong>{{ $item->jabatan }}</strong></p>
-                            <p class="text-center card-text">{{ $item->nama }}</p>
-                        </div>
+                <ul>
+                @foreach ($organisasi->where('jabatan', 'MPH') as $item)
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ asset('asset/img/Organisasi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="width: 18rem; height: 18rem;">
+                    <div class="card-body">
+                        <p class="text-center"><strong>{{ $item->jabatan }}</strong></p>
+                        <p class="text-center card-text">{{ $item->nama }}</p>
                     </div>
-                    @endforeach
-                </ul>
+                </div>
+                @endforeach
+
+                @foreach ($organisasi->where('jabatan', 'Wakil MPH') as $item)
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ asset('asset/img/Organisasi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="width: 18rem; height: 18rem;">
+                    <div class="card-body">
+                        <p class="text-center"><strong>{{ $item->jabatan }}</strong></p>
+                        <p class="text-center card-text">{{ $item->nama }}</p>
+                    </div>
+                </div>
+                @endforeach
             </div>
             </div>
+        </ul>
 
         <div class="mt-5 mb-5">
         <hr/>

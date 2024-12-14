@@ -59,7 +59,8 @@
                     <option value="">Pilih Jabatan</option>
                     <option value="Pembina">Pembina</option>
                     <option value="MPH">MPH</option>
-                    <option value="Ketua">Ketua</option>
+                    <option value="MPH">MPH</option>
+                    <option value="Ketua">Wakil MPH</option>
                     <option value="Wakil Ketua">Wakil Ketua</option>
                     <option value="Sekretaris">Sekretaris</option>
                     <option value="Wakil Sekretaris">Wakil Sekretaris</option>
@@ -114,7 +115,7 @@
         var jabatanDivContainer = document.getElementById('jabatan-div'); // Kontainer dari dropdown jabatan
 
         // Sembunyikan form jabatan dan label jika divisi adalah Pembina atau MPH
-        if (this.value === 'Pembina' || this.value === 'MPH') {
+        if (this.value === 'Pembina') {
             jabatanLabel.style.display = 'none';  // Menyembunyikan label jabatan
             jabatanDiv.style.display = 'none';    // Menyembunyikan dropdown jabatan
         } else {
@@ -137,7 +138,7 @@
             // Define jabatan options based on divisi
             var jabatanOptions = {
                 'Pembina': ['Pembina'],
-                'MPH': ['MPH'],
+                'MPH': ['MPH', 'Wakil MPH'],
                 'BPH': ['Ketua', 'Wakil Ketua', 'Sekretaris', 'Wakil Sekretaris', 'Bendahara', 'Wakil Bendahara'],
                 'Danus': ['Kepala Divisi', 'Wakil Kepala Divisi', 'Anggota'],
                 'Humas': ['Kepala Divisi', 'Wakil Kepala Divisi', 'Anggota'],

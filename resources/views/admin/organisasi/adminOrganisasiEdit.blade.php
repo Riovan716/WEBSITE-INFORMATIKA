@@ -103,7 +103,7 @@
     // Set default jabatan options
     var jabatanOptions = {
         'Pembina': ['Pembina'],
-        'MPH': ['MPH'],
+        'MPH': ['MPH', 'Wakil MPH'],
         'BPH': ['Ketua', 'Wakil Ketua', 'Sekretaris', 'Wakil Sekretaris', 'Bendahara', 'Wakil Bendahara'],
         'Danus': ['Kepala Divisi', 'Wakil Kepala Divisi', 'Anggota'],
         'Humas': ['Kepala Divisi', 'Wakil Kepala Divisi', 'Anggota'],
@@ -126,7 +126,7 @@
     });
 
     // Tampilkan atau sembunyikan dropdown jabatan
-    if (divisi === 'Pembina' || divisi === 'MPH') {
+    if (divisi === 'Pembina') {
         jabatanLabel.style.display = 'none';
         jabatanDiv.style.display = 'none';
 
