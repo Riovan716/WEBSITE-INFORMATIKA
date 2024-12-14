@@ -404,10 +404,7 @@
                 <a style="text-align: center;">
                     <div style="text-align: center">
                         <a href="https://kp.delcom.online/">
-                            <div
-                                style="background-color: #e2e8f0; color: #000; padding: 10px 20px; border-radius: 5px; font-weight: bold;">
-                                Web KP/Magang
-                            </div>
+                        <img src="{{ asset('asset/img/logo-sijapra.png') }}" alt="Logo Del" style="height: 60px;">
                         </a>
                     </div>
                     <a href="https://www.del.ac.id/">
