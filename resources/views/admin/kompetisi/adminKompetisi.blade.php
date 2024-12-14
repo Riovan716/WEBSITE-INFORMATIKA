@@ -26,7 +26,7 @@
                         <td>{{ $item->tanggal }}</td>
                         <td>{{ $item->penyelenggara }}</td>
                         <td>{{ $item->keterangan }}</td>
-                        <td><a href="{{ $item->link }}" target="_blank">{{ $item->link }}</a></td>
+                        <td><a href="{{ $item->link }}" target="_blank">{{ \Illuminate\Support\Str::limit($item->link, 30, '...') }}</a></td>
                         <td class="d-flex">
                             <a href="{{ route('admin.viewParticipant', ['kompetisi_id' => $item->id]) }}">
                                 <button type="button" class="btn btn-warning">Lihat Participants</button>
