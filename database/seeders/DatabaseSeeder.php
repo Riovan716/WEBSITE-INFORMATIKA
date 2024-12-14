@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             AlumniSeeder::class,
             UserSeeder::class,
             OrganisasiSeed::class,
+            kontakSeed::class,
         ]);
     }
 }
