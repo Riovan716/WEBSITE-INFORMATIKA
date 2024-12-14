@@ -9,10 +9,6 @@
             <input type="text" class="form-control" id="email" name="email" placeholder="Masukkan Email" required>
         </div>
         <div class="form-group">
-            <label for="instagram">Instagram</label>
-            <input type="url" class="form-control" id="instagram" name="instagram" placeholder="Masukkan URL Instagram" required>
-        </div>
-        <div class="form-group">
             <label for="nomor_telepon">Nomor Telepon</label>
             <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon" placeholder="Masukkan Nomor Telepon" required>
         </div>

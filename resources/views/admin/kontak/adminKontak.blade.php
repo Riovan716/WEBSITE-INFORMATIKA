@@ -15,7 +15,6 @@
         <thead>
             <tr>
                 <th scope="col">E-mail</th>
-                <th scope="col">Instagram</th>
                 <th scope="col">Nomor Telepon</th>
                 <th scope="col">Kode Pos</th>
                 <th scope="col">Aksi</th>
@@ -25,7 +24,6 @@
             @if ($kontak)
                 <tr>
                     <td>{{ $kontak->email }}</td>
-                    <td>{{ $kontak->instagram }}</td>
                     <td>{{ $kontak->nomor_telepon }}</td>
                     <td>{{ $kontak->kode_pos }}</td>
                     <td>

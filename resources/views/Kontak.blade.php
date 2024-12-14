@@ -2,7 +2,7 @@
 
 @section('section')
 <section>
-    <h1 class="text-body text-center" style="font-size: 3em;"><b>Kontak</b></h1>
+    <h1 class="text text-center" style="font-size: 3em;"><b>Kontak</b></h1>
     <div class="container">
         <!-- Wrapper untuk border besar -->
         <div class="custom-border rounded-4 p-4 shadow-lg">
@@ -19,14 +19,10 @@
                             <p>{{ $kontak->kode_pos }}</p>
                             <br>
 
-                            <p> <i class="ri-instagram-line"></i><b>Instagram:</b></p>
-                            <p>
-                                <a href="{{ $kontak->instagram }}" target="_blank" class="text-primary fw-bold text-decoration-none">Akun Instagram</a>
-                            </p>
-                            <br>
+
+                            <p><i class="ri-mail-line"></i><b>E-mail:</b></p>
+                            <p><a href="mailto:{{ $kontak->email }}">{{ $kontak->email }}</a></p>
                             
-                            <p> <i class="ri-mail-line"></i><b>E-mail:</b></p>
-                            <p>{{ $kontak->email }}</p>
                         @else
                             <p>Data kontak belum tersedia.</p>
                         @endif
