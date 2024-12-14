@@ -134,11 +134,11 @@
             </tbody>
         </table>
         <div style="text-align: center; margin-top: 20px;">
-            {{ $alumni->links() }}
+            {{ $alumni->appends(request()->query())->links() }}
         </div>
     </div>
 
-    <h4 class="text-dark container text-center"><b>Total Alumni = {{ $jumlahAlumni }} orang</b></h4>
+    <h4 class="text-dark container text-center"><b>Total Alumni = {{ $jumlahAlumni }} Orang</b></h4>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
@@ -150,7 +150,7 @@
             var s2 = document.getElementById(e2);
             var optionarr = [];
 
-            s2.innerHTML = ""; // Clear previous options
+            s2.innerHTML = "";
 
             if (s1.value == 'tahun_lulus') {
                 var optionarr = [
@@ -160,13 +160,11 @@
                 ];
             }
 
-            // Reset options to default if "Semua" is selected
             if (s1.value == '') {
                 s2.innerHTML = "<option value=''>Pilih...</option>";
                 return;
             }
 
-            // Add options dynamically for years
             for (var option in optionarr) {
                 var pair = optionarr[option].split("|");
                 var newoption = document.createElement("option");
@@ -177,7 +175,6 @@
             }
         }
 
-        // Initialize on page load to show the correct options
         window.onload = function() {
             dependent('searchby', 'searchvalue');
         }
