@@ -35,7 +35,6 @@
 
         .table th {
             background-color: #0b4582;
-            /* Biru */
             color: #ffffff;
             text-transform: uppercase;
         }
@@ -61,6 +60,19 @@
         .pagination {
             justify-content: center;
         }
+
+        .form-inline {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-inline select {
+            margin-right: 10px;
+        }
+
+        .col-4 {
+            max-width: 100%;
+        }
     </style>
 
     <br>
@@ -69,7 +81,7 @@
 
     <div class="row">
         <div class="col-4 py-5 px-5">
-            <form action="{{ route('filter.mahasiswa') }}" method="GET">
+            <form action="{{ route('filter.mahasiswa') }}" method="GET" class="form-inline">
                 @csrf
                 <div class="row">
                     <label for="searchby" class="py-2">Pilih Kategori</label>
@@ -81,87 +93,88 @@
                             <option value="status">Status</option>
                         </select>
                     </div>
-                    <div class="col-8">
-                        <div class="row">
-                            <div class="col-8">
-                                <select name="searchvalue" id="searchvalue" class="form-select form-select-sm"
-                                    aria-label=".form-select-sm example"></select>
-                            </div>
-                            <div class="col-4">
-                                <button class="btn btn-primary">Terapkan</button>
-                            </div>
-                        </div>
+                    <div class="col-6">
+                        <select name="searchvalue" id="searchvalue" class="form-select form-select-sm"
+                            aria-label=".form-select-sm example"></select>
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-primary" type="submit">Terapkan</button>
                     </div>
                 </div>
             </form>
         </div>
+    </div>
 
-        <div class="py-5 mx-5" style="border-radius:20px; background-color:transparent;">
-            <table class="table">
-                <thead>
+    <div class="py-5 mx-5" style="border-radius:20px; background-color:transparent;">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">NIM</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Angkatan</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($mahasiswa as $item)
                     <tr>
-                        <th scope="col">NIM</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Angkatan</th>
-                        <th scope="col">Status</th>
+                        <td>{{ $item->nim }}</td>
+                        <td>{{ $item->nama }}</td>
+                        <td>{{ $item->angkatan }}</td>
+                        <td>{{ $item->status }}</td>
                     </tr>
-                </thead>
-                <tbody>
-                    @foreach ($mahasiswa as $item)
-                        <tr>
-                            <td>{{ $item->nim }}</td>
-                            <td>{{ $item->nama }}</td>
-                            <td>{{ $item->angkatan }}</td>
-                            <td>{{ $item->status }}</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <div style="text-align: center; margin-top: 20px;">
-                {{ $mahasiswa->links() }}
-            </div>
+                @endforeach
+            </tbody>
+        </table>
+        <div style="text-align: center; margin-top: 20px;">
+            {{ $mahasiswa->links() }}
         </div>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
 
-        <script>
-            function dependent(e1, e2) {
-                var s1 = document.getElementById(e1);
-                var s2 = document.getElementById(e2);
-                var optionarr = [];
+    <script>
+        function dependent(e1, e2) {
+            var s1 = document.getElementById(e1);
+            var s2 = document.getElementById(e2);
+            var optionarr = [];
 
-                s2.innerHTML = "";
+            s2.innerHTML = "";
 
-                if (s1.value == 'angkatan') {
-                    var optionarr = [
-                        @if (@isset($angkatan) & (sizeof($angkatan) > 0))
-                            @foreach ($angkatan as $akt)
-                                '{{ $akt->angkatan }}|{{ $akt->angkatan }}',
-                            @endforeach
-                        @endif
-                    ];
-                } else if (s1.value == 'status') {
-                    var optionarr = [
-                        @if (@isset($status) & (sizeof($status) > 0))
-                            @foreach ($status as $sts)
-                                @if ($sts->status != 'Tidak Aktif')
-                                    '{{ $sts->status }}|{{ $sts->status }}',
-                                @endif
-                            @endforeach
-                        @endif
-                    ];
-                }
-
-                for (var option in optionarr) {
-                    var pair = optionarr[option].split("|");
-                    var newoption = document.createElement("option");
-
-                    newoption.value = pair[0];
-                    newoption.innerHTML = pair[1];
-                    s2.options.add(newoption);
-                }
+            if (s1.value == 'angkatan') {
+                var optionarr = [
+                    @if (@isset($angkatan) & (sizeof($angkatan) > 0))
+                        @foreach ($angkatan as $akt)
+                            '{{ $akt->angkatan }}|{{ $akt->angkatan }}',
+                        @endforeach
+                    @endif
+                ];
+            } else if (s1.value == 'status') {
+                var optionarr = [
+                    @if (@isset($status) & (sizeof($status) > 0))
+                        @foreach ($status as $sts)
+                            @if ($sts->status != 'Tidak Aktif')
+                                '{{ $sts->status }}|{{ $sts->status }}',
+                            @endif
+                        @endforeach
+                    @endif
+                ];
             }
-        </script>
-    @endsection
+
+            for (var option in optionarr) {
+                var pair = optionarr[option].split("|");
+                var newoption = document.createElement("option");
+
+                newoption.value = pair[0];
+                newoption.innerHTML = pair[1];
+                s2.options.add(newoption);
+            }
+        }
+
+        window.onload = function() {
+            dependent('searchby', 'searchvalue');
+        }
+    </script>
+@endsection

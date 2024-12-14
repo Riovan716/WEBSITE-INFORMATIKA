@@ -13,8 +13,15 @@ class MahasiswaController extends Controller
 
     public function mahasiswa()
     {
-        $angkatan = Mahasiswa::select('angkatan')->distinct()->get();
-        $status = Mahasiswa::select('status')->distinct()->whereIn('status', ['aktif', 'mengundurkan diri'])->get();
+        $angkatan = Mahasiswa::select('angkatan')
+            ->where('status', 'aktif') // Hanya angkatan mahasiswa aktif
+            ->distinct()
+            ->get();
+
+        $status = Mahasiswa::select('status')
+            ->whereIn('status', ['aktif', 'mengundurkan diri'])
+            ->distinct()
+            ->get();
 
         if ($this->filtercategory == 'angkatan') {
             $mahasiswa = Mahasiswa::where('angkatan', $this->filtervalue)
@@ -24,18 +31,19 @@ class MahasiswaController extends Controller
                 ->appends(['angkatan' => $this->filtervalue]);
         } elseif ($this->filtercategory == 'status') {
             $mahasiswa = Mahasiswa::where('status', $this->filtervalue)
-                ->whereIn('status', ['aktif', 'mengundurkan diri'])
                 ->orderBy('nim', 'ASC')
                 ->paginate(20)
                 ->appends(['status' => $this->filtervalue]);
         } else {
-            $mahasiswa = Mahasiswa::whereIn('status', ['aktif', 'mengundurkan diri'])
+            // Default: hanya mahasiswa aktif
+            $mahasiswa = Mahasiswa::where('status', 'aktif')
                 ->orderBy('nim', 'ASC')
                 ->paginate(20);
         }
 
         return view('mahasiswa', compact('mahasiswa', 'angkatan', 'status'));
     }
+
 
 
     public function adminFilterMahasiswa(Request $request)
