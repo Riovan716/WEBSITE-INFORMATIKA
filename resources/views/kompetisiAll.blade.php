@@ -4,12 +4,12 @@
 <div class="container mt-5">
     <!-- Header -->
     <div class="text-center mb-4">
-        <h1 class="text-center mb-4" style="font-family: 'Arial', sans-serif; font-weight: bold; color: #333;">KOMPETISI</h1>
+        <h1 class="text-dark container text-center" style="font-weight: bold">Kompetisi</h1>
         <hr class="w-50 mx-auto">
     </div>
 
     <!-- Kompetisi List -->
-    <div class="event-card shadow-sm p-4 rounded-3" style="background-color: rgb(255, 255, 255); border-radius: 25px;">
+    <div class="event-card" style="background-color: rgb(255, 255, 255); border-radius: 25px;">
         @foreach ($kompetisi as $item)
         <div class="event-card shadow-sm p-4 rounded-3 mb-4" style="background-color: rgb(255, 255, 255); border-radius: 25px;">
             <div class="d-flex flex-wrap align-items-center">
@@ -19,7 +19,8 @@
                         <img src="{{ asset('asset/img/Kompetisi/' . $item->gambar) }}" alt="{{ $item->nama }}" class="img-fluid mb-3" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
                         
                         <!-- Nama Kompetisi dengan Link -->
-                        <a href="/kompetisi/{{ $item->id }}" class="kompetisi-link text-dark text-decoration-none">
+                    
+                        <a href="/kompetisi/{{ $item->id }}" class="kompetisi-link">
                             {{ $item->nama }}
                         </a>
                     </h3>
@@ -42,13 +43,13 @@
 <style>
     /* Efek hover untuk nama kompetisi */
     .kompetisi-link {
-        transition: color 0.3s ease; /* Efek transisi untuk perubahan warna */
-    }
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+    color: black; /* Pastikan warna default adalah hitam */
+}
 
-    .kompetisi-link:hover {
-        color: #0079c2; /* Warna biru saat hover */
-        text-decoration: underline; /* Garis bawah saat hover */
-    }
+.kompetisi-link:hover {
+    color: #0079c2; /* Ganti warna saat hover */
+}
 </style>
 
 <!-- Bootstrap JS -->

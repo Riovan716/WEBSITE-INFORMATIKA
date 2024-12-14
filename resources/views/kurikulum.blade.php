@@ -83,8 +83,9 @@
         </style>
     </head>
 
-    <section class="text-body">
-        <h1 class="text-body text-center" style="font-size: 3em;">
+    <section class="text">
+        <h1 class="text text-center" style="font-size: 3em;">
+            <br>
             <b>Struktur Kurikulum <br> Program Studi Informatika</b>
         </h1>
         <div class="container mt-5">
