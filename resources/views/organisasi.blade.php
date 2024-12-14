@@ -189,6 +189,16 @@
                 </div>
                 @endforeach
 
+                @foreach ($organisasi->where('divisi', 'Pendidikan')->where('jabatan', 'Wakil Kepala Divisi') as $item)
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ asset('asset/img/Organisasi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="width: 18rem; height: 18rem;">
+                    <div class="card-body">
+                        <p class="text-center"><strong>{{ $item->jabatan }}</strong></p>
+                        <p class="text-center card-text">{{ $item->nama }}</p>
+                    </div>
+                </div>
+                @endforeach
+
             </ul>
 
             <ul>
@@ -210,6 +220,15 @@
         <div class="serv text-body">
             <ul>
                 @foreach ($organisasi->where('divisi', 'Kominfo')->where('jabatan', 'Kepala Divisi') as $item)
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ asset('asset/img/Organisasi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="width: 18rem; height: 18rem;">
+                    <div class="card-body">
+                        <p class="text-center"><strong>{{ $item->jabatan }}</strong></p>
+                        <p class="text-center card-text">{{ $item->nama }}</p>
+                    </div>
+                </div>
+                @endforeach
+                @foreach ($organisasi->where('divisi', 'Kominfo')->where('jabatan', 'Wakil Kepala Divisi') as $item)
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{ asset('asset/img/Organisasi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="width: 18rem; height: 18rem;">
                     <div class="card-body">
@@ -249,6 +268,16 @@
                     </div>
                 </div>
                 @endforeach
+
+                @foreach ($organisasi->where('divisi', 'Minat')->where('jabatan', 'Wakil Kepala Divisi') as $item)
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ asset('asset/img/Organisasi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="width: 18rem; height: 18rem;">
+                    <div class="card-body">
+                        <p class="text-center"><strong>{{ $item->jabatan }}</strong></p>
+                        <p class="text-center card-text">{{ $item->nama }}</p>
+                    </div>
+                </div>
+                @endforeach
                 
             </ul>
 
@@ -280,6 +309,15 @@
                     </div>
                 </div>
                 @endforeach
+                @foreach ($organisasi->where('divisi', 'Danus')->where('jabatan', 'Wakil Kepala Divisi') as $item)
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ asset('asset/img/Organisasi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="width: 18rem; height: 18rem;">
+                    <div class="card-body">
+                        <p class="text-center"><strong>{{ $item->jabatan }}</strong></p>
+                        <p class="text-center card-text">{{ $item->nama }}</p>
+                    </div>
+                </div>
+                @endforeach
                 
             </ul>
            
@@ -303,6 +341,16 @@
         <div class="serv text-body">
             <ul>
                 @foreach ($organisasi->where('divisi', 'Humas')->where('jabatan', 'Kepala Divisi') as $item)
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{{ asset('asset/img/Organisasi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="width: 18rem; height: 18rem;">
+                    <div class="card-body">
+                        <p class="text-center"><strong>{{ $item->jabatan }}</strong></p>
+                        <p class="text-center card-text">{{ $item->nama }}</p>
+                    </div>
+                </div>
+                @endforeach
+
+                @foreach ($organisasi->where('divisi', 'Humas')->where('jabatan', 'Wakil Kepala Divisi') as $item)
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src="{{ asset('asset/img/Organisasi/' . $item->gambar) }}" alt="{{ $item->gambar }}" style="width: 18rem; height: 18rem;">
                     <div class="card-body">
