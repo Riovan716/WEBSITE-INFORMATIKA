@@ -371,6 +371,14 @@ class OrganisasiSeed extends Seeder
             //kepengurusan 2024
 
             [
+                'nama' => "Arie Satia Dharma",
+                'gambar' => "Arie.jpg",
+                'divisi' => "Pembina",
+                'jabatan' => "Pembina",
+                'tahun' => 2024,
+            ],
+
+            [
                 'nama' => "Royman Situmeang",
                 'gambar' => "",
                 'divisi' => "Humas",
