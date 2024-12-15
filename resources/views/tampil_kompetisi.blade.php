@@ -17,7 +17,7 @@
             <p>{{$kompetisi->keterangan}}</p>
 
             <p><b>Brosur</b></p>
-            <img src="{{ asset('asset/img/Kompetisi/' . $kompetisi->gambar) }}" alt="">
+            <img src="{{ asset('asset/img/Kompetisi/' . $kompetisi->gambar) }}" alt="" style="max-height: 300px; max-width:300px">
 
             <br><br>
             <p><b>Link Lebih Lanjut</b></p>

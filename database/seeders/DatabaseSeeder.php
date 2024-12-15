@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             OrganisasiSeed::class,
             kontakSeed::class,
+            ParticipantSeeder::class,
         ]);
     }
 }

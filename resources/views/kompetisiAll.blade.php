@@ -16,7 +16,7 @@
                 <div class="card-body p-4" style="background-color: rgba(245, 245, 220, 0.144);">
                     <h3 class="card-title fw-bold">
                         <!-- Gambar Kompetisi -->
-                        <img src="{{ asset('asset/img/Kompetisi/' . $item->gambar) }}" alt="{{ $item->nama }}" class="img-fluid mb-3" style="max-height: 200px; object-fit: cover; border-radius: 10px;">
+                        <img src="{{ asset('asset/img/Kompetisi/' . $item->gambar) }}" alt="{{ $item->nama }}" class="img-fluid mb-3" style="max-height: 200px; width: 200px; object-fit: cover; border-radius: 10px;">
                         
                         <!-- Nama Kompetisi dengan Link -->
                     
@@ -25,7 +25,7 @@
                         </a>
                     </h3>
                     <p class="mb-1">Oleh: <strong>{{ $item->penyelenggara }}</strong></p>
-                    <p>Batas Pendaftaran: {{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</p>
+                    <p>Tanggal Kegiatan: {{ \Carbon\Carbon::parse($item->tanggal)->format('d M Y') }}</p>
                 </div>
             </div>
             <hr>
