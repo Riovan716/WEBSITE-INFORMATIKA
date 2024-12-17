@@ -127,7 +127,7 @@
             </tbody>
         </table>
         <div style="text-align: center; margin-top: 20px;">
-            {{ $mahasiswa->links() }}
+            {{ $mahasiswa->appends(request()->except('page'))->links() }}
         </div>
     </div>
 
