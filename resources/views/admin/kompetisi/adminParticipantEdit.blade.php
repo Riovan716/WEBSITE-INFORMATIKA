@@ -9,12 +9,12 @@
         @csrf
     
         <label class="form-label">NIM</label>
-        <input type="text" class="form-control" name="nim" value="{{ $participant->nim }}" required>
+        <input type="text" class="form-control" name="nim" value="{{ $participant->nim }}" id="nim" required>
     
         <br><br>
 
         <label class="form-label">Nama Kontestan</label>
-        <input type="text" class="form-control" name="nama" value="{{ $participant->nama }}">
+        <input type="text" class="form-control" name="nama" value="{{ $participant->nama }}" id="nama">
 
         <br><br>
 
@@ -42,7 +42,8 @@
         <br><br>
         <input type="submit" value="Perbarui Participant" class="btn btn-primary">
     </form>
-    {{-- menampilkan error validasi --}}
+
+    {{-- Menampilkan error validasi --}}
     @if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
@@ -51,10 +52,43 @@
             @endforeach
         </ul>
     </div>
-@endif
+    @endif
+
     <br>
     <a href="{{ route('admin.viewParticipant', ['kompetisi_id' => $kompetisi->id]) }}">
         <button type="button" class="btn btn-danger">Kembali</button>
     </a> 
 </div>
+
+@endsection
+
+@section('scripts')
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Ketika NIM diubah
+            $('#nim').on('input', function() {
+                var nim = $(this).val();
+
+                if (nim.length >= 3) {  // Minimal 3 karakter NIM
+                    $.ajax({
+                        url: '{{ route('getNamaByNim', '') }}/' + nim,
+                        method: 'GET',
+                        success: function(response) {
+                            if (response.status === 'success') {
+                                $('#nama').val(response.nama);  // Mengisi Nama berdasarkan NIM
+                            } else {
+                                $('#nama').val('');  // Kosongkan Nama jika NIM tidak ditemukan
+                            }
+                        },
+                        error: function() {
+                            alert('Terjadi kesalahan saat mengambil data.');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 @endsection
