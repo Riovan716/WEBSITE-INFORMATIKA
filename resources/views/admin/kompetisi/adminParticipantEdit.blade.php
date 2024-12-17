@@ -19,8 +19,13 @@
         <br><br>
 
         <label class="form-label">Prestasi</label>
-        <input type="text" class="form-control" name="prestasi" value="{{ $participant->prestasi }}">
-
+        <select class="form-control" name="prestasi">
+            <option value="Juara 1">Juara 1</option>
+            <option value="Juara 2">Juara 2</option>
+            <option value="Juara 3">Juara 3</option>
+            <option value="Finalis">Finalis</option>
+            <option value="Participant">Participant</option>
+        </select>
         <br><br>
 
         <label class="form-label">Keterangan</label>

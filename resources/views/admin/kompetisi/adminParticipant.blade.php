@@ -32,10 +32,11 @@
             <!-- Field Prestasi -->
             <label class="form-label">Prestasi</label>
             <select class="form-control" name="prestasi">
-                <option value="juara_1">Juara 1</option>
-                <option value="juara_2">Juara 2</option>
-                <option value="juara_3">Juara 3</option>
-                <option value="anggota">Participant</option>
+                <option value="Juara 1">Juara 1</option>
+                <option value="Juara 2">Juara 2</option>
+                <option value="Juara 3">Juara 3</option>
+                <option value="Finalis">Finalis</option>
+                <option value="Participant">Participant</option>
             </select>
 
             <br><br>
@@ -46,7 +47,7 @@
 
             <br><br>
 
-            <!-- Field File Gambar -->
+            <!-- Field File Gambar (opsional) -->
             <b>File Gambar</b><br />
             <input type="file" name="file">
             <br><br>

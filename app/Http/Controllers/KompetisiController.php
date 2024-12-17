@@ -173,10 +173,13 @@ class KompetisiController extends Controller
             'prestasi' => 'required',
             'keterangan' => 'required',
             'kompetisi_id' => 'required|exists:kompetisi,id',
-            'file' => 'required|file|mimes:jpeg,png,jpg,gif|max:2048',
+            'file' => 'nullable|file|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        // Proses upload file
+        // Inisialisasi $fileName sebagai null
+        $fileName = '';
+
+        // Proses upload file jika ada
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             $fileName = time() . '_' . $file->getClientOriginalName();
@@ -189,7 +192,7 @@ class KompetisiController extends Controller
             'nama' => $request->nama,
             'prestasi' => $request->prestasi,
             'keterangan' => $request->keterangan,
-            'gambar' => $fileName ?? null,
+            'gambar' => $fileName, // Tetap null jika tidak ada file
             'kompetisi_id' => $request->kompetisi_id,
         ]);
 
@@ -197,6 +200,7 @@ class KompetisiController extends Controller
         return redirect()->route('admin.viewParticipant', ['kompetisi_id' => $request->kompetisi_id])
             ->with('success', 'Participant berhasil ditambahkan!');
     }
+
 
 
     public function hapusParticipant($id)
