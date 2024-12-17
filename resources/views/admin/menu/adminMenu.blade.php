@@ -9,7 +9,7 @@
         /* Atur overflow agar tidak bisa di-scroll horizontal */
         html,
         body {
-            overflow-x: hidden;
+
             background-color: #f8f9fa;
         }
 

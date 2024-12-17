@@ -29,7 +29,7 @@ class visiMisi extends Seeder
             ],
         ]);
         DB::table('visi')->insert([
-            'visi' => "Menjadi program Teknik Informatika yang unggul yang berperan dalam menghasilkan dan memanfaatkan teknologi untuk mengembangkan potensi lokal bagi kemajuan bangsa pada tahun 2023.",
+            'visi' => "Menjadi program Teknik Informatika yang unggul yang berperan dalam menghasilkan dan memanfaatkan teknologi untuk mengembangkan potensi lokal bagi kemajuan bangsa.",
         ]);
         DB::table('sejarah')->insert([
             'sejarah' => "<h3>Sejarah Program Studi S1-Informatika</h3><p>Program Studi S1 Teknik 
