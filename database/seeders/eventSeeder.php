@@ -111,6 +111,43 @@ class eventSeeder extends Seeder
                 'deskripsi' => 'Partisipasi akan kegiatan yang diadakan oleh BEM',
                 'penjelasan' => 'Kompetisi ini dirancang oleh kepengurusan HIMASTI untuk anggota HIMASTI guna melatih skill dan meningkatkan solidaritas antar setiap anggota HIMASTI.',
             ],
+            [
+                'nama' => 'Welcoming Party',
+                'waktu_mulai' => '2024-01-27 00:00:00',
+                'waktu_selesai' => '2024-01-27 00:00:00',
+                'deskripsi_singkat' => 'Calon anggota baru HIMASTI dikukuhkan menjadi anggota tetap HIMASTI .
+                ',
+                'jenis' => 'Event',
+                'lokasi' => 'Institut Teknologi Del',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Minat dan Bakat',
+                'kontak' => '08116230035 (Pengeran Simamora)',
+                'deskripsi' => 'Calon anggota baru HIMASTI dikukuhkan menjadi anggota tetap HIMASTI ',
+                'penjelasan' => 'Mempererat hubungan dan rasa kekeluargaan antar mahasiswa Himasti.',
+            ],
+            [
+                'nama' => 'HIMASTI CUP ',
+                'waktu_mulai' => '2024-02-3 00:00:00',
+                'waktu_selesai' => '2024-02-24 00:00:00',
+                'deskripsi_singkat' => 'Setiap anggota tim HIMASTI akan melakukan pertandingan olahraga dan kesenian.',
+                'jenis' => 'Kompetisi',
+                'lokasi' => 'Institut Teknologi Del',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Minat dan Bakat',
+                'kontak' => '08116230035 (Pengeran Simamora)',
+                'deskripsi' => 'Setiap anggota tim HIMASTI akan melakukan pertandingan olahraga dan kesenian',
+                'penjelasan' => 'Melatih skill olahraga dan meningkatkan solidaritas antar setiap anggota HIMASTI.',
+            ],
+            [
+                'nama' => 'War FITE',
+                'waktu_mulai' => '2024-02-15 00:00:00',
+                'waktu_selesai' => '2024-02-15 00:00:00',
+                'deskripsi_singkat' => 'Setiap anggota tim HIMASTI akan melakukan pertandingan olahraga dan kesenian.',
+                'jenis' => 'Kompetisi',
+                'lokasi' => 'Institut Teknologi Del',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Minat dan Bakat',
+                'kontak' => '08116230035 (Pengeran Simamora)',
+                'deskripsi' => 'Setiap anggota tim HIMASTI akan melakukan pertandingan olahraga dan kesenian',
+                'penjelasan' => 'Meningkatkan solidaritas mahasiswa IT DEL',
+            ],
         ]);
     }
 }
