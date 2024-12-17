@@ -72,7 +72,7 @@
     </style>
 
     <br>
-    <h1 class="text-dark container text-center"><b>Daftar Alumni Informatika Institut Teknologi Del</b></h1>
+    <h1 class="text-dark container text-center"><b>Daftar Alumni Prodi Informatika Institut Teknologi Del</b></h1>
     <br>
 
     <div class="row">

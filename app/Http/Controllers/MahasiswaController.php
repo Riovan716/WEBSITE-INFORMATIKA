@@ -261,6 +261,18 @@ class MahasiswaController extends Controller
         return view('admin.mahasiswa.adminAlumni', compact('alumni', 'angkatan', 'status', 'tahunLulus'));
     }
 
+    public function getNamaByNim(Request $request)
+    {
+        $nim = $request->nim;
+        $mahasiswa = Mahasiswa::where('nim', $nim)->first();
+
+        if ($mahasiswa) {
+            return response()->json(['nama' => $mahasiswa->nama]);
+        }
+
+        return response()->json(['nama' => '']);
+    }
+
     public function showAlumni(Request $request)
     {
         $alumni = Alumni::all();
@@ -270,9 +282,6 @@ class MahasiswaController extends Controller
         return view('admin.mahasiswa.adminAlumni', compact('alumni', 'angkatan', 'status'));
     }
 
-
-
-
     public function adminFilterAlumni(Request $request)
     {
         $query = Alumni::where('status', 'lulus');
@@ -281,16 +290,12 @@ class MahasiswaController extends Controller
             $query->where('tahun_lulus', $request->searchvalue);
         }
 
-        if ($request->filled('searchby') && $request->searchby == 'angkatan' && $request->filled('searchvalue')) {
-            $query->where('angkatan', $request->searchvalue);
-        }
-
         $alumni = $query->orderBy('nim', 'ASC')->paginate(20);
         $angkatan = Alumni::select('angkatan')->distinct()->get();
         $status = Alumni::select('status')->distinct()->get();
         $tahunLulus = Alumni::select('tahun_lulus')
             ->distinct()
-            ->whereNotNull('tahun_lulus') // Tambahkan filter ini untuk menghilangkan null
+            ->whereNotNull('tahun_lulus')
             ->orderBy('tahun_lulus', 'ASC')
             ->get();
 

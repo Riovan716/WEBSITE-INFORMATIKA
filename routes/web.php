@@ -151,6 +151,7 @@ Route::delete('/admin/hapusMahasiswa/{id}', [MahasiswaController::class, 'hapusM
 Route::get('/admin/alumni', [MahasiswaController::class, 'adminAlumni'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/filteralumni', [MahasiswaController::class, 'adminFilterAlumni'])->middleware(['auth', 'verified'])->name('filter.AdminAlumni');
 Route::get('/admin/addAlumni', [MahasiswaController::class, 'addAlumni'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/getNamaByNim', [MahasiswaController::class, 'getNamaByNim'])->name('getNamaByNim');
 Route::post('/addAlumni_proses', [MahasiswaController::class, 'addAlumni_proses'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/admin/editAlumni/{id}', [MahasiswaController::class, 'editAlumni'])->middleware(['auth', 'verified'])->name('dashboard');
 Route::post('/admin/editAlumni_proses', [MahasiswaController::class, 'editAlumni_proses'])->middleware(['auth', 'verified'])->name('editAlumni.proses');

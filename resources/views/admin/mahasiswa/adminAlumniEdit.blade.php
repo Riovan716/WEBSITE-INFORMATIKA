@@ -21,23 +21,25 @@
             <br><br>
 
             <label class="form-label">Angkatan</label> <br>
-
-            <select name="angkatan" id="angkatan">
+            <select name="angkatan" id="angkatan" class="form-control">
                 @for ($i = 2014; $i <= now()->year; $i++)
-                    <option value="{{ $i }}">{{ $i }}</option>
+                    <option value="{{ $i }}" {{ $alumni->angkatan == $i ? 'selected' : '' }}>
+                        {{ $i }}
+                    </option>
                 @endfor
-
             </select>
-
-            <br>
 
             <br><br>
+
             <label class="form-label">Tahun Lulus</label> <br>
-            <select name="tahun_lulus" id="tahun_lulus">
+            <select name="tahun_lulus" id="tahun_lulus" class="form-control">
                 @for ($i = 2018; $i <= now()->year + 2; $i++)
-                    <option value="{{ $i }}">{{ $i }}</option>
+                    <option value="{{ $i }}" {{ $alumni->tahun_lulus == $i ? 'selected' : '' }}>
+                        {{ $i }}
+                    </option>
                 @endfor
             </select>
+
 
             <br><br>
             <label class="form-label mt-3">SK Yudisium</label>
