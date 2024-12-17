@@ -95,7 +95,8 @@ class beritaSeed extends Seeder
                 Febri Chatarina Sianipar (S1 Teknik Bioproses 2019)                
                     ",
                 'gambar' => '5.jpg',
-            ],[
+            ],
+            [
                 'judul' => ' 3 Mahasiswa menjadi sebagai Partisipasi babak Final Schematics 2022
                 ',
                 'deskripsi' => 'Selamat kepada 3 mahasiswa Informatika: Guntur Sinaga, Michael Napitupulu, dan Samuel Sibuea sebagai finalis pada Schematics 2022
@@ -107,6 +108,42 @@ class beritaSeed extends Seeder
                 
                     ",
                 'gambar' => '6.png',
+            ],
+            [
+                'judul' => '1 Mahasiswa Informatika IT DEL lolos Program ICYEP ',
+                'deskripsi' => 'Salah satu mahasiswa dari Program Studi Informatika Institut Teknologi Del (IT DEL) berhasil lolos seleksi Program International Youth Exchange Program (ICYEP)',
+                'isi' => "Salah satu mahasiswa Program Studi Informatika Institut Teknologi Del (IT DEL) telah berhasil mengukir prestasi membanggakan dengan lolos seleksi International Youth Exchange Program (ICYEP). Program ini merupakan inisiatif yang bertujuan untuk memfasilitasi pertukaran budaya, peningkatan kompetensi pemuda, serta pengembangan kemampuan kepemimpinan di tingkat internasional.
+
+Mahasiswa yang berhasil lolos program ini melewati berbagai tahapan seleksi ketat yang meliputi ujian kemampuan akademik, komunikasi, serta wawasan kebangsaan dan internasional. Program ICYEP sendiri diikuti oleh peserta dari berbagai institusi pendidikan di Indonesia dan negara mitra, menjadikannya ajang yang sangat kompetitif.
+
+Melalui program ini, mahasiswa IT DEL berkesempatan untuk berinteraksi dengan pemuda-pemuda dari berbagai negara, memperluas jaringan internasional, serta meningkatkan pemahaman tentang berbagai budaya dan perkembangan global, khususnya dalam bidang teknologi dan inovasi.
+
+Keberhasilan ini tidak hanya membawa kebanggaan bagi mahasiswa yang bersangkutan, tetapi juga bagi Institut Teknologi Del secara keseluruhan. Prestasi ini menunjukkan kualitas pembelajaran, semangat berkompetisi, serta komitmen IT DEL dalam mendukung mahasiswanya untuk berprestasi di tingkat global.
+
+Pihak kampus berharap prestasi ini dapat menjadi inspirasi bagi mahasiswa lainnya untuk terus mengembangkan potensi dan berpartisipasi dalam program-program serupa yang dapat memperluas wawasan serta pengalaman internasional.
+
+Dengan lolosnya mahasiswa Informatika dalam program ICYEP, diharapkan dapat membawa manfaat tidak hanya bagi dirinya secara pribadi, tetapi juga memberikan kontribusi positif bagi IT DEL dan masyarakat di masa depan",
+                'gambar' => '9.png',
+            ],
+            [
+                'judul' => '1 Mahasiswa Informatika IT DEL mewakili indonesia pada program huawei seeds for the future 2024 di china ',
+                'deskripsi' => 'Salah satu mahasiswa dari Program Studi Informatika Institut Teknologi Del (IT DEL) berhasil lolos seleksi Program Huawei Seeds For The Future 2024',
+                'isi' => "Salah satu mahasiswa dari Program Studi Informatika Institut Teknologi Del (IT DEL) berhasil lolos seleksi Huawei Seeds for the Future 2024, sebuah program prestisius yang diselenggarakan oleh Huawei Technologies. Program ini bertujuan untuk mengembangkan talenta muda di bidang teknologi dan informasi, serta memperkenalkan inovasi terkini dalam industri teknologi global.
+
+Mahasiswa tersebut terpilih setelah melewati serangkaian tahapan seleksi yang ketat, mulai dari penilaian akademik, kemampuan komunikasi, hingga wawasan teknologi terkini. Program ini mempertemukan mahasiswa berprestasi dari berbagai negara untuk belajar langsung mengenai perkembangan teknologi digital di pusat inovasi Huawei di China.
+
+Huawei Seeds for the Future adalah program global yang rutin diselenggarakan oleh Huawei dengan tujuan mempersiapkan generasi muda sebagai pemimpin masa depan dalam bidang teknologi. Program ini mencakup:
+
+Pelatihan intensif di bidang teknologi informasi dan komunikasi (TIK),
+Kunjungan ke pusat penelitian dan pengembangan Huawei,
+Kolaborasi internasional dengan peserta dari berbagai negara, dan
+Pengembangan keterampilan kepemimpinan serta pemahaman budaya global.
+Dalam program ini, mahasiswa Informatika IT DEL akan mendapat kesempatan berharga untuk mendalami teknologi seperti 5G, Artificial Intelligence (AI), Cloud Computing, dan Internet of Things (IoT), langsung dari para ahli dan praktisi di Huawei.
+
+Keberhasilan ini menjadi kebanggaan tersendiri bagi Institut Teknologi Del dan Program Studi Informatika. Hal ini menunjukkan kualitas pendidikan serta kesiapan mahasiswa IT DEL dalam menghadapi tantangan global di bidang teknologi.
+
+Pihak kampus menyampaikan apresiasi atas pencapaian ini dan berharap keberhasilan ini dapat menjadi inspirasi bagi mahasiswa lainnya untuk terus berprestasi dan berpartisipasi dalam program-program internasional serupa. Dengan mengikuti program ini, mahasiswa IT DEL diharapkan dapat memperoleh pengalaman berharga dan membawa wawasan serta teknologi baru untuk dikembangkan di Indonesia.",
+                'gambar' => '10.png',
             ],
         ]);
     }

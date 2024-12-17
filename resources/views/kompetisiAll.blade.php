@@ -5,7 +5,6 @@
     <!-- Header -->
     <div class="text-center mb-4">
         <h1 class="text-dark container text-center" style="font-weight: bold">Kompetisi</h1>
-        <hr class="w-50 mx-auto">
     </div>
 
     <!-- Kompetisi List -->
