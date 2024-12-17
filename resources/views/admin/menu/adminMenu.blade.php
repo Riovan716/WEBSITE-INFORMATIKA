@@ -89,9 +89,11 @@
         }
     </style>
     <title>Admin Menu</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('asset/img/logo_del.png') }}">
 </head>
 
 <body>
+
     <!-- Navbar untuk layar kecil -->
     <nav class="navbar navbar-dark bg-dark d-md-none">
         <div class="container-fluid">
