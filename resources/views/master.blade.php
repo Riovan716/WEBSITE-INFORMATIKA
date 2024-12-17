@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('asset/css/bootstrap-5.2.3-dist/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('asset/css/bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <title>Informatika</title>
 </head>
 
 <title>Informatika</title>
@@ -351,7 +350,8 @@
                                             style="font-size: 16px; font-family: Nunito">Kompetisi</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-light" href="/kontak" style="font-size: 16px; font-family: Nunito">Kontak</a>
+                                        <a class="nav-link text-light" href="/kontak"
+                                            style="font-size: 16px; font-family: Nunito">Kontak</a>
                                     </li>
 
 
@@ -417,32 +417,33 @@
 
 
         <div class="text-white py-5" style="background-color: #003f88">
-    <div class="container">
-        <div class="row justify-content-between align-items-start">
-            <!-- Bagian Kiri -->
-            <div class="col-md-6 text-md-start text-center mb-4 mb-md-0">
-                <p class="mb-2 small">
-                    Copyright 2024 © S1IF IT Del. All Rights Reserved.
-                </p>
-                <div class="d-flex justify-content-md-start justify-content-center gap-3 mt-2">
-                    <a href="tel:+62632331234" class="text-success fs-3">
-                        <i class="bi bi-telephone"></i>
-                    </a>
-                    <a href="mailto:Informatika@del.ac.id" class="text-info fs-3">
-                        <i class="bi bi-envelope"></i>
-                    </a>
+            <div class="container">
+                <div class="row justify-content-between align-items-start">
+                    <!-- Bagian Kiri -->
+                    <div class="col-md-6 text-md-start text-center mb-4 mb-md-0">
+                        <p class="mb-2 small">
+                            Copyright 2024 © S1IF IT Del. All Rights Reserved.
+                        </p>
+                        <div class="d-flex justify-content-md-start justify-content-center gap-3 mt-2">
+                            <a href="tel:+62632331234" class="text-success fs-3">
+                                <i class="bi bi-telephone"></i>
+                            </a>
+                            <a href="mailto:Informatika@del.ac.id" class="text-info fs-3">
+                                <i class="bi bi-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Bagian Kanan -->
+                    <div class="col-md-6 text-md-start text-center">
+                        <b class="d-block fs-5 mb-2">Institut Teknologi Del</b>
+                        <p class="mb-1 small">Jl. Sisingamangaraja, Sitoluama, Laguboti, Toba, Sumatera Utara,
+                            Indonesia</p>
+                        <p class="mb-0 small">Kode Pos: 22381</p>
+                    </div>
                 </div>
             </div>
-
-            <!-- Bagian Kanan -->
-            <div class="col-md-6 text-md-start text-center">
-                <b class="d-block fs-5 mb-2">Institut Teknologi Del</b>
-                <p class="mb-1 small">Jl. Sisingamangaraja, Sitoluama, Laguboti, Toba, Sumatera Utara, Indonesia</p>
-                <p class="mb-0 small">Kode Pos: 22381</p>
-            </div>
         </div>
-    </div>
-</div>
 
     </footer>
 
