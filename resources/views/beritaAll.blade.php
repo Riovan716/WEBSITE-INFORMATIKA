@@ -2,24 +2,33 @@
 
 @section('section')
     <div class="text-light container">
-        <h1><b>Berita Terkini </b></h1>
     </div>
 
     @foreach ($berita as $item)
-    <div class="mx-5" style="border-radius: 20px; background-color:rgb(156, 173, 206)">
-        <div class="berita d-flex p-3">
-            <img src="{{ asset('asset/img/Berita/' . $item->gambar) }}" alt="{{ $item->gambar }}"
-                style="height:225px;width:400px">
-            <div class="ms-3 pt-4 text-light">
-                <h3>{{ $item->judul }}</h3>
-                <p>{{ $item->deskripsi }}</p>
-                <a href="/berita/{{ $item->id }}"><button type="button"
-                    class="btn btn-primary">Selengkapnya</button></a>
+    <div class="event-card shadow-sm p-4 rounded-3 mb-4" style="background-color: rgb(255, 255, 255); border-radius: 25px;">
+        <div class="d-flex align-items-center">
+            <!-- Bagian Gambar -->
+            <div class="me-4">
+                <img src="{{ asset('asset/img/Berita/' . $item->gambar) }}" 
+                    alt="{{ $item->gambar }}"
+                    style="height: 350px; width: 400px; object-fit: cover; border-radius: 10px;">
+            </div>
+
+            <!-- Bagian Teks -->
+            <div class="card-body p-4" style="background-color: rgba(245, 245, 220, 0.144); flex: 1;">
+                <div class="card-title fw-bold">
+                    <h3>{{ $item->judul }}</h3>
+                    <p>{{ $item->deskripsi }}</p>
+                    <a href="/berita/{{ $item->id }}">
+                        <button type="button" class="btn btn-primary">Selengkapnya</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     <br>
-    @endforeach
+@endforeach
+
     <div style="width: 50%; /* or any other width */
     margin: auto;">
         <br>

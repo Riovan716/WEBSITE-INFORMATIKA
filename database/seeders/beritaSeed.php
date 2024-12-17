@@ -110,7 +110,7 @@ class beritaSeed extends Seeder
                 'gambar' => '6.png',
             ],
             [
-                'judul' => '1 Mahasiswa Informatika IT DEL lolos Program ICYEP ',
+                'judul' => 'Mahasiswa Informatika IT DEL lolos Program ICYEP ',
                 'deskripsi' => 'Salah satu mahasiswa dari Program Studi Informatika Institut Teknologi Del (IT DEL) berhasil lolos seleksi Program International Youth Exchange Program (ICYEP)',
                 'isi' => "Salah satu mahasiswa Program Studi Informatika Institut Teknologi Del (IT DEL) telah berhasil mengukir prestasi membanggakan dengan lolos seleksi International Youth Exchange Program (ICYEP). Program ini merupakan inisiatif yang bertujuan untuk memfasilitasi pertukaran budaya, peningkatan kompetensi pemuda, serta pengembangan kemampuan kepemimpinan di tingkat internasional.
 
@@ -126,7 +126,7 @@ Dengan lolosnya mahasiswa Informatika dalam program ICYEP, diharapkan dapat memb
                 'gambar' => '9.png',
             ],
             [
-                'judul' => '1 Mahasiswa Informatika IT DEL mewakili indonesia pada program huawei seeds for the future 2024 di china ',
+                'judul' => 'Mahasiswa Informatika IT DEL mewakili indonesia pada program huawei seeds for the future 2024 di china ',
                 'deskripsi' => 'Salah satu mahasiswa dari Program Studi Informatika Institut Teknologi Del (IT DEL) berhasil lolos seleksi Program Huawei Seeds For The Future 2024',
                 'isi' => "Salah satu mahasiswa dari Program Studi Informatika Institut Teknologi Del (IT DEL) berhasil lolos seleksi Huawei Seeds for the Future 2024, sebuah program prestisius yang diselenggarakan oleh Huawei Technologies. Program ini bertujuan untuk mengembangkan talenta muda di bidang teknologi dan informasi, serta memperkenalkan inovasi terkini dalam industri teknologi global.
 
@@ -143,7 +143,7 @@ Dalam program ini, mahasiswa Informatika IT DEL akan mendapat kesempatan berharg
 Keberhasilan ini menjadi kebanggaan tersendiri bagi Institut Teknologi Del dan Program Studi Informatika. Hal ini menunjukkan kualitas pendidikan serta kesiapan mahasiswa IT DEL dalam menghadapi tantangan global di bidang teknologi.
 
 Pihak kampus menyampaikan apresiasi atas pencapaian ini dan berharap keberhasilan ini dapat menjadi inspirasi bagi mahasiswa lainnya untuk terus berprestasi dan berpartisipasi dalam program-program internasional serupa. Dengan mengikuti program ini, mahasiswa IT DEL diharapkan dapat memperoleh pengalaman berharga dan membawa wawasan serta teknologi baru untuk dikembangkan di Indonesia.",
-                'gambar' => '10.png',
+                'gambar' => '11.png',
             ],
         ]);
     }
