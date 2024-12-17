@@ -42,6 +42,16 @@
         <br><br>
         <input type="submit" value="Perbarui Participant" class="btn btn-primary">
     </form>
+    {{-- menampilkan error validasi --}}
+    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <br>
     <a href="{{ route('admin.viewParticipant', ['kompetisi_id' => $kompetisi->id]) }}">
         <button type="button" class="btn btn-danger">Kembali</button>
