@@ -241,6 +241,37 @@
         transform: rotate(180deg);
     }
 
+    .nav-link {
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    /* Efek hover */
+    .nav-link:hover {
+        color: #a0c4ff !important;
+        /* Warna saat hover */
+    }
+
+    /* Efek garis bawah saat hover */
+    .nav-link:hover::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #a0c4ff;
+        transition: width 0.3s ease;
+    }
+
+    /* Untuk halaman aktif */
+    .nav-link.active {
+        font-weight: bold;
+        color: #a0c4ff !important;
+        border-bottom: 2px solid #a0c4ff;
+    }
+
+
 
     /* pagination in eventAll */
 
@@ -284,18 +315,18 @@
                             <div class="collapse navbar-collapse justify-content-end " id="navbarNav">
                                 <ul class="navbar-nav mr-auto gap-3 justify-content-end ">
                                     <li class="nav-item">
-                                        <a class="nav-link text-light" href="/"
-                                            style="font-size: 16px; font-family: Nunito;">Beranda</a>
+                                        <a class="nav-link text-light {{ Request::is('/') ? 'active' : '' }}"
+                                            href="/" style="font-size: 16px; font-family: Nunito;">Beranda</a>
                                     </li>
 
                                     <!-- Profil -->
 
                                     <li class="nav-item">
                                         <div class="dropdown show">
-                                            <a class="nav-link dropdown-toggle text-light" href="#"
-                                                style="font-size: 16px; font-family: Nunito" role="button"
-                                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
-                                                data-bs-target="#dropdownMenu">Profil</a>
+                                            <a class="nav-link dropdown-toggle text-light {{ Request::is('profil*') ? 'active' : '' }}"
+                                                href="#" style="font-size: 16px; font-family: Nunito"
+                                                role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                                                aria-expanded="false" data-bs-target="#dropdownMenu">Profil</a>
                                             <ul class="dropdown-menu dropdown-menu-center dropcolor"
                                                 aria-labelledby="dropdownMenuLink" id="dropdownMenu"
                                                 style="width: fit-content;">
@@ -316,27 +347,30 @@
                                     <!-- KURIKULUM -->
 
                                     <li class="nav-item">
-                                        <a class="nav-link text-light" href="/kurikulum"
-                                            style="font-size: 16px; font-family: Nunito">Kurikulum</a>
+                                        <a class="nav-link text-light {{ Request::is('kurikulum') ? 'active' : '' }}"
+                                            href="/kurikulum" style="font-size: 16px; font-family: Nunito">Kurikulum</a>
                                     </li>
 
                                     <li class="nav-item">
                                         <div class="dropdown show">
-                                            <a class="nav-link dropdown-toggle text-light" href="#"
-                                                style="font-size: 16px; font-family: Nunito" role="button"
-                                                id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
-                                                data-bs-target="#dropdownMenu">Akademik</a>
+                                            <a class="nav-link dropdown-toggle text-light {{ Request::is('akademik') ? 'active' : '' }}"
+                                                href="#" style="font-size: 16px; font-family: Nunito"
+                                                role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                                                aria-expanded="false" data-bs-target="#dropdownMenu">Akademik</a>
                                             <ul class="dropdown-menu dropdown-menu-center dropcolor"
                                                 aria-labelledby="dropdownMenuLink" id="dropdownMenu"
                                                 style="width: fit-content;">
 
-                                                <li><a class="dropdown-item text-light" href="/staffDosen"
+                                                <li><a class="dropdown-item text-light {{ Request::is('dosen') ? 'active' : '' }}"
+                                                        href="/staffDosen"
                                                         style="font-size: 16px; font-family: Nunito">Dosen</a></li>
                                                 <hr>
-                                                <li><a class="dropdown-item text-light" href="/mahasiswa"
+                                                <li><a class="dropdown-item text-light{{ Request::is('mahasiswa') ? 'active' : '' }}"
+                                                        href="/mahasiswa"
                                                         style="font-size: 16px; font-family: Nunito">Mahasiswa</a></li>
                                                 <hr>
-                                                <li><a class="dropdown-item text-light" href="/alumni"
+                                                <li><a class="dropdown-item text-light {{ Request::is('alumni') ? 'active' : '' }}"
+                                                        href="/alumni"
                                                         style="font-size: 16px; font-family: Nunito">Alumni</a></li>
                                                 <hr>
 
@@ -346,12 +380,13 @@
 
 
                                     <li class="nav-item">
-                                        <a class="nav-link text-light" href="/kompetisiAll"
+                                        <a class="nav-link text-light {{ Request::is('kompetisi') ? 'active' : '' }}"
+                                            href="/kompetisiAll"
                                             style="font-size: 16px; font-family: Nunito">Kompetisi</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link text-light" href="/kontak"
-                                            style="font-size: 16px; font-family: Nunito">Kontak</a>
+                                        <a class="nav-link text-light {{ Request::is('kontak') ? 'active' : '' }}"
+                                            href="/kontak" style="font-size: 16px; font-family: Nunito">Kontak</a>
                                     </li>
 
 
