@@ -380,7 +380,7 @@
 
 
                                     <li class="nav-item">
-                                        <a class="nav-link text-light {{ Request::is('kompetisi') ? 'active' : '' }}"
+                                        <a class="nav-link text-light {{ Request::is('kompetisiAll') ? 'active' : '' }}"
                                             href="/kompetisiAll"
                                             style="font-size: 16px; font-family: Nunito">Kompetisi</a>
                                     </li>
