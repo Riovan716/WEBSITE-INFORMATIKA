@@ -230,10 +230,6 @@ class MahasiswaController extends Controller
             $query->where('tahun_lulus', $request->searchvalue);
         }
 
-        if ($request->has('searchby') && $request->searchby == 'angkatan' && $request->has('searchvalue')) {
-            $query->where('angkatan', $request->searchvalue);
-        }
-
         $alumni = $query->orderBy('nim', 'ASC')->paginate(20);
 
         $jumlahAlumni = Alumni::where('status', 'lulus')->count();
@@ -271,8 +267,6 @@ class MahasiswaController extends Controller
         $angkatan = Alumni::select('angkatan')->distinct()->get();
         $status = Alumni::select('status')->distinct()->get();
 
-
-        // Pastikan variabel alumni, angkatan, dan status dipassing ke view
         return view('admin.mahasiswa.adminAlumni', compact('alumni', 'angkatan', 'status'));
     }
 
