@@ -148,6 +148,186 @@ class eventSeeder extends Seeder
                 'deskripsi' => 'Setiap anggota tim HIMASTI akan melakukan pertandingan olahraga dan kesenian',
                 'penjelasan' => 'Meningkatkan solidaritas mahasiswa IT DEL',
             ],
+            [
+                'nama' => 'HiCo (Himasti Competition)',
+                'Waktu Pelaksanaan' => '8 Maret 2025',
+                'jenis' => 'Event',
+                'Tujuan' => 'Menumbuhkan rasa minat dan kompetisi mahasiswa terkhususnya dibidang pemograman dan juga desain',
+                'deskripsi_singkat' => 'Membuat kompetisi yang memiliki 2 divisi yaitu HCC (Himasti Coding Competion) dan juga HDC (Himasti Desain Competion). Acara ini akan diselenggarakan di lingkup IT Del.',
+                'lokasi' => 'Auditorium',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Riset dan Teknologi',
+                'kontak' => ' 081260071260(Prans Simarmata)',
+                'Estimasi Biaya' => 'Menyesuaikan'
+            ],
+            [
+                'nama' => 'Sharing knowledge ',
+                'Waktu Pelaksanaan' => 'Januari - November 2025',
+                'jenis' => 'Event',
+                'Tujuan' => 'Memberikan pengetahuan terkhususnya kepada anggota Himasti tentang teknologi ', 'deskripsi_singkat' => 'Menjadi wadah bagi anggota Himasti untuk bisa saling berbagi pengetahuan dan juga memungkinkan untuk mengadakan webinar dari alumni untuk anggota Himasti yang berkaitan dengan dunia teknologi',
+                'lokasi' => 'Menyesuaikan',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Riset dan Teknologi',
+                'kontak' => ' 081260071260(Prans Simarmata)',
+                'Estimasi Biaya' => 'Menyesuaikan'
+            ],
+            [
+                'nama' => 'Open Pre Order ',
+                'Waktu Pelaksanaan' => 'Menyesuaikan',
+                'jenis' => 'Event',
+                'Tujuan' => 'Menambah Uang Kas Himasti ',
+                'deskripsi_singkat' => 'Memberikan layanan promosi berbayar bagi usaha yang ingin mempromosikan dagangan atau jasanya melalui akun social media',
+                'lokasi' => 'Auditorium',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Dana dan Usaha',
+                'kontak' => ' 082161800457(Sunanda Munthe)',
+                'Estimasi Biaya' => 'Tidak memerlukan biaya '
+            ],
+            [
+                'nama' => 'Membuat dan menjual Souvenir ',
+                'Waktu Pelaksanaan' => 'Menyesuaikan',
+                'jenis' => 'Event',
+                'Tujuan' => 'Menambah Uang Kas Himasti ',
+                'deskripsi_singkat' => 'Menjual barang yang ber-Temakan DEL ',
+                'lokasi' => 'Menyesuaikan',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Dana dan Usaha',
+                'kontak' => ' 082161800457(Sunanda Munthe)',
+                'Estimasi Biaya' => 'Rp.100.000 - Rp.150.000'
+            ],
+            [
+                'nama' => 'Mengadakan Bazar',
+                'Waktu Pelaksanaan' => 'Pada event Himasti atau BEM ',
+                'jenis' => 'Event',
+                'Tujuan' => 'Menambah Uang Kas Himasti ',
+                'deskripsi_singkat' => 'Menjual makanan atau minuman',
+                'lokasi' => 'Menyesuaikan',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Dana dan Usaha',
+                'kontak' => ' 082161800457(Sunanda Munthe)',
+                'Estimasi Biaya' => 'Rp.500.000 - Rp.1.000.000 / Harga dapat berubah-ubah '
+            ],
+            [
+                'nama' => 'HIMASTI Tutorial ',
+                'Waktu Pelaksanaan' => 'Setiap bulan dengan jadwal yang fleksibel, menyesuaikan permintaan mahasiswa.',
+                'jenis' => 'Event',
+                'Tujuan' => 'Memberikan tambahan pembelajaran untuk membantu mahasiswa, terutama yang masih kesulitan memahami materi perkuliahan yang diajarkan di kelas',
+                'deskripsi_singkat' => 'Kegiatan ini berfokus pada pembahasan topik yang kurang dipahami mahasiswa, dengan melibatkan mahasiswa yang telah menguasai materi untuk menjadi pengajar.',
+                'lokasi' => 'IT Del',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Pendidikan',
+                'kontak' => ' 085244275171(Okdini Hutagalung)',
+                'Estimasi Biaya' => 'Tidak memerlukan biaya.'
+            ],
+            [
+                'nama' => 'Pengumpulan dan Pembagian Referensi Belajar ',
+                'Waktu Pelaksanaan' => 'Berlangsung selama masa kepengurusan.',
+                'jenis' => 'Event',
+                'Tujuan' => 'Menambah koleksi soal untuk membantu mahasiswa lebih percaya diri menghadapi kuis, UTS, dan UAS.', 'deskripsi_singkat' => 'Mengumpulkan soal-soal dari berbagai angkatan untuk disusun menjadi bank soal yang dapat diakses oleh seluruh anggota HIMASTI.',
+                'lokasi' => 'Google Drive ',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Pendidikan',
+                'kontak' => ' 085244275171(Okdini Hutagalung)',
+                'Estimasi Biaya' => 'Tidak memerlukan biaya.'
+            ],
+            [
+                'nama' => 'Pengadaan Webinar',
+                'Waktu Pelaksanaan' => 'Menyesuaikan jadwal yang tersedia.',
+                'jenis' => 'Event',
+                'Tujuan' => 'Membekali mahasiswa dengan wawasan dan keterampilan dasar untuk mempersiapkan diri menghadapi dunia kerja, sekaligus mempererat relasi dengan alumni HIMASTI.', 'deskripsi_singkat' => 'Mengadakan diskusi dan sesi berbagi pengalaman oleh alumni untuk seluruh anggota HIMASTI.',
+                'lokasi' => 'IT DEL / Zoom Meeting ',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Pendidikan',
+                'kontak' => ' 085244275171(Okdini Hutagalung)',
+                'Estimasi Biaya' => 'Menyesuaikan kebutuhan'
+            ],
+            [
+                'nama' => 'Sharing Knowledge dan Temu Ramah Informatika ',
+                'Waktu Pelaksanaan' => '16 November 2024 : Pertemuan Angk. 19 dan 21 dengan Ang.24 23 November 2024 : Pertemuan Angk. 23 dengan Ang.24 30 November 2024 : Pertemuan Angk.22 dengan Ang.24',
+                'jenis' => 'Event',
+                'Tujuan' => 'Memperdekat hubungan antar Mahasiswa Angk. 21, 21 dan 23 kepada Angk.24 ', 'deskripsi_singkat' => 'Program Humas Himasti dimana Mahasiswa Angk. 21, 21 dan 23 diberikan waktu untuk melakukan pendekatan/sharing kepada mahasiswa baru Angk.24. ',
+                'lokasi' => 'Lapangan Napitupulu, Lingkungan Kampus IT Del ',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Hubungan Masyarakat',
+                'kontak' => '085831057136(Esra Silaen)',
+                'Estimasi Biaya' => 'Rp. 300.000 '
+            ],
+            [
+                'nama' => 'Pengukuhan dan Penyambutan Anggota Baru HIMASTI',
+                'Waktu Pelaksanaan' => 'Belum ditentukan ',
+                'jenis' => 'Event',
+                'Tujuan' => '• Mengenalkan HIMASTI Memberikan pemahaman kepada mahasiswa baru tentang HIMASTI sebagai wadah untuk berpartisipasi, berkembang, dan bersosialisasi di lingkungan kampus
+                                • Pengukuhan Identitas Memberikan penghargaan dan tanda pengenal
+                                resmi kepada mahasiswa baru dengan jaket Himpunan sebagai
+                                anggota sah HIMASTI
+                                • Membangun Persahabatan dan Relasi Menciptakan suasana yang
+                                santai dan akrab di acara penyambutan mahasiswa baru sebagai
+                                anggota baru HIMASTI untuk memungkinkan mahasiswa baru
+                                berkenalan, membentuk hubungan pertemanan, dan membangun
+                                jaringan sosial di antara sesama anggota HIMASTI
+                                • Mendorong Partisipasi Aktif Merangsang minat dan partisipasi
+                                mahasiswa baru untuk berperan aktif dalam berbagai kegiatan yang
+                                diadakan oleh HIMASTI selama masa perkuliahan.
+                                • Memberikan Informasi Penting Menyampaikan informasi praktis
+                                terkait program, kegiatan, dan sumber daya yang dapat diakses oleh
+                                anggota HIMASTI, sehingga mahasiswa baru dapat lebih terlibat dan
+                                terinformasi. ',
+                'deskripsi_singkat' => 'Program Humas Himasti yang bertujuan untuk memperkenalkan Himasti kepada Calon Anggota Himasti dan sekaligus mengukuhkan Calon Anggota menjadi Anggota resmi Himasti. ',
+                'lokasi' => 'Pantai Lumban Bul-bul, Balige ',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Hubungan Masyarakat',
+                'kontak' => '085831057136(Esra Silaen)',
+                'Estimasi Biaya' => 'Rp.3.000.000 / Biaya dapat berubah sesuai kondisi Websitenya berfungsi sebagai portal informasi yang memberikan rincian rinci mengenai program studi, termasuk kurikulum yang diikuti, fokus studi yang ditawarkan, dan prospek karir yang dapat diharapkan lulusan.'
+            ],
+            [
+                'nama' => 'Pembuatan artikel mengenai Program Studi',
+                'Waktu Pelaksanaan' => 'Setiap bulan akan ada 2 artikel',
+                'jenis' => 'Event',
+                'Tujuan' => '- Mengenalkan HIMASTI yang dapat diakses melalui website resmi.
+                            - Memberikan informasi rinci tentang program studi, meliputi
+                            kurikulum, fokus studi, dan prospek karir lulusan
+                            - Mempromosikan kegiatan dan acara yang diselenggarakan oleh
+                            HIMASTI.',
+                'deskripsi_singkat' => 'Artikel ini berfungsi sebagai portal informasi yang memberikan rincian rinci mengenai program studi, termasuk kurikulum yang diikuti, fokus studi yang ditawarkan, dan prospek karir yang dapat diharapkan lulusan',
+                'lokasi' => 'Situs website HIMASTI',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Hubungan Masyarakat',
+                'kontak' => '085831057136(Esra Silaen)',
+                'Estimasi Biaya' => 'Tidak Ada'
+            ],
+            [
+                'nama' => 'Documentary Excellence ',
+                'Waktu Pelaksanaan' => 'Sepanjang tahun ',
+                'jenis' => 'Event',
+                'Tujuan' => 'Mengabadikan momen berharga dan mempublikasikannya di Instagram resmi HIMASTI. ', 
+                'deskripsi_singkat' => 'Membuat catatan visual setiap momen berharga dalam acara HIMASTI, termasuk webinar, rapat kerja, dan pertemuan anggota HIMASTI. ',
+                'lokasi' => 'Menyesuaikan',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Komunikasi dan Informasi',
+                'kontak' => '081363333029(Yizreel Sipahutar)',
+                'Estimasi Biaya' => 'Program tidak membutuhkan biaya '
+            ],
+            [
+                'nama' => 'Creative Design ',
+                'Waktu Pelaksanaan' => 'Minggu keempat Januari 2025',
+                'jenis' => 'Event',
+                'Tujuan' => 'Menyediakan materi visual berkualitas untuk memperindah acara HIMASTI. ',
+                'deskripsi_singkat' => 'Membuat desain poster dan banner kreatif ataupun materi visual untuk mendukung acara HIMASTI, baik formal maupun non-formal.',
+                'lokasi' => 'Menyesuaikan',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Komunikasi dan Informasi',
+                'kontak' => '081363333029(Yizreel Sipahutar)',
+                'Estimasi Biaya' => 'Program tidak membutuhkan biaya '
+            ],
+            [
+                'nama' => 'HIMASTI Photography Challenge',
+                'Waktu Pelaksanaan' => 'Minggu pertama Febuari 2024 - Minggu keempat Februari 2024  ',
+                'jenis' => 'Event',
+                'Tujuan' => 'Mendorong anggota HIMASTI untuk mengembangkan kreativitas dalam fotografi melalui kompetisi yang berkaitan dengan HIMASTI',
+                'deskripsi_singkat' => 'Anggota HIMASTI atau anggota HIMAPRO lain (jika memungkinkan) berpartisipasi dalam kompetisi, dan menyediakan poster/video promosi yang sesuai dengan tema acara yang akan digelar oleh HIMASTI',
+                'lokasi' => 'IT DEL ',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Komunikasi dan Informasi',
+                'kontak' => '081363333029(Yizreel Sipahutar)',
+                'Estimasi Biaya' => 'Menyesuaikan'
+            ],
+            [
+                'nama' => 'HIMASTI Digital Presence Management ',
+                'Waktu Pelaksanaan' => 'Sepanjang tahun ',
+                'jenis' => 'Event',
+                'Tujuan' => ' Membuat konten media sosial HIMASTI tetap menarik dan profesional, serta mengembangkan kreativitas anggota dalam bidang visualisasi. ',
+                'deskripsi_singkat' => 'Mengevaluasi setiap foto dan/atau video yang akan atau telah diunggah untuk memastikan kualitas konten yang memadai, mempromosikan citra positif HIMASTI.',
+                'lokasi' => 'Menyesuaikan',
+                'penyelenggara' => 'Pengurus HIMASTI Divisi Komunikasi dan Informasi',
+                'kontak' => '081363333029(Yizreel Sipahutar)',
+                'Estimasi Biaya' => 'Menyesuaikan'
+            ]
         ]);
     }
 }
