@@ -1022,96 +1022,307 @@ class kurikulum extends Seeder
                 'tahun' => 2024
             ],
             [
-                'kode' => '11S3122',
-                'nama' => 'Komputasi Paralel dan Terdistribusi',
-                'semester' => 5,
-                'sks' => 3,
-                'tahun' => 2024
-            ],
-            [
-                'kode' => '11S3121',
+                'kode' => '11S3126',
                 'nama' => 'Manajemen Proyek Teknologi Informasi',
                 'semester' => 5,
                 'sks' => 3,
                 'tahun' => 2024
             ],
             [
-                'kode' => '11S3221',
-                'nama' => 'Keamanan Sistem Informasi',
+                'kode' => '11S3135',
+                'nama' => 'Pengujian dan Penjaminan Mutu Perangkat Lunak (+P)',
+                'semester' => 5,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S3143',
+                'nama' => 'Kriptografi dan Keamanan Informasi',
+                'semester' => 5,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+
+            [
+                'kode' => 'KUS0201',
+                'nama' => 'Bahasa Inggris III',
+                'semester' => 6,
+                'sks' => 2,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S3244',
+                'nama' => 'Keamanan Perangkat Lunak',
                 'semester' => 6,
                 'sks' => 3,
                 'tahun' => 2024
             ],
             [
-                'kode' => '10S3201',
-                'nama' => 'Pengolahan Citra Digital (+P)',
+                'kode' => '11S3237',
+                'nama' => 'Pengembangan Aplikasi Mobile (+P)',
+                'semester' => 6,
+                'sks' => 4,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S3242',
+                'nama' => 'Pembelajaran Mesin (+P)',
                 'semester' => 6,
                 'sks' => 3,
                 'tahun' => 2024
             ],
             [
-                'kode' => '11S3204',
-                'nama' => 'Big Data Analytics',
+                'kode' => '11S3228',
+                'nama' => 'Proyek Perangkat Lunak (+P)',
+                'semester' => 6,
+                'sks' => 4,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S3246',
+                'nama' => 'Sistem Paralel dan Terdistribusi (+P)',
                 'semester' => 6,
                 'sks' => 3,
                 'tahun' => 2024
             ],
             [
-                'kode' => '10S3202',
-                'nama' => 'Pemrograman Mobile (+P)',
-                'semester' => 6,
-                'sks' => 3,
-                'tahun' => 2024
-            ],
-            [
-                'kode' => '11S3225',
-                'nama' => 'Sistem Pendukung Keputusan',
-                'semester' => 6,
-                'sks' => 3,
-                'tahun' => 2024
-            ],
-            [
-                'kode' => '11S4101',
+                'kode' => '11S4190',
                 'nama' => 'Kerja Praktik',
                 'semester' => 7,
-                'sks' => 4,
-                'tahun' => 2024
-            ],
-            [
-                'kode' => '11S4203',
-                'nama' => 'Komputasi Awan (+P)',
-                'semester' => 7,
                 'sks' => 3,
                 'tahun' => 2024
             ],
             [
-                'kode' => '11S4212',
-                'nama' => 'Manajemen Data dan Informasi',
-                'semester' => 7,
-                'sks' => 3,
-                'tahun' => 2024
-            ],
-            [
-                'kode' => '11S4205',
-                'nama' => 'Pengembangan Aplikasi Enterprise (+P)',
+                'kode' => '11S4093',
+                'nama' => 'Tugas Akhir 1',
                 'semester' => 7,
                 'sks' => 4,
                 'tahun' => 2024
             ],
             [
-                'kode' => '11S4226',
-                'nama' => 'Teknik Optimasi',
+                'kode' => '11S4051',
+                'nama' => 'Pemrograman Berbasis Blok',
+                'semester' => 7,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S4053',
+                'nama' => 'Pengembangan Aplikasi Platform Khusus',
+                'semester' => 7,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S4055',
+                'nama' => 'Pengujian Otomasi',
+                'semester' => 7,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S4056',
+                'nama' => 'Ethical Hacking dan Penetration Testing',
+                'semester' => 7,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S4062',
+                'nama' => 'Pembelajaran Mesin Lanjut',
+                'semester' => 7,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3061',
+                'nama' => 'Magang 1',
+                'semester' => 7,
+                'sks' => 1,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3062',
+                'nama' => 'Magang 2',
+                'semester' => 7,
+                'sks' => 2,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3063',
+                'nama' => 'Magang 3',
+                'semester' => 7,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3061',
+                'nama' => 'Magang 4',
+                'semester' => 7,
+                'sks' => 4,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3061',
+                'nama' => 'Magang 5',
+                'semester' => 7,
+                'sks' => 5,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3061',
+                'nama' => 'Magang 6',
+                'semester' => 7,
+                'sks' => 6,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3071',
+                'nama' => 'Penelitian 1',
+                'semester' => 7,
+                'sks' => 1,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3072',
+                'nama' => 'Penelitian 2',
+                'semester' => 7,
+                'sks' => 2,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3073',
+                'nama' => 'Penelitian 3',
+                'semester' => 7,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3074',
+                'nama' => 'Penelitian 4',
+                'semester' => 7,
+                'sks' => 4,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3075',
+                'nama' => 'Penelitian 5',
+                'semester' => 7,
+                'sks' => 5,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3076',
+                'nama' => 'Penelitian 6',
+                'semester' => 7,
+                'sks' => 6,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'TIS0001',
+                'nama' => 'Keteknowiraan',
                 'semester' => 8,
                 'sks' => 3,
                 'tahun' => 2024
             ],
             [
-                'kode' => '11S4102',
-                'nama' => 'Skripsi',
+                'kode' => '11S4094',
+                'nama' => 'Tugas Akhir 2',
+                'semester' => 8,
+                'sks' => 4,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S4195',
+                'nama' => 'Kapita Selekta',
+                'semester' => 8,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S4052',
+                'nama' => 'Pembangunan Aplikasi Berbasis Service',
+                'semester' => 8,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S4054',
+                'nama' => 'UI/UX Design',
+                'semester' => 8,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S4057',
+                'nama' => 'Keamanan Jaringan Siber',
+                'semester' => 8,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S4063',
+                'nama' => 'Kecerdasan Komputasional',
+                'semester' => 8,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => '11S4064',
+                'nama' => 'Visi Komputer',
+                'semester' => 8,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3051',
+                'nama' => 'Studi/Proyek Independen 1',
+                'semester' => 8,
+                'sks' => 1,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3052',
+                'nama' => 'Studi/Proyek Independen 2',
+                'semester' => 8,
+                'sks' => 2,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3053',
+                'nama' => 'Studi/Proyek Independen 3',
+                'semester' => 8,
+                'sks' => 3,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3054',
+                'nama' => 'Studi/Proyek Independen 4',
+                'semester' => 8,
+                'sks' => 4,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3055',
+                'nama' => 'Studi/Proyek Independen 5',
+                'semester' => 8,
+                'sks' => 5,
+                'tahun' => 2024
+            ],
+            [
+                'kode' => 'KUS3056',
+                'nama' => 'Studi/Proyek Independen 6',
                 'semester' => 8,
                 'sks' => 6,
                 'tahun' => 2024
-            ]
+            ],
+            [
+                'kode' => 'KUS0203',
+                'nama' => 'Kewarganegaraan',
+                'semester' => 8,
+                'sks' => 2,
+                'tahun' => 2024
+            ],
         ]);
     }
 }
